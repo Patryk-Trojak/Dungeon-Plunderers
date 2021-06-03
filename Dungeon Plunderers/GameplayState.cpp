@@ -272,8 +272,7 @@ void GameplayState::tryTeleportToBoss()
             makePlayerFormChanger();
             isFightingWithBoss = true;
             addaptViewToBossFight();
-            addaptBackgroundToBossFight();
-         
+            addaptBackgroundToBossFight();     
         }
     }
 }
@@ -454,7 +453,6 @@ void GameplayState::endLevelIfPlayerHasWon()
         stateData.savedPlayerData.money += currentPlayer->collectedMoney;
         makeMessageBoxAboutWin();
         collectedMoneyOnLevel = 0;
-        isFightingWithBoss = false;
     }
 }
 
