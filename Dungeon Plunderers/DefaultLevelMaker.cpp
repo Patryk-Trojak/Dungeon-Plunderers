@@ -53,7 +53,7 @@ std::unique_ptr<Enemy> DefaultLevelMaker::createBoss(LevelName levelName, Player
 	switch (levelName)
 	{
 	case LevelName::Level1:
-		return std::make_unique<DeadlyFlower>(sf::Vector2f(3501.22593, 500.000000), resources);
+		return std::make_unique<DeadlyFlowerBoss>(sf::Vector2f(3501.22593, 500.000000), resources);
 	case LevelName::Level2:
 		return std::make_unique<SkeletonBoss>(sf::Vector2f(3501.22593, 500.000000), resources);
 	case LevelName::Level3:
@@ -69,6 +69,7 @@ std::function<Level(const Resources & resources)> DefaultLevelMaker::makeFunctio
 		Level level;
 		level.name = LevelName::Level1;
 		level.initialPositionOfPlayer = sf::Vector2f(480.f, 565.f);
+		level.initialPositionOfPlayer = sf::Vector2f(17900.f, 565.f);
 		level.endOfLevelPosition = sf::Vector2f(17900.f, 370.f);
 
 		level.blocks.emplace_back(sf::Vector2f(275, 690), sf::Vector2f(50, 200), BlocksTypes::dirt);

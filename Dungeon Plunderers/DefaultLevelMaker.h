@@ -12,6 +12,7 @@
 #include"SkeletonBoss.h"
 #include"DeadlyFlower.h"
 #include"GunEnemy.h"
+#include "DeadlyFlowerBoss.h"
 
 class DefaultLevelMaker
 {
