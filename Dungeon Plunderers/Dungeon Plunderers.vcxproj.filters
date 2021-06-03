@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Pliki zasobów">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{d22fa59a-b174-4387-8c31-a0f6042a8504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="All GUI">
+      <UniqueIdentifier>{378b6e92-d518-47a9-9484-f3f6464110a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="All GUI\Menu GUI">
+      <UniqueIdentifier>{f8bba11c-bb59-498a-8bbf-72c522921e4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers">
+      <UniqueIdentifier>{676d42ed-96ec-4519-9754-252951417553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff">
+      <UniqueIdentifier>{b446b96e-f3c4-49b6-814b-71e41bc143be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Player">
+      <UniqueIdentifier>{58b40d1d-42dc-4251-aba2-0a7e5ba0e815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Weapons">
+      <UniqueIdentifier>{2d89c6dd-5468-4d69-84c6-146562a8d0b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Projectiles">
+      <UniqueIdentifier>{53c8ead2-e71e-486c-98bd-c58a24a1c1c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Projectiles\Enemy%27s Projectiles">
+      <UniqueIdentifier>{5d122d72-96f3-43c1-9d45-fa513cb00e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Projectiles\Players Projectile">
+      <UniqueIdentifier>{b6fc22a8-31da-496b-bf97-5616f1cce923}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Projectiles\Abstract class">
+      <UniqueIdentifier>{eb03e323-1a15-427a-a9c2-cb71c0998d1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Enemies">
+      <UniqueIdentifier>{2a7c76b3-9566-46c5-8413-e0e3574b2266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Enemies\Abstract classes">
+      <UniqueIdentifier>{be0aaa8d-6f84-48de-9f8b-e05c1b21ce27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Enemies\Units">
+      <UniqueIdentifier>{b5354d10-3c7c-4229-829c-e41683f49184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{df4f6782-fd2c-42be-872d-80e471788281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\HUD">
+      <UniqueIdentifier>{8632c3d5-8a99-46fa-bcb8-27514c5d1ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Effects">
+      <UniqueIdentifier>{438c2266-95ac-48c4-bc89-a008207dfea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Enemies\Units\Bosses">
+      <UniqueIdentifier>{080510e7-701e-4260-acc3-3d89319f14aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\HUD\PlayersHUD">
+      <UniqueIdentifier>{07b608bf-a4d2-4364-a923-f0ec372a89cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Persistances">
+      <UniqueIdentifier>{e62a48b1-5fba-428d-8482-054ec5c9f61d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstMenuState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SupportGameState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveButton.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveSelectionState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Textbox.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Feedback.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondMenuState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="ShopState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="ShopButton.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassSelectionState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Hitbox.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="HitboxComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SavedDataManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureHolder.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBox.h">
+      <Filter>All GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TextCursor.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Gameplay stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelSelectionState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Movable.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard.h">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Handgun.h">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Stormtrooper.h">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Rifle.h">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Shotgun.h">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>Gameplay stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingEnemy.h">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClInclude>
+    <ClInclude Include="RangedEnemy.h">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClInclude>
+    <ClInclude Include="RangedAndMovingEnemy.h">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="DeadlyFlower.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectileOfDeadlyFlower.h">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="AmmoHUD.h">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="MoneyHUD.h">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="PotionBar.h">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="Helicopter.h">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponOfHelicopter.h">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelBar.h">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="Blood1.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="Blood2.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="Blood3.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="Blood5.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="Blood4.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorUnit.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="IconButton.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TextButton.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Checkbox.h">
+      <Filter>All GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Slider.h">
+      <Filter>All GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollBar.h">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDownList.h">
+      <Filter>All GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlSettingsState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorToolbar.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorUpgradeClassState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelsOfPlayerSelection.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="ManaBar.h">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Wand.h">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardOnCloud.h">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Fireball.h">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Electroball.h">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Icicle.h">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Fly.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="DeadlyFlowerBoss.h">
+      <Filter>Gameplay stuff\Enemies\Units\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonBoss.h">
+      <Filter>Gameplay stuff\Enemies\Units\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="ZombieBoss.h">
+      <Filter>Gameplay stuff\Enemies\Units\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSelection.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="GunEnemy.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowBall.h">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectileOfBoss.h">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectileOfBoss2.h">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Spikes.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="Bar.h">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyHealthBar.h">
+      <Filter>Gameplay stuff\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHealthBar.h">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="Bonus.h">
+      <Filter>Gameplay stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Laser.h">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerFormChanger.h">
+      <Filter>Gameplay stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Warning.h">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Portal.h">
+      <Filter>Gameplay stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomEngine.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionsHandler.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocksDrawer.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocksHandler.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectilesHandler.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="BonusesHandler.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundHandler.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="CoinsHandler.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceHolder.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemiesHandler.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectsHandler.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Pause.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelName.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelData.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Keybinds.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardOnCloudHUD.h">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardHUD.h">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClInclude>
+    <ClInclude Include="StormtrooperHUD.h">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHUD.h">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClInclude>
+    <ClInclude Include="HelicopterHUD.h">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadDataState.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureID.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsPlayerCreator.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerData.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="PersistenceSaver.h">
+      <Filter>Persistances</Filter>
+    </ClInclude>
+    <ClInclude Include="PersistenceLoader.h">
+      <Filter>Persistances</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultPersistenceCreator.h">
+      <Filter>Persistances</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsData.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="PathsToPersistences.h">
+      <Filter>Persistances</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerUpgradeState.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelCodeCreator.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyProjectile.h">
+      <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerProjectile.h">
+      <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorClipboard.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorUnitsChangeTracker.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="MySimpleLibrary.hpp">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultLevelMaker.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTypeChecker.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorUnitsNames.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Dungeon Plunderers.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="FirstMenuState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SupportGameState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveButton.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveSelectionState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Textbox.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Feedback.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondMenuState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="ShopState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="ShopButton.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassSelectionState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Hitbox.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="HitboxComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="SavedDataManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureHolder.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBox.cpp">
+      <Filter>All GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TextCursor.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Gameplay stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelSelectionState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Movable.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Wizard.cpp">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Handgun.cpp">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Stormtrooper.cpp">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameplayState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Rifle.cpp">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Shotgun.cpp">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>Gameplay stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingEnemy.cpp">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClCompile>
+    <ClCompile Include="RangedEnemy.cpp">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClCompile>
+    <ClCompile Include="RangedAndMovingEnemy.cpp">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="DeadlyFlower.cpp">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectileOfDeadlyFlower.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="AmmoHUD.cpp">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="MoneyHUD.cpp">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="PotionBar.cpp">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="Helicopter.cpp">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponOfHelicopter.cpp">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelBar.cpp">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Blood1.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Blood2.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Blood4.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Blood5.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Blood3.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorUnit.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="IconButton.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TextButton.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Checkbox.cpp">
+      <Filter>All GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Slider.cpp">
+      <Filter>All GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollBar.cpp">
+      <Filter>All GUI\Menu GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DropDownList.cpp">
+      <Filter>All GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlSettingsState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorToolbar.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorUpgradeClassState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelsOfPlayerSelection.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="ManaBar.cpp">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="Wand.cpp">
+      <Filter>Gameplay stuff\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardOnCloud.cpp">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Fireball.cpp">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="Electroball.cpp">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="Icicle.cpp">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="Fly.cpp">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="DeadlyFlowerBoss.cpp">
+      <Filter>Gameplay stuff\Enemies\Units\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="ZombieBoss.cpp">
+      <Filter>Gameplay stuff\Enemies\Units\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonBoss.cpp">
+      <Filter>Gameplay stuff\Enemies\Units\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSelection.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="GunEnemy.cpp">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowBall.cpp">
+      <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectileOfBoss.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectileOfBoss2.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Spikes.cpp">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Bar.cpp">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHealthBar.cpp">
+      <Filter>Gameplay stuff\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyHealthBar.cpp">
+      <Filter>Gameplay stuff\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Bonus.cpp">
+      <Filter>Gameplay stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Laser.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerFormChanger.cpp">
+      <Filter>Gameplay stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="Warning.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Portal.cpp">
+      <Filter>Gameplay stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomEngine.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionsHandler.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocksDrawer.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocksHandler.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectilesHandler.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="BonusesHandler.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundHandler.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="CoinsHandler.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceHolder.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemiesHandler.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectsHandler.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Pause.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelName.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelData.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Keybinds.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardOnCloudHUD.cpp">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardHUD.cpp">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClCompile>
+    <ClCompile Include="StormtrooperHUD.cpp">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHUD.cpp">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClCompile>
+    <ClCompile Include="HelicopterHUD.cpp">
+      <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadDataState.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureID.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsPlayerCreator.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerData.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="PersistenceSaver.cpp">
+      <Filter>Persistances</Filter>
+    </ClCompile>
+    <ClCompile Include="PersistenceLoader.cpp">
+      <Filter>Persistances</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultPersistenceCreator.cpp">
+      <Filter>Persistances</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsData.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="PathsToPersistences.cpp">
+      <Filter>Persistances</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerUpgradeState.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelCodeCreator.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyProjectile.cpp">
+      <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerProjectile.cpp">
+      <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorClipboard.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorUnitsChangeTracker.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultLevelMaker.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTypeChecker.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Dungeon Plunderers.rc">
+      <Filter>Pliki zasobów</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Release\logo.ico">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
