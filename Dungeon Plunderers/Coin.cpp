@@ -63,5 +63,4 @@ void Coin::moveWithBlock(float deltaTime)
 void Coin::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(coin, states);
-	target.draw(base.getHitboxes()[0]);
 }
