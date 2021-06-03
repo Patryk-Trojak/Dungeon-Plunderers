@@ -49,4 +49,5 @@ Fireball::~Fireball()
 
 void Fireball::addEffects(std::vector<std::unique_ptr< Effect> >& effects, const Resources& resources)
 {
+    effects.emplace_back(std::make_unique<FireExplosion>(projectile.getPosition(), resources[TextureID::FireExplosion]));
 }

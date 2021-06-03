@@ -1,5 +1,6 @@
 #pragma once
 #include "PlayerProjectile.h"
+#include "FireExplosion.h"
 
 class Fireball
 	:public PlayerProjectile
