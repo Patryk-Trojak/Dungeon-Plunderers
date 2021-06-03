@@ -70,7 +70,7 @@
     <Filter Include="Gameplay stuff\HUD\PlayersHUD">
       <UniqueIdentifier>{07b608bf-a4d2-4364-a923-f0ec372a89cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Persistances">
+    <Filter Include="Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances">
       <UniqueIdentifier>{e62a48b1-5fba-428d-8482-054ec5c9f61d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -442,19 +442,19 @@
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="PersistenceSaver.h">
-      <Filter>Persistances</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClInclude>
     <ClInclude Include="PersistenceLoader.h">
-      <Filter>Persistances</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClInclude>
     <ClInclude Include="DefaultPersistenceCreator.h">
-      <Filter>Persistances</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClInclude>
     <ClInclude Include="SettingsData.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="PathsToPersistences.h">
-      <Filter>Persistances</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClInclude>
     <ClInclude Include="PlayerUpgradeState.h">
       <Filter>Pliki nagłówkowe</Filter>
@@ -485,6 +485,9 @@
     </ClInclude>
     <ClInclude Include="LevelEditorUnitsNames.h">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="SnowDust.h">
+      <Filter>Gameplay stuff\Effects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -855,19 +858,19 @@
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="PersistenceSaver.cpp">
-      <Filter>Persistances</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClCompile>
     <ClCompile Include="PersistenceLoader.cpp">
-      <Filter>Persistances</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClCompile>
     <ClCompile Include="DefaultPersistenceCreator.cpp">
-      <Filter>Persistances</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClCompile>
     <ClCompile Include="SettingsData.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="PathsToPersistences.cpp">
-      <Filter>Persistances</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClCompile>
     <ClCompile Include="PlayerUpgradeState.cpp">
       <Filter>Pliki źródłowe</Filter>
@@ -892,6 +895,9 @@
     </ClCompile>
     <ClCompile Include="UnitTypeChecker.cpp">
       <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="SnowDust.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,7 @@ enum class TextureID
     Blood3,
     Blood4,
     Blood5,
+    SnowDust,
     Brick,
     Dirt,
     Concrate,
