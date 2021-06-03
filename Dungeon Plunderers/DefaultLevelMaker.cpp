@@ -1,24 +1,24 @@
 #include "pch.h"
 #include "DefaultLevelMaker.h"
 
-Level DefaultLevelMaker::makeBossArea()
+std::vector<Block> DefaultLevelMaker::makeBossArea()
 {
-	Level level;
-	level.blocks.emplace_back(sf::Vector2f(950, 1165), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(1450, 965), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(900, 415), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(2300, 265), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(1750, 665), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(1350, 115), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(375, 540), sf::Vector2f(50, 1850), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(3625, 490), sf::Vector2f(50, 1850), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(2000, -360), sf::Vector2f(3200, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(2150, 1015), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(3450, 940), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(2075, 1440), sf::Vector2f(3350, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(3450, 490), sf::Vector2f(300, 50), BlocksTypes::brick);
-	level.blocks.emplace_back(sf::Vector2f(3450, 40), sf::Vector2f(300, 50), BlocksTypes::brick);
-	return level;
+	std::vector<Block> blocks;
+	blocks.emplace_back(sf::Vector2f(950, 1165), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(1450, 965), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(900, 415), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(2300, 265), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(1750, 665), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(1350, 115), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(375, 540), sf::Vector2f(50, 1850), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(3625, 490), sf::Vector2f(50, 1850), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(2000, -360), sf::Vector2f(3200, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(2150, 1015), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(3450, 940), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(2075, 1440), sf::Vector2f(3350, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(3450, 490), sf::Vector2f(300, 50), BlocksTypes::brick);
+	blocks.emplace_back(sf::Vector2f(3450, 40), sf::Vector2f(300, 50), BlocksTypes::brick);
+	return blocks;
 }
 
 std::function<Level(const Resources & resources)> DefaultLevelMaker::makeFunctionCreatingNextDefaultLevel(LevelName levelName)

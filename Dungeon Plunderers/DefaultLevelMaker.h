@@ -17,7 +17,7 @@
 class DefaultLevelMaker
 {
 public: 
-	static Level makeBossArea();
+	static std::vector<Block> makeBossArea();
 	static std::function<Level(const Resources & resources)> makeFunctionCreatingNextDefaultLevel(LevelName levelName);
 	static std::function<Level(const Resources & resources)> makeFunctionCreatingDefaultLevel(LevelName levelName);
 	static std::unique_ptr<Enemy> createBoss(LevelName levelName, PlayerType playerType, const Resources& resources);

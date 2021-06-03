@@ -264,13 +264,12 @@ void GameplayState::tryTeleportToBoss()
         if (level.name != LevelName::playerLevel)
         {
             clearAllGameStuff();
-            level = DefaultLevelMaker::makeBossArea();
+            level.blocks = DefaultLevelMaker::makeBossArea();
+            level.enemies.emplace_back(DefaultLevelMaker::createBoss(level.name, currentPlayer->getType(), stateData.resources));
             blocksDrawer.addBlocksToVertexArray(level.blocks, false);
             blocksDrawer.addBlocksToVertexArray(level.decorationBlocks, true);
             currentPlayer->setPositionRelativeToHitbox(sf::Vector2f(1000.f, -260.f));
             makePlayerFormChanger();
-            level = DefaultLevelMaker::makeBossArea();
-            level.enemies.emplace_back( DefaultLevelMaker::createBoss(level.name, currentPlayer->getType(), stateData.resources) );
             isFightingWithBoss = true;
             addaptViewToBossFight();
             addaptBackgroundToBossFight();
