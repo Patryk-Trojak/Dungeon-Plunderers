@@ -40,6 +40,7 @@ Icicle::~Icicle()
 
 void Icicle::addEffects(std::vector<std::unique_ptr< Effect> >& effects, const Resources& resources)
 {
+    effects.emplace_back(std::make_unique<SnowDust>(projectile.getPosition(), resources[TextureID::SnowDust]));
 }
 
 void Icicle::onCollisionWithEnemy(Enemy& enemy)

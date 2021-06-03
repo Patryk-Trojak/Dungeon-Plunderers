@@ -1,5 +1,6 @@
 #pragma once
 #include "PlayerProjectile.h"
+#include "SnowDust.h"
 
 class Icicle
 	:public PlayerProjectile
