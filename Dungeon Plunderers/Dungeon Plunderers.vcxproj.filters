@@ -489,6 +489,9 @@
     <ClInclude Include="SnowDust.h">
       <Filter>Gameplay stuff\Effects</Filter>
     </ClInclude>
+    <ClInclude Include="FireExplosion.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -897,6 +900,9 @@
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="SnowDust.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="FireExplosion.cpp">
       <Filter>Gameplay stuff\Effects</Filter>
     </ClCompile>
   </ItemGroup>

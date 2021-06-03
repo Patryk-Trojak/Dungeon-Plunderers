@@ -199,6 +199,7 @@
     <ClInclude Include="Feedback.h" />
     <ClInclude Include="FileSelection.h" />
     <ClInclude Include="Fireball.h" />
+    <ClInclude Include="FireExplosion.h" />
     <ClInclude Include="FirstMenuState.h" />
     <ClInclude Include="Fly.h" />
     <ClInclude Include="Game.h" />
@@ -340,6 +341,7 @@
     <ClCompile Include="Feedback.cpp" />
     <ClCompile Include="FileSelection.cpp" />
     <ClCompile Include="Fireball.cpp" />
+    <ClCompile Include="FireExplosion.cpp" />
     <ClCompile Include="FirstMenuState.cpp" />
     <ClCompile Include="Fly.cpp" />
     <ClCompile Include="Game.cpp" />

@@ -17,6 +17,7 @@ enum class TextureID
     Blood4,
     Blood5,
     SnowDust,
+    FireExplosion,
     Brick,
     Dirt,
     Concrate,
