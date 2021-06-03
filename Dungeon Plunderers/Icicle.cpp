@@ -44,6 +44,6 @@ void Icicle::addEffects(std::vector<std::unique_ptr< Effect> >& effects, const R
 
 void Icicle::onCollisionWithEnemy(Enemy& enemy)
 {
-    enemy.tryTakeDamage(-damage);
+    enemy.tryTakeDamage(damage);
     enemy.tryChangeState(EnemyState::frost, 2);
 }
