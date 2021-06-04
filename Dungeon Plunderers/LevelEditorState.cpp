@@ -629,7 +629,7 @@ void LevelEditorState::updatePositionOfPlayer()
 				player.move(sf::Vector2f(numberOfTileToShift * tileSize, 0));
 				UnitShift.x -= numberOfTileToShift * tileSize;
 			}
-			if (abs(UnitShift.y) >= 5)
+			if (abs(UnitShift.y) >= tileSize)
 			{
 				int numberOfTileToShift = static_cast<int>(UnitShift.y) / tileSize;
 				player.move(sf::Vector2f(0.f, numberOfTileToShift * tileSize));			
