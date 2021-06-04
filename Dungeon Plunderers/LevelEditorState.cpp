@@ -777,6 +777,11 @@ void LevelEditorState::addBlocksByCreatedArea()
 
 void LevelEditorState::handleAddingUnits()
 {
+	if (!sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	{
+		if (currentAction == Action::addingUnit)
+			currentAction = Action::none;
+	}
 	if (wasMousePressed)
 	{
 		if (isAbleToAddUnit())
@@ -790,6 +795,7 @@ void LevelEditorState::handleAddingUnits()
 			else
 			{
 				addUnitByClick();
+				currentAction = Action::addingUnit;
 				numberOfSelectedUnits = 1;
 				updateAfterChanges();
 			}
@@ -801,7 +807,7 @@ void LevelEditorState::handleAddingUnits()
 		{
 			if (isAbleToAddUnit())
 			{
-				addBlocksByCreatedArea();				
+				addBlocksByCreatedArea();
 				numberOfSelectedUnits = 1;
 				updateAfterChanges();
 			}
