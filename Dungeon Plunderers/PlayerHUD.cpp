@@ -4,13 +4,13 @@
 PlayerHUD::PlayerHUD(const sf::Vector2f& HUDViewCenter, const Resources& resources,
     const std::shared_ptr<Player>& currentPlayer, const std::shared_ptr<Player>& playerBaseVersion, const PlayerData& playerData)
     :    levelBar(HUDViewCenter + sf::Vector2f(-550.f, 445.f), resources, StatsPlayerCreator::getExpierienceToNextLevel(playerData.experienceOfPlayer), playerData.experienceOfPlayer, playerData.levelOfPlayer),
-    moneyHUD(HUDViewCenter + sf::Vector2f(200.f, 445.f), resources, playerData.money + currentPlayer->collectedMoney),
-    healthPotionsBar(HUDViewCenter + sf::Vector2f(200.f, 445.f), resources[TextureID::PotionBar], resources[TextureID::HealthPotion], 3),
+    moneyHUD(HUDViewCenter + sf::Vector2f(350.f, 445.f), resources, playerData.money + currentPlayer->collectedMoney),
+    healthPotionsBar(HUDViewCenter + sf::Vector2f(-50, 445.f), resources[TextureID::PotionBar], resources[TextureID::HealthPotion], 3),
     currentPlayer(currentPlayer),
     playerBaseVersion(playerBaseVersion),
     playerData(playerData)
 {
-    healthBars.emplace_back(HUDViewCenter + sf::Vector2f(-250.f, 445.f), resources, currentPlayer->getInitialHp(), currentPlayer->getCurrentHp());
+    healthBars.emplace_back(HUDViewCenter + sf::Vector2f(-300.f, 445.f), resources, currentPlayer->getInitialHp(), currentPlayer->getCurrentHp());
 }
 
 PlayerHUD::~PlayerHUD()

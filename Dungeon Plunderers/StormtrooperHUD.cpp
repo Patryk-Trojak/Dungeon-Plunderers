@@ -6,7 +6,7 @@ StormtrooperHUD::StormtrooperHUD(const sf::Vector2f& HUDViewCenter, const Resour
     const std::shared_ptr<Player>& currentPlayer, const std::shared_ptr<Player>& playerBaseVersion, const PlayerData& playerData)
     :PlayerHUD(HUDViewCenter, resources,
         currentPlayer, playerBaseVersion, playerData),
-    ammo(HUDViewCenter + sf::Vector2f(400.f, 445.f), resources, "Nieskonczonosc")
+    ammo(HUDViewCenter + sf::Vector2f(160.f, 445.f), resources, "Nieskonczonosc")
 {
 
 }
