@@ -94,6 +94,7 @@ void LevelEditorState::update(const float deltaTime)
 	handleSelectingUnitsByClick();
 	handleChangingSizeOfBlocks();
 	handleMovingUnits();
+	updatePositionOfPlayer();
 
 	updatePositionsOfBackgrounds(backgrounds);
 	updatePositionsOfBackgrounds(helpLines);
@@ -109,7 +110,6 @@ void LevelEditorState::update(const float deltaTime)
 	else
 		tileSize = 50;
 
-	updatePositionOfPlayer();
 	updateColorOfUnits();
 
 	updateArea(selectedArea);
@@ -493,7 +493,7 @@ void LevelEditorState::loadAllUnitsTextures()
 
 void LevelEditorState::handleSelectingUnitsByClick()
 {
-	if (wasMousePressed and units.size() >= 1)
+	if (wasMousePressed and units.size() >= 1 and !toolbar.isMouseOverToolbar(mousePositionHUD) )
 	{
 		bool isMouseOverEnemyGun = false;
 		for (auto i = units.begin(); i != units.end() - numberOfSelectedUnits; ++i)
@@ -599,7 +599,7 @@ bool LevelEditorState::isMouseOverEnemyGuns() const
 
 void LevelEditorState::updatePositionOfPlayer()
 {
-	if (!sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	if (!sf::Mouse::isButtonPressed(sf::Mouse::Left) )
 	{
 		if (currentAction == Action::movingPlayer)
 		{
@@ -611,7 +611,7 @@ void LevelEditorState::updatePositionOfPlayer()
 		}
 	}
 
-	if (wasMousePressed)
+	if (wasMousePressed and !toolbar.isMouseOverToolbar(mousePositionHUD))
 	{
 		if (player.hitboxComponent.contains(lastMousePosition))
 		{
@@ -890,7 +890,7 @@ void LevelEditorState::handleMovingUnits()
 
 void LevelEditorState::tryStartMovingUnits()
 {
-	if (currentAction == Action::none)
+	if (currentAction == Action::none and !toolbar.isMouseOverToolbar(mousePositionHUD))
 	{
 		if (wasMousePressed)
 		{
@@ -941,15 +941,18 @@ void LevelEditorState::handleChangingMovingDistance(const sf::RenderWindow& wind
 
 void LevelEditorState::tryStartChangingMovingDistance()
 {
-	if (numberOfSelectedUnits == 1) //changing size is only possible if one unit is selected. if more are selected, moving move hitboxes will cause movement of all selected unit
+	if (numberOfSelectedUnits == 1 ) //changing size is only possible if one unit is selected. if more are selected, moving move hitboxes will cause movement of all selected unit
 	{
-		if (UnitTypeChecker::isMovable(units.back().getType()))
+		if (!toolbar.isMouseOverToolbar(mousePositionHUD))
 		{
-			if (units.back().moveHitboxes[0].getGlobalBounds().contains(lastMousePosition) and wasMousePressed)
+			if (UnitTypeChecker::isMovable(units.back().getType()))
 			{
-				currentAction = Action::changingMovingDistance;
+				if (units.back().moveHitboxes[0].getGlobalBounds().contains(lastMousePosition) and wasMousePressed)
+				{
+					currentAction = Action::changingMovingDistance;
+				}
 			}
-		}
+		}	
 	}
 }
 
@@ -1019,7 +1022,7 @@ void LevelEditorState::handleChangingSizeOfBlocks()
 
 void LevelEditorState::tryStartChangingSizeOfBlocks()
 {
-	if (numberOfSelectedUnits == 1)
+	if (numberOfSelectedUnits == 1 and !toolbar.isMouseOverToolbar(mousePositionHUD))
 	{
 		if (currentAction == Action::none)
 		{			
