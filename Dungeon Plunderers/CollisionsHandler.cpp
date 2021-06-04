@@ -175,11 +175,12 @@ void CollisionsHandler::ProjectilesAndEnemies()
 						bonusesHandler.tryAddBonus((*enemy)->getPosition(), player->getType());
 						msl::fastErase(level.enemies, enemy);
 						wasEnemyDeleted = true;
-						break;
 					} 
 				}
 				(*projectile)->addEffects(effects, resources);
 				msl::fastErase(playerProjectiles, projectile);
+				if (wasEnemyDeleted)
+					break;
 			}
 			else 
 			{
