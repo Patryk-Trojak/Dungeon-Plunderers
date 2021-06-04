@@ -493,7 +493,7 @@ void LevelEditorState::loadAllUnitsTextures()
 
 void LevelEditorState::handleSelectingUnitsByClick()
 {
-	if (wasMousePressed and units.size() >= 1 and !toolbar.isMouseOverToolbar(mousePositionHUD) )
+	if (wasMousePressed and units.size() >= 1 and !toolbar.isMouseOverToolbar(mousePositionHUD) and !sliderOfView.isSliding() and !sliderOfView.isMouseOver(mousePositionHUD))
 	{
 		bool isMouseOverEnemyGun = false;
 		for (auto i = units.begin(); i != units.end() - numberOfSelectedUnits; ++i)
@@ -611,7 +611,7 @@ void LevelEditorState::updatePositionOfPlayer()
 		}
 	}
 
-	if (wasMousePressed and !toolbar.isMouseOverToolbar(mousePositionHUD))
+	if (wasMousePressed and !toolbar.isMouseOverToolbar(mousePositionHUD) and !sliderOfView.isSliding() and !sliderOfView.isMouseOver(mousePositionHUD))
 	{
 		if (player.hitboxComponent.contains(lastMousePosition))
 		{
@@ -890,7 +890,7 @@ void LevelEditorState::handleMovingUnits()
 
 void LevelEditorState::tryStartMovingUnits()
 {
-	if (currentAction == Action::none and !toolbar.isMouseOverToolbar(mousePositionHUD))
+	if (currentAction == Action::none and !toolbar.isMouseOverToolbar(mousePositionHUD) and !sliderOfView.isSliding() and !sliderOfView.isMouseOver(mousePositionHUD))
 	{
 		if (wasMousePressed)
 		{
@@ -943,7 +943,7 @@ void LevelEditorState::tryStartChangingMovingDistance()
 {
 	if (numberOfSelectedUnits == 1 ) //changing size is only possible if one unit is selected. if more are selected, moving move hitboxes will cause movement of all selected unit
 	{
-		if (!toolbar.isMouseOverToolbar(mousePositionHUD))
+		if (!toolbar.isMouseOverToolbar(mousePositionHUD) and !sliderOfView.isSliding() and !sliderOfView.isMouseOver(mousePositionHUD))
 		{
 			if (UnitTypeChecker::isMovable(units.back().getType()))
 			{
@@ -1022,7 +1022,7 @@ void LevelEditorState::handleChangingSizeOfBlocks()
 
 void LevelEditorState::tryStartChangingSizeOfBlocks()
 {
-	if (numberOfSelectedUnits == 1 and !toolbar.isMouseOverToolbar(mousePositionHUD))
+	if (numberOfSelectedUnits == 1 and !toolbar.isMouseOverToolbar(mousePositionHUD) and !sliderOfView.isSliding() and !sliderOfView.isMouseOver(mousePositionHUD))
 	{
 		if (currentAction == Action::none)
 		{			
