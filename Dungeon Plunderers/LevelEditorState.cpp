@@ -826,7 +826,7 @@ bool LevelEditorState::isAbleToAddUnit()
 {
 	if (currentAction == Action::none or currentAction == Action::creatingSelectedArea)
 	{
-		if (!isMouseOverUnits() and !toolbar.isMouseOverToolbar(mousePositionHUD))
+		if (!isMouseOverUnits() and !toolbar.isMouseOverToolbar(mousePositionHUD) and !sliderOfView.isMouseOver(mousePositionHUD))
 		{
 			return true;
 		}
