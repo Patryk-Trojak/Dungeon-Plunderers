@@ -5,9 +5,9 @@ MoneyHUD::MoneyHUD(const sf::Vector2f& Position, const Resources& resources, con
 {
 	money.setFont(resources.font);
 	money.setString(std::to_string(Money));
-	money.setPosition(sf::Vector2f(Position.x + 80, Position.y - 12));
-	money.setCharacterSize(65);
-	money.setOutlineThickness(3.f);
+	money.setPosition(sf::Vector2f(Position.x + 60, Position.y - 2));
+	money.setCharacterSize(40);
+	money.setOutlineThickness(1.5f);
 	money.setLetterSpacing(1.2);
 
 	coin.setTexture(resources[TextureID::Coin]);
