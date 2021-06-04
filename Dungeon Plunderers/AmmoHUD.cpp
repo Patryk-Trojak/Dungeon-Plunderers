@@ -7,12 +7,12 @@ AmmoHUD::AmmoHUD(const sf::Vector2f& Position, const Resources& resources,
 	currentAmmo.setFont(resources.font);
 	currentAmmo.setPosition(Position);
 	currentAmmo.setCharacterSize(40);
-	currentAmmo.setString("Ammo: " + CurrentAmmo);
 	currentAmmo.setFillColor(sf::Color::White);	
 	currentAmmo.setOutlineThickness(1.5);
 
 	infinitySymbol.setTexture(resources[TextureID::InfinitySymbol]);
-	infinitySymbol.setPosition(sf::Vector2f(Position.x + 100, Position.y + 7));
+	infinitySymbol.setPosition(sf::Vector2f(Position.x + 100, Position.y + 12));
+	setCurrentAmmo(CurrentAmmo);
 }
 
 AmmoHUD::~AmmoHUD()
