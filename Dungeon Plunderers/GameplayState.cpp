@@ -255,6 +255,7 @@ void GameplayState::clearAllGameStuff()
     projectiles.clear();
     projectilesOfEnemies.clear();
     effects.clear();
+    playerFormChanger.reset();
 }
 
 void GameplayState::tryTeleportToBoss()
@@ -293,7 +294,7 @@ void GameplayState::handleWithInfoAboutEndOfLevel()
         if (infoAboutEnd->FirstOptionWasPressed(mousePositionHUD, wasMousePressed))
         {
             clearAllGameStuff();
-            if (hasPlayerWon())
+            if (isBossKilled)
             {
                 createCurrentLevel = DefaultLevelMaker::makeFunctionCreatingNextDefaultLevel(level.name);
                 level = createCurrentLevel(stateData.resources);
@@ -302,7 +303,8 @@ void GameplayState::handleWithInfoAboutEndOfLevel()
             {
                 resetCurrentLevel();
             }
-
+            isBossKilled = false;
+            isPlayerInBossArea = false;
             initPlayer(level.initialPositionOfPlayer);
             createHUD(currentPlayer->getType());
             backgroundsHandler.initBackgrounds(currentPlayer->getPosition());
@@ -451,6 +453,7 @@ void GameplayState::endLevelIfPlayerHasWon()
     if (hasPlayerWon())
     {
         stateData.savedPlayerData.money += currentPlayer->collectedMoney;
+        isBossKilled = true;
         makeMessageBoxAboutWin();
         collectedMoneyOnLevel = 0;
     }

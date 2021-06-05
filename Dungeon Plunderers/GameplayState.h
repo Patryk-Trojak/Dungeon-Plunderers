@@ -116,7 +116,7 @@ private:
     Portal portal;
     void tryTeleportToBoss();
     bool isPlayerInBossArea{ false };
-
+    bool isBossKilled{ false };
     std::unique_ptr<game::MessageBox> infoAboutEnd;
     void handleWithInfoAboutEndOfLevel();
 
@@ -124,7 +124,7 @@ private:
 
     Pause pause;
     std::wstring makeStringAboutWin();
-
+    
     void exitState();
     std::function<void()> exitGameplay;
 
