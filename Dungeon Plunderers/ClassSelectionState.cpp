@@ -118,6 +118,7 @@ void ClassSelectionState::update(const float deltaTime)
 
 		}
 	}
+	updateBackToPreviousState();
 }
 
 void ClassSelectionState::handleSFMLEvent(sf::RenderWindow& window, sf::Event& event)
@@ -166,6 +167,7 @@ void ClassSelectionState::draw(sf::RenderTarget& target, sf::RenderStates states
 
 	target.draw(wizardArm, states);
 	target.draw(stormtrooperArm, states);
+	target.draw(backToPreviousState, states);
 
 	
 

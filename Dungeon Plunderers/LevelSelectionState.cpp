@@ -28,6 +28,7 @@ void LevelSelectionState::update(const float deltaTime)
 		i.second.update(mousePositionView);
 	}
 	handleFunctionalityOfButtons();
+	updateBackToPreviousState();
 }
 
 void LevelSelectionState::handleSFMLEvent(sf::RenderWindow& window, sf::Event& event)
@@ -64,6 +65,7 @@ void LevelSelectionState::updateInput(const float deltaTime)
 void LevelSelectionState::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(background, states);
+	target.draw(backToPreviousState, states);
 	drawButtons(target, states);
 }
 

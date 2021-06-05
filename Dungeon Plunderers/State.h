@@ -14,6 +14,7 @@
 #include "PersistenceSaver.h"
 #include "DefaultPersistenceCreator.h"
 #include "SettingsData.h"
+#include "TextButton.h"
 
 class State;
 
@@ -51,6 +52,8 @@ protected:
 	sf::Sprite background;
 	sf::View view;
 	sf::View HUDView;
+	TextButton backToPreviousState;
+	void updateBackToPreviousState();
 	bool closeWindow;
 	bool HasCustomCursor;
 	int numberOfStatesPop;

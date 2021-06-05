@@ -158,10 +158,8 @@ ControlSettingsState::~ControlSettingsState()
 
 void ControlSettingsState::update(const float deltaTime)
 {
-
 	if (!isChangingKey)
 	{
-	
 		if (messageBoxAreYouSureToResetControl)
 		{
 			messageBoxAreYouSureToResetControl->update(mousePositionView);
@@ -256,6 +254,8 @@ void ControlSettingsState::update(const float deltaTime)
 			resetButton.update(mousePositionView);
 			if (resetButton.wasPressed(mousePositionView, wasMousePressed))
 				makeMessageBoxAreYouSureToResetControl();
+
+			updateBackToPreviousState();
 		}
 	}
 }
@@ -412,6 +412,7 @@ void ControlSettingsState::draw(sf::RenderTarget& target, sf::RenderStates state
 	target.draw(resetButton, states);
 	target.draw(generalSettings);
 	target.draw(controlSettings);
+	target.draw(backToPreviousState);
 	if (messageBoxAreYouSureToResetControl)
 		target.draw(*messageBoxAreYouSureToResetControl, states);
 
@@ -420,6 +421,13 @@ void ControlSettingsState::draw(sf::RenderTarget& target, sf::RenderStates state
 		target.draw(informationAboutChangingKey, states);
 		target.draw(DefaultAndCurrentKey, states);
 	}
+}
+
+void ControlSettingsState::updateBackToPreviousState()
+{
+	backToPreviousState.update(mousePositionView);
+	if (backToPreviousState.wasPressed(mousePositionView, wasMousePressed))
+		numberOfStatesPop = numberOfStatesPopToBackMenu;
 }
 
 void ControlSettingsState::initSupportedKeys()

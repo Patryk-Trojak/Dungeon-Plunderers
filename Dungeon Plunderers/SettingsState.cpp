@@ -170,6 +170,7 @@ void SettingsState::update(const float deltaTime)
 			settingsButton[7].setCurrentColor(sf::Color::Red);
 	
 		reseterGeneralSettings.update(mousePositionView);
+		updateBackToPreviousState();
 	}
 	
 	if (WereSettingsChanged)
@@ -522,8 +523,16 @@ void SettingsState::draw(sf::RenderTarget& target, sf::RenderStates states) cons
 	target.draw(positionOfFPS);
 	target.draw(maxFPS);
 	target.draw(colorOfFPS);
+	target.draw(backToPreviousState);
 	if (areYouSureToResetSettings)
 		target.draw(*areYouSureToResetSettings);
+}
+
+void SettingsState::updateBackToPreviousState()
+{
+	backToPreviousState.update(mousePositionView);
+	if (backToPreviousState.wasPressed(mousePositionView, wasMousePressed))
+		numberOfStatesPop = numberOfStatesPopToBackMenu;
 }
 
 void SettingsState::createAdvancedFPSSettings()

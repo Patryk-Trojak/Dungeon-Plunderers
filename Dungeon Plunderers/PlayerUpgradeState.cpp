@@ -38,6 +38,8 @@ void PlayerUpgradeState::update(const float deltaTime)
 	handleDowngrading();
 	handleUpgrading();
 	handleResetingAllUpgrades();
+	updateBackToPreviousState();
+
 }
 
 void PlayerUpgradeState::updateInput(const float deltaTime)
@@ -53,6 +55,7 @@ void PlayerUpgradeState::draw(sf::RenderTarget& target, sf::RenderStates state) 
 	drawTexts(target, state);
 	drawWeapons(target, state);
 	target.draw(resetUpgradesBought, state);
+	target.draw(backToPreviousState, state);
 	if (drawAdditionalInformation)
 		target.draw(additionalInformationAboutButtons, state);
 	if (feedback)

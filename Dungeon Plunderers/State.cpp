@@ -4,7 +4,9 @@
 State::State(StateData& stateData)
 	:stateData(stateData),
 	numberOfStatesPop(0),
-	WereSettingsChanged(false)
+	WereSettingsChanged(false),
+	backToPreviousState(sf::Vector2f(30.f, 1000.f), sf::Vector2f(130.f, 50.f), stateData.resources[TextureID::BackButton], stateData.resources.font,
+		L"Wróæ", 40, ContentAlignment::left, 49.f)
 {
 	//view.setSize(1500, 1000);
 
@@ -70,6 +72,15 @@ bool State::wereSettingsChanged()
 	return WereSettingsChanged;
 }
 
+
+void State::updateBackToPreviousState()
+{
+	backToPreviousState.update(mousePositionView);
+	if (backToPreviousState.wasPressed(mousePositionView, wasMousePressed))
+	{
+		numberOfStatesPop = 1;
+	}
+}
 
 void State::resizeWindowProportionally(sf::RenderWindow& window, sf::Event& event)
 {

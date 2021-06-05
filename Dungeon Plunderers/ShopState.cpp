@@ -37,6 +37,7 @@ void ShopState::draw(sf::RenderTarget& target, sf::RenderStates state) const
 		target.draw(*feedback, state);
 
 	target.draw(weaponOfHelicopter, state);
+	target.draw(backToPreviousState, state);
 
 	drawWeapons(target, state);
 

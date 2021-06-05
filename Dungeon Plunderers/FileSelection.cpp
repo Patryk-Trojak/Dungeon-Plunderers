@@ -89,7 +89,7 @@ void FileSelection::update(const float deltaTime)
 
 		view.setCenter(sf::Vector2f(view.getCenter().x, PageHeight * scrollbar.getPercentValue() / 100 + view.getSize().y / 2));
 		scrollbar.update(mousePositionHUD, wasMousePressed, PageHeight, deltaTime);
-
+		updateBackToPreviousState();
 	}
 	handleMessageBoxAreYouSureToDeleteSave();
 }
@@ -314,6 +314,7 @@ void FileSelection::draw(sf::RenderTarget& target, sf::RenderStates states) cons
 	target.draw(howSortButton);
 	target.draw(saveCreator);
 	target.draw(sort);
+	target.draw(backToPreviousState);
 
 	if (areYouSureToDeleteSave)
 		target.draw(*areYouSureToDeleteSave);

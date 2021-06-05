@@ -21,6 +21,7 @@ public:
 private:
 	virtual void updateInput(const float deltaTime) override;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+	void updateBackToPreviousState();
 	sf::Vector2f positionOfFirstButton;
 	DropDownList colorOfFPS;
 	DropDownList positionOfFPS;
