@@ -127,6 +127,7 @@ void LoadDataState::loadAllTextures()
 	stateData.resources.textures.add(TextureID::GreyButton200x150, loadTexture(".\\Textures\\GreyButton200x150.png"));
 	stateData.resources.textures.add(TextureID::GreyButton300x70, loadTexture(".\\Textures\\GreyButton300x70.png"));
 	stateData.resources.textures.add(TextureID::GreyButton750x86, loadTexture(".\\Textures\\GreyButton750x86.png"));
+	stateData.resources.textures.add(TextureID::BackButton, loadTexture(".\\Textures\\BackButton.png"));
 
 	stateData.resources.textures.add(TextureID::DeleteSaveButton, loadTexture(".\\Textures\\DeleteSaveButton.png"));
 	stateData.resources.textures.add(TextureID::Plus, loadTexture(".\\Textures\\Plus.png"));

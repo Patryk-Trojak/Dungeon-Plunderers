@@ -82,6 +82,7 @@ enum class TextureID
     GreyButton300x70,
     GreyButton750x86,
     DeleteSaveButton,
+    BackButton,
     Plus,
     Minus,
     Arrow,
