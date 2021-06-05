@@ -120,7 +120,7 @@ void GameplayState::update(const float deltaTime)
             enemiesHandler.updateEnemies(newDeltaTime, currentPlayer->getPosition());
             coinsHandler.moveCoinsWithBlocks(newDeltaTime);
 
-            if (!isFightingWithBoss)
+            if (!isPlayerInBossArea)
                 collisionsHandler.AllProjectilesAndBlock();
 
             collisionsHandler.PlayerAndEnemyProjectiles();
@@ -170,7 +170,7 @@ void GameplayState::draw(sf::RenderTarget& target, sf::RenderStates states) cons
     bonusesHandler.drawBonuses(target, viewRightPos, viewLeftPos);
 
 
-    if (!isFightingWithBoss)
+    if (!isPlayerInBossArea)
         target.draw(portal);
     coinsHandler.drawCoins(target, viewRightPos, viewLeftPos);
     target.draw(blocksDrawer);
@@ -259,7 +259,7 @@ void GameplayState::clearAllGameStuff()
 
 void GameplayState::tryTeleportToBoss()
 {
-    if (!isFightingWithBoss and currentPlayer->hitboxComponent.intersects(portal.hitboxes))
+    if (!isPlayerInBossArea and currentPlayer->hitboxComponent.intersects(portal.hitboxes))
     {
         if (level.name != LevelName::playerLevel)
         {
@@ -270,7 +270,7 @@ void GameplayState::tryTeleportToBoss()
             blocksDrawer.addBlocksToVertexArray(level.decorationBlocks, true);
             currentPlayer->setPositionRelativeToHitbox(sf::Vector2f(1000.f, -260.f));
             makePlayerFormChanger();
-            isFightingWithBoss = true;
+            isPlayerInBossArea = true;
             addaptViewToBossFight();
             addaptBackgroundToBossFight();     
         }
@@ -481,7 +481,7 @@ void GameplayState::makeMessageBoxAboutLose()
 
 bool GameplayState::hasPlayerWon()
 {
-    if (isFightingWithBoss and level.enemies.empty())
+    if (isPlayerInBossArea and level.enemies.empty())
     {
         return true;
     }
@@ -497,7 +497,7 @@ bool GameplayState::hasPlayerWon()
 
 void GameplayState::updatePositionOfView()
 {
-    if (!isFightingWithBoss)
+    if (!isPlayerInBossArea)
     {
         view.setCenter(currentPlayer->getPosition().x, view.getCenter().y);
     }

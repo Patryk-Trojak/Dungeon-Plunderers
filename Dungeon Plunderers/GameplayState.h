@@ -115,7 +115,7 @@ private:
 
     Portal portal;
     void tryTeleportToBoss();
-    bool isFightingWithBoss{ false };
+    bool isPlayerInBossArea{ false };
 
     std::unique_ptr<game::MessageBox> infoAboutEnd;
     void handleWithInfoAboutEndOfLevel();
