@@ -53,6 +53,7 @@ enum class TextureID
     ZombieGirl,
     GunEnemy,
     Spikes,
+    Slime,
 
     //Projectiles
 
