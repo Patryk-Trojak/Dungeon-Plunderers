@@ -276,6 +276,7 @@
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="SkeletonBoss.h" />
     <ClInclude Include="Slider.h" />
+    <ClInclude Include="SlimeProjectile.h" />
     <ClInclude Include="SnowDust.h" />
     <ClInclude Include="Spikes.h" />
     <ClInclude Include="State.h" />
@@ -420,6 +421,7 @@
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="SkeletonBoss.cpp" />
     <ClCompile Include="Slider.cpp" />
+    <ClCompile Include="SlimeProjectile.cpp" />
     <ClCompile Include="SnowDust.cpp" />
     <ClCompile Include="Spikes.cpp" />
     <ClCompile Include="State.cpp" />

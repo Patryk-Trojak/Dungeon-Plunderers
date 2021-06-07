@@ -492,6 +492,9 @@
     <ClInclude Include="FireExplosion.h">
       <Filter>Gameplay stuff\Effects</Filter>
     </ClInclude>
+    <ClInclude Include="SlimeProjectile.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -904,6 +907,9 @@
     </ClCompile>
     <ClCompile Include="FireExplosion.cpp">
       <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="SlimeProjectile.cpp">
+      <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
