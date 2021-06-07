@@ -99,6 +99,10 @@ void Projectile::setPositionOfHitboxes()
 	}
 }
 
+void Projectile::matchHitboxesToAnimation()
+{
+}
+
 const sf::Vector2f& Projectile::getVelocity() const
 {
 	return currentVelocity;

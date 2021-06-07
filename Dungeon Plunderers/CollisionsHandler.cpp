@@ -226,6 +226,7 @@ bool CollisionsHandler::intersect(Projectile& projectile, Enemy& enemy)
 	{
 		enemy.matchHitboxesToAnimation();
 		enemy.updatePositionOfHitboxes();
+		projectile.matchHitboxesToAnimation();
 		projectile.setPositionOfHitboxes();
 
 		if (enemy.isReiquireSATCollision or projectile.isReiquireSATCollision)
@@ -246,6 +247,7 @@ bool CollisionsHandler::intersect(Projectile& projectile, const Block& block)
 {
 	if (block.hitboxComponent.intersects(projectile.getGlobalBoundsOfSprite()))
 	{
+		projectile.matchHitboxesToAnimation(); 
 		projectile.setPositionOfHitboxes(); 
 
 		if (projectile.isReiquireSATCollision)
@@ -312,6 +314,7 @@ bool CollisionsHandler::intersect(const Player& player, Projectile& projectile)
 {
 	if (intersects(player.getGlobalBoundsOfSprite(), projectile.getGlobalBoundsOfSprite()))
 	{
+		projectile.matchHitboxesToAnimation();
 		projectile.setPositionOfHitboxes();
 		if (player.hitboxComponent.intersects(projectile.hitboxComponent))
 		{
@@ -380,6 +383,7 @@ void CollisionsHandler::WizardAndEnemyProjectiles()
 		bool isLastProjectile = msl::isLastElement(enemyProjectiles, projectile);
 		if ( (*projectile)->getGlobalBoundsOfSprite().intersects(wizardOnCloud->globalBoundsOfHitboxes.getGlobalBounds()))
 		{
+			projectile->get()->matchHitboxesToAnimation();
 			projectile->get()->setPositionOfHitboxes();
 			if (wizardOnCloud->shieldHitboxes.intersects(projectile->get()->hitboxComponent.getHitboxes()))
 			{

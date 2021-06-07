@@ -31,6 +31,7 @@ public:
 	virtual void addEffects(std::vector<std::unique_ptr< Effect> >& effects, const Resources& resources) = 0;
 	const sf::FloatRect& getGlobalBoundsOfSprite() const;
 	void setPositionOfHitboxes();
+	virtual void matchHitboxesToAnimation();
 	const sf::Vector2f& getVelocity() const;
 	void addVelocity(const sf::Vector2f& velocity);
 	void setVelocity(const sf::Vector2f& newVelocity);
