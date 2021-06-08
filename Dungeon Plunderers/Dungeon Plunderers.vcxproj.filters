@@ -495,6 +495,9 @@
     <ClInclude Include="SlimeProjectile.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="MovingEnemyComponent.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -909,6 +912,9 @@
       <Filter>Gameplay stuff\Effects</Filter>
     </ClCompile>
     <ClCompile Include="SlimeProjectile.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingEnemyComponent.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>

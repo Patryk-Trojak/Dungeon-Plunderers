@@ -235,6 +235,7 @@
     <ClInclude Include="MoneyHUD.h" />
     <ClInclude Include="Movable.h" />
     <ClInclude Include="MovingEnemy.h" />
+    <ClInclude Include="MovingEnemyComponent.h" />
     <ClInclude Include="MySimpleLibrary.hpp" />
     <ClInclude Include="PathsToPersistences.h" />
     <ClInclude Include="Pause.h" />
@@ -377,6 +378,7 @@
     <ClCompile Include="MoneyHUD.cpp" />
     <ClCompile Include="Movable.cpp" />
     <ClCompile Include="MovingEnemy.cpp" />
+    <ClCompile Include="MovingEnemyComponent.cpp" />
     <ClCompile Include="PathsToPersistences.cpp" />
     <ClCompile Include="Pause.cpp" />
     <ClCompile Include="pch.cpp">
