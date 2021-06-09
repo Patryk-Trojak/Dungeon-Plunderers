@@ -14,7 +14,6 @@ public:
 	virtual void matchHitboxesToAnimation();
 	virtual void updateRotation(const sf::Vector2f& PlayerPosition) override;
 	virtual void updateScale(const float PositionXOfPlayer) override;
-	virtual std::unique_ptr<Enemy> clone() const override;
 
 protected:
 	bool canShoot;

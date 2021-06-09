@@ -189,13 +189,7 @@
     <ClInclude Include="Enemy.h">
       <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
     </ClInclude>
-    <ClInclude Include="MovingEnemy.h">
-      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
-    </ClInclude>
     <ClInclude Include="RangedEnemy.h">
-      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
-    </ClInclude>
-    <ClInclude Include="RangedAndMovingEnemy.h">
       <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
     </ClInclude>
     <ClInclude Include="Zombie.h">
@@ -614,13 +608,7 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
     </ClCompile>
-    <ClCompile Include="MovingEnemy.cpp">
-      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
-    </ClCompile>
     <ClCompile Include="RangedEnemy.cpp">
-      <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
-    </ClCompile>
-    <ClCompile Include="RangedAndMovingEnemy.cpp">
       <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
     </ClCompile>
     <ClCompile Include="Zombie.cpp">

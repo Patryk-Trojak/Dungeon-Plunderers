@@ -17,12 +17,6 @@ RangedEnemy::~RangedEnemy()
 {
 }
 
-void RangedEnemy::move(const float deltaTime)
-{
-	//They don't move. They only shooting
-}
-
-
 void RangedEnemy::updateScale(const float PositionXOfPlayer)
 {
 	if (PositionXOfPlayer >= enemy.getPosition().x)

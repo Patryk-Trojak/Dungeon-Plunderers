@@ -1,5 +1,6 @@
 #pragma once
-#include"Enemy.h"
+#include "Movable.h"
+#include <iostream>
 
 class MovingEnemyComponent
 	: public Movable
@@ -12,7 +13,7 @@ public:
 	void updateScale(const float PositionXOfPlayer);
 private:
 	sf::Sprite& enemy;
-	const sf::Vector2f& initialScaleOfEnemy;
+	const sf::Vector2f initialScaleOfEnemy;
 	sf::Vector2f distanceMoved;
 	const sf::Vector2f changeDirectionDistance;
 };

@@ -5,7 +5,8 @@ MovingEnemyComponent::MovingEnemyComponent(sf::Sprite& enemy, const sf::Vector2f
 	const sf::Vector2f& MaxVelocity, const sf::Vector2f ChangeDirectionDistance)
 	: enemy(enemy),
 	initialScaleOfEnemy(initialScaleOfEnemy),
-	Movable(MaxVelocity)
+	Movable(MaxVelocity),
+	changeDirectionDistance(ChangeDirectionDistance)
 {
 	maxVelocity = MaxVelocity;
 
@@ -57,7 +58,6 @@ void MovingEnemyComponent::move(const float deltaTime)
 		distanceMoved.y = 0.f;
 		currentVelocity.y = -currentVelocity.y;
 	}
-
 }
 
 void MovingEnemyComponent::updateScale(const float PositionXOfPlayer)

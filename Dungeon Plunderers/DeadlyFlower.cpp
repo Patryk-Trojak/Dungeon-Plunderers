@@ -203,10 +203,4 @@ void DeadlyFlower::matchHitboxesToAnimation()
 		}
 	}
 }
-
-std::unique_ptr<Enemy> DeadlyFlower::clone() const
-{
-	return std::make_unique<DeadlyFlower>(*this);
-}
-
  

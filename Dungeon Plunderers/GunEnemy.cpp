@@ -73,11 +73,6 @@ void GunEnemy::updateScale(const float PositionXOfPlayer)
 {
 }
 
-std::unique_ptr<Enemy> GunEnemy::clone() const
-{
-	return std::make_unique<GunEnemy>(*this);
-}
-
 void GunEnemy::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(laser);

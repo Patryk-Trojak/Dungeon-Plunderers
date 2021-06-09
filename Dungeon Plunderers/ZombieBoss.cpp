@@ -314,7 +314,6 @@ void ZombieBoss::attack6(std::vector<std::unique_ptr<EnemyProjectile>>& EnemyPro
 		numberOfAttacksInWave = 0;
 		timerOfWave = 0;
 		Move = true;
-		distanceMoved = sf::Vector2f(0.f, 0.f);
 		distanceMovedFalling = 0;
 		if (enemy.getPosition().y < -3200)
 		{

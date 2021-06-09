@@ -2,11 +2,12 @@
 #include "Skeleton.h"
 
 Skeleton::Skeleton(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionDistance, const Resources& resources, const sf::Vector2f& initialScale)
-	:MovingEnemy(Position, resources[TextureID::Skeleton2], resources,
+	:Enemy(Position, resources[TextureID::Skeleton2], resources,
 	Animation(1, 1, sf::Vector2i(139.f, 200.f), 11, 0.1f), sf::Vector2f(-25.f, -30.f),
 	300, 10,
-	sf::Vector2f(200.f, 0), ChangeDirectionDistance, false)
+	false)
 {
+	movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, initialScale, sf::Vector2f(200.f, 0.f), ChangeDirectionDistance);
 	name = EnemyType::skeleton;
 	enemy.setOrigin(45.f, 0.f);
 	this->initialScale = initialScale;
@@ -485,9 +486,4 @@ void Skeleton::matchHitboxesToAnimation()
 		}
 	
 
-}
-
-std::unique_ptr<Enemy> Skeleton::clone() const
-{
-	return std::make_unique<Skeleton>(*this);
 }

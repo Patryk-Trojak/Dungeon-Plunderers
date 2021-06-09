@@ -234,7 +234,6 @@
     <ClInclude Include="MessageBox.h" />
     <ClInclude Include="MoneyHUD.h" />
     <ClInclude Include="Movable.h" />
-    <ClInclude Include="MovingEnemy.h" />
     <ClInclude Include="MovingEnemyComponent.h" />
     <ClInclude Include="MySimpleLibrary.hpp" />
     <ClInclude Include="PathsToPersistences.h" />
@@ -257,7 +256,6 @@
     <ClInclude Include="ProjectileOfDeadlyFlower.h" />
     <ClInclude Include="ProjectilesHandler.h" />
     <ClInclude Include="RandomEngine.h" />
-    <ClInclude Include="RangedAndMovingEnemy.h" />
     <ClInclude Include="RangedEnemy.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ResourceHolder.h" />
@@ -377,7 +375,6 @@
     <ClCompile Include="MessageBox.cpp" />
     <ClCompile Include="MoneyHUD.cpp" />
     <ClCompile Include="Movable.cpp" />
-    <ClCompile Include="MovingEnemy.cpp" />
     <ClCompile Include="MovingEnemyComponent.cpp" />
     <ClCompile Include="PathsToPersistences.cpp" />
     <ClCompile Include="Pause.cpp" />
@@ -404,7 +401,6 @@
     <ClCompile Include="ProjectileOfDeadlyFlower.cpp" />
     <ClCompile Include="ProjectilesHandler.cpp" />
     <ClCompile Include="RandomEngine.cpp" />
-    <ClCompile Include="RangedAndMovingEnemy.cpp" />
     <ClCompile Include="RangedEnemy.cpp" />
     <ClCompile Include="ResourceHolder.cpp" />
     <ClCompile Include="Resources.cpp" />

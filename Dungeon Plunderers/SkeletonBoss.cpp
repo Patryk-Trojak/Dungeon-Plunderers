@@ -211,7 +211,6 @@ void SkeletonBoss::attack7(std::vector<std::unique_ptr<EnemyProjectile>>& EnemyP
 		numberOfAttacksInWave = 0;
 		timerOfWave = 1;
 		Move = true;
-		distanceMoved = sf::Vector2f(0, 0);
 		distanceMovedFalling = 0;
 		if (enemy.getPosition().y < -3200)
 		{

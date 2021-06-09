@@ -7,7 +7,6 @@ Enemy::Enemy(const sf::Vector2f& Position, const sf::Texture& TextureOfEnemy, co
 	bool isReiquireSATCollision)
 	:enemy(TextureOfEnemy),
 	animation(Animation),
-	Movable(maxVelocity),
 	currentHp(InitialHp),
 	playersDamageAfterCollision(PlayersDamageAfterCollision),
 	healthBar(Position, resources, resources.font, InitialHp, healthBarOffset),
@@ -26,6 +25,16 @@ Enemy::Enemy(const sf::Vector2f& Position, const sf::Texture& TextureOfEnemy, co
 
 Enemy::~Enemy()
 {
+}
+
+void Enemy::attack(std::vector<std::unique_ptr<EnemyProjectile>>& Projectiles, const sf::Vector2f& PlayerPosition, const float deltaTime)
+{
+}
+
+void Enemy::updateScale(const float PositionXOfPlayer)
+{
+	if (movingEnemyComponent)
+		movingEnemyComponent->updateScale(PositionXOfPlayer);
 }
 
 void Enemy::updateRotation(const sf::Vector2f& PlayerPosition)

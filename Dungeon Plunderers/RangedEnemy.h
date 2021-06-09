@@ -12,7 +12,6 @@ public:
 		const float TimeBetweenShots, const int DamageOfProjectile,
 		bool isReiquireSATCollision);
 	virtual ~RangedEnemy();
-	virtual void move(const float deltaTime) override;
 	virtual void updateScale(const float PositionXOfPlayer) override;
 
 protected:

@@ -2,11 +2,12 @@
 #include "Zombie.h"
 
 Zombie::Zombie(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionDistance, const Resources& resources, const sf::Vector2f& initialScale)
-	:MovingEnemy(Position, resources[TextureID::ZombieGirl], resources,
+	:Enemy(Position, resources[TextureID::ZombieGirl], resources,
         Animation(1, 1, sf::Vector2i(122, 184), 4, 0.14f), sf::Vector2f(-30.f, -30.f),
 		300, 10,
-		sf::Vector2f(200.f, 0), ChangeDirectionDistance, false)
+		false)
 {
+    movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, initialScale, sf::Vector2f(200.f, 0.f), ChangeDirectionDistance);
     name = EnemyType::zombieGirl;
 	enemy.setOrigin(46.f, 0.f);
     this->initialScale = initialScale;
@@ -98,9 +99,4 @@ void Zombie::matchHitboxesToAnimation()
 
 
 
-}
-
-std::unique_ptr<Enemy> Zombie::clone() const
-{
-    return std::make_unique<Zombie>(*this);
 }

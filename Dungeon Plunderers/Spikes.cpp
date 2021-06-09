@@ -99,10 +99,6 @@ void Spikes::playAnimation(const float deltaTime)
 	
 }
 
-void Spikes::move(const float deltaTime)
-{
-}
-
 void Spikes::attack(std::vector<std::unique_ptr<EnemyProjectile>>& Projectiles, const sf::Vector2f& PlayerPosition, const float deltaTime)
 {
 	matchHitboxesToAnimation();
@@ -189,11 +185,6 @@ void Spikes::matchHitboxesToAnimation()
 	default:
 		break;
 	}
-}
-
-std::unique_ptr<Enemy> Spikes::clone() const
-{
-	return std::make_unique<Spikes>(*this);
 }
 
 void Spikes::draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -1,12 +1,13 @@
 #pragma once
 #include<SFML/Graphics.hpp>
+#include<memory>
 #include "HitboxComponent.h"
 #include "AnimationComponent.h"
-#include "Movable.h"
 #include "EnemyProjectile.h"
 #include "EnemyHealthBar.h"
 #include "Block.h"
 #include "Resources.h"
+#include "MovingEnemyComponent.h"
 
 
 enum class EnemyType {
@@ -29,8 +30,7 @@ enum class EnemyState {
 class Block;
 
 class Enemy
-	:public Movable, 
-	public sf::Drawable
+	:public sf::Drawable
 {
 public:
 	Enemy(const sf::Vector2f& Position, const sf::Texture& TextureOfEnemy, const Resources& resources,
@@ -40,11 +40,10 @@ public:
 	virtual ~Enemy();
 	HitboxComponent hitboxComponent;
 	HitboxComponent base;
-	virtual void attack(std::vector<std::unique_ptr<EnemyProjectile> >& Projectiles, const sf::Vector2f & PlayerPosition, const float deltaTime) = 0;
-	virtual void updateScale(const float PositionXOfPlayer) = 0;
+	virtual void attack(std::vector<std::unique_ptr<EnemyProjectile> >& Projectiles, const sf::Vector2f & PlayerPosition, const float deltaTime);
+	virtual void updateScale(const float PositionXOfPlayer);
 	virtual void updateRotation(const sf::Vector2f& PlayerPosition);
 	virtual void matchHitboxesToAnimation() = 0;
-	virtual std::unique_ptr<Enemy> clone() const = 0;
 	void updateCurrentState(float deltaTime);
 	virtual void playAnimation(const float deltaTime);
 	virtual void moveWithBlock(float deltaTime);
@@ -68,6 +67,7 @@ public:
 	void tryChangeState(EnemyState newEnemyState, float newStateDuration);
 
 	const bool isReiquireSATCollision;
+	std::unique_ptr<MovingEnemyComponent> movingEnemyComponent;
 protected:
 	EnemyHealthBar healthBar;
 	Animation animation;

@@ -10,7 +10,6 @@ public:
 	virtual ~DeadlyFlower();
 	virtual void attack(std::vector<std::unique_ptr<EnemyProjectile> >& Projectiles, const sf::Vector2f& PlayerPosition, const float deltaTime);
 	virtual void matchHitboxesToAnimation();
-	virtual std::unique_ptr<Enemy> clone() const override;
 
 private:
 	bool canShoot;
