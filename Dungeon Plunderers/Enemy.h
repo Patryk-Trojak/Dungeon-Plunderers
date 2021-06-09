@@ -19,6 +19,7 @@ enum class EnemyType {
 	spikes, 
 	hidingSpikes,
 	showingAfterDamageSpikes,
+	slimeEnemy
 };
 
 enum class EnemyState {
@@ -87,4 +88,3 @@ protected:
 	const float playersDamageAfterCollision;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
-
