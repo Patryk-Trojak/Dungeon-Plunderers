@@ -19,8 +19,15 @@ RangedEnemy::~RangedEnemy()
 
 void RangedEnemy::updateScale(const float PositionXOfPlayer)
 {
-	if (PositionXOfPlayer >= enemy.getPosition().x)
-		enemy.setScale(initialScale);
+	if (movingEnemyComponent)
+	{
+		movingEnemyComponent->updateScale(PositionXOfPlayer);
+	}
 	else
-		enemy.setScale(sf::Vector2f(initialScale.x * -1.f, initialScale.y));
+	{
+		if (PositionXOfPlayer >= enemy.getPosition().x)
+			enemy.setScale(initialScale);
+		else
+			enemy.setScale(sf::Vector2f(initialScale.x * -1.f, initialScale.y));
+	}
 }
