@@ -2,6 +2,7 @@
 #include<SFML/Graphics.hpp>
 #include<array>
 #include<unordered_map>
+#include<optional>
 #include "TextButton.h"
 #include"Resources.h"
 #include "LevelEditorUnit.h"
@@ -34,6 +35,15 @@ enum class ToolbarState {
 	beingShown,
 	hidden,
 	beingHidden
+};
+
+struct ChangePageButton
+{
+	ChangePageButton(const Button& button, UnitsCategories categoryToChangeAfterPressed)
+		:button(button), categoryToChangeAfterPressed(categoryToChangeAfterPressed){};
+
+	UnitsCategories categoryToChangeAfterPressed;
+	Button button;
 };
 
 class LevelEditorToolbar
@@ -72,7 +82,6 @@ private:
 	void handleShowingGUI(const float deltaTime, const float positionOfViewBottom);
 	void handleHidingGUI(const float deltaTime, const float positionOfViewBottom);
 
-
 	LevelEditorUnitsNames currentUnitType;
 
 	bool IsRoundPositionTo5pxOn;
@@ -87,16 +96,18 @@ private:
 	UnitsCategories currentCategory;
 	const ResourceHolder<LevelEditorUnitsNames, sf::Texture> & unitsTextures;
 	const Resources& resources;
+
+	void handleSwitchingCategories(const bool wasMousePressed, const sf::Vector2f& mousePosition);
+	void changeCategory(UnitsCategories categoryToChange);
+	void tryCreateNextPageButton(UnitsCategories currentCategory);
 	void createGivenCategory(UnitsCategories categoryToCreate);
-	void makeBlocksButton();
-	void makeEnemiesButtons();
-	void makeEnemiesButtonsPage2();
-	void makeCoinsButton();
 	void makeOptions();
 	void makeOptionsPage2();
 	void clearCurrentCategory();
-	std::unique_ptr<Button> nextPage;
+	std::unique_ptr<ChangePageButton> nextPage;
+	std::optional<UnitsCategories> getCategoryNameOfNextPage(UnitsCategories nameOfCurrentCategory);
 	void updateCurrentUnitType(const bool wasMousePressed, const sf::Vector2f& mousePosition);
+
 	const sf::Font& font;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
