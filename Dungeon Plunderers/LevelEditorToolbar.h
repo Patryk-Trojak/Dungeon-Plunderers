@@ -71,7 +71,7 @@ private:
 	sf::RectangleShape background;
 	std::unordered_map<UnitsCategories,TextButton> categoryButtons;
 	void initCategoryButtons(const sf::Font& font);
-	std::vector<IconButton> unitsButtons;
+	std::unordered_map<LevelEditorUnitsNames, IconButton> unitsButtons;
 	std::vector<Checkbox> checkboxes;
 	std::vector<sf::Text> texts;
 	std::unique_ptr<Slider> SliderOfVelocityOfView;
@@ -100,12 +100,15 @@ private:
 	void handleSwitchingCategories(const bool wasMousePressed, const sf::Vector2f& mousePosition);
 	void changeCategory(UnitsCategories categoryToChange);
 	void tryCreateNextPageButton(UnitsCategories currentCategory);
+	void tryCreatePreviousPageButton(UnitsCategories currentCategory);
 	void createGivenCategory(UnitsCategories categoryToCreate);
 	void makeOptions();
 	void makeOptionsPage2();
 	void clearCurrentCategory();
 	std::unique_ptr<ChangePageButton> nextPage;
+	std::unique_ptr<ChangePageButton> previousPage;
 	std::optional<UnitsCategories> getCategoryNameOfNextPage(UnitsCategories nameOfCurrentCategory);
+	std::optional<UnitsCategories> getCategoryNameOfPreviousPage(UnitsCategories nameOfCurrentCategory);
 	void updateCurrentUnitType(const bool wasMousePressed, const sf::Vector2f& mousePosition);
 
 	const sf::Font& font;
