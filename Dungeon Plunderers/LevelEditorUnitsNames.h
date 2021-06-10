@@ -1,7 +1,6 @@
 #pragma once
 
 enum class LevelEditorUnitsNames {
-	player = -1,
 	brick, //blocks
 	dirt,
 	concrete,
@@ -22,5 +21,6 @@ enum class LevelEditorUnitsNames {
 	movingConcrete,
 	movingGranite,
 	slimeEnemy,
+	player,
 	counter //<--- keep number of names
 };
