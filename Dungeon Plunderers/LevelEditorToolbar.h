@@ -87,6 +87,7 @@ private:
 	UnitsCategories currentCategory;
 	const ResourceHolder<LevelEditorUnitsNames, sf::Texture> & unitsTextures;
 	const Resources& resources;
+	void createGivenCategory(UnitsCategories categoryToCreate);
 	void makeBlocksButton();
 	void makeEnemiesButtons();
 	void makeEnemiesButtonsPage2();
