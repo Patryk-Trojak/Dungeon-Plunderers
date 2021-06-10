@@ -49,6 +49,8 @@ private:
 	int numberOfSelectedUnits;
 	bool wasLeftMouseReleased;
 
+	ResourceHolder<LevelEditorUnitsNames, sf::Texture> unitsTextures;
+	ResourceHolder<LevelEditorUnitsNames, sf::Texture> loadAllUnitsTextures();
 
 	LevelEditorToolbar toolbar;
 	void handleFunctionalityToolbarButtons();
@@ -114,9 +116,7 @@ private:
 		const std::vector<std::tuple<sf::FloatRect, sf::Vector2f, LevelEditorUnitsNames>>& unitsMoveHitboxes) const;
 	void roundPositionsOfUnits();
 	
-	ResourceHolder<LevelEditorUnitsNames, sf::Texture> unitsTextures;
 	std::unique_ptr<sf::Texture> loadTexture(const std::string& filepath, const sf::IntRect& area = sf::IntRect(), const bool isRepeated = false);
-	void loadAllUnitsTextures();
 	
 	//coping
 	LevelEditorClipboard clipboard;

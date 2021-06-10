@@ -4,9 +4,9 @@
 
 LevelEditorState::LevelEditorState(StateData& stateData, const std::string& filepath)
 	: State(stateData),
+	unitsTextures(loadAllUnitsTextures()),
 	toolbar(sf::Vector2f(0.f, 930),
 		stateData.resources, unitsTextures, stateData.resources.font),
-
 	numberOfSelectedUnits(0),
 	tileSize(50),
 	filepath(filepath),
@@ -18,7 +18,6 @@ LevelEditorState::LevelEditorState(StateData& stateData, const std::string& file
 	clipboard(units, numberOfSelectedUnits, unitsTextures)
 {
 	initFunctionConvertUnitsToLevel();
-	loadAllUnitsTextures();
 	loadUnitsFromFile();
 
 	player.setTexture(unitsTextures.getResource(LevelEditorUnitsNames::player));
@@ -229,6 +228,41 @@ void LevelEditorState::draw(sf::RenderTarget& target, sf::RenderStates states) c
 	if(feedback)
 		target.draw(*feedback, states);
 	target.setView(view);
+}
+
+ResourceHolder<LevelEditorUnitsNames, sf::Texture> LevelEditorState::loadAllUnitsTextures()
+{
+	ResourceHolder<LevelEditorUnitsNames, sf::Texture> unitsTextures;
+	//blocks 
+	unitsTextures.add(LevelEditorUnitsNames::brick, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(0, 0, 50, 50), true));
+	unitsTextures.add(LevelEditorUnitsNames::dirt, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(50, 0, 50, 50), true));
+	unitsTextures.add(LevelEditorUnitsNames::concrete, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(100, 0, 50, 50), true));
+	unitsTextures.add(LevelEditorUnitsNames::granite, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(150, 0, 50, 50), true));
+
+	//moving blocks
+	unitsTextures.add(LevelEditorUnitsNames::movingBrick, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(0, 0, 50, 50), true));
+	unitsTextures.add(LevelEditorUnitsNames::movingDirt, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(50, 0, 50, 50), true));
+	unitsTextures.add(LevelEditorUnitsNames::movingConcrete, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(100, 0, 50, 50), true));
+	unitsTextures.add(LevelEditorUnitsNames::movingGranite, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(150, 0, 50, 50), true));
+
+	//enemies
+	unitsTextures.add(LevelEditorUnitsNames::deadlyFlower, loadTexture(".\\Textures\\DeadlyFlowerLvlEditor.png"));
+	unitsTextures.add(LevelEditorUnitsNames::skeleton, loadTexture(".\\Textures\\Skeleton.png", sf::IntRect(695, 0, 139, 200)));
+	unitsTextures.add(LevelEditorUnitsNames::fly, loadTexture(".\\Textures\\Fly.png", sf::IntRect(0, 0, 77, 57)));
+	unitsTextures.add(LevelEditorUnitsNames::zombie, loadTexture(".\\Textures\\ZombieGirl.png", sf::IntRect(0, 0, 122, 184)));
+	unitsTextures.add(LevelEditorUnitsNames::gunEnemy, loadTexture(".\\Textures\\GunEnemyLevelEditor.png"));
+	unitsTextures.add(LevelEditorUnitsNames::movingGunEnemyOnFakeBlock, loadTexture(".\\Textures\\GunEnemyOnBrick.png"));
+	unitsTextures.add(LevelEditorUnitsNames::gunEnemyOnFakeBlock, loadTexture(".\\Textures\\GunEnemyOnBrick.png"));
+	unitsTextures.add(LevelEditorUnitsNames::spikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
+	unitsTextures.add(LevelEditorUnitsNames::showingAfterDamageSpikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
+	unitsTextures.add(LevelEditorUnitsNames::hidingSpikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
+	unitsTextures.add(LevelEditorUnitsNames::slimeEnemy, loadTexture(".\\Textures\\Slime.png", sf::IntRect(0, 0, 96, 96)));
+
+	//other
+	unitsTextures.add(LevelEditorUnitsNames::player, loadTexture(".\\Textures\\Stormtrooper.png", sf::IntRect(0, 0, 117, 207)));
+	unitsTextures.add(LevelEditorUnitsNames::coin, loadTexture(".\\Textures\\Coin.png", sf::IntRect(0, 0, 50, 50)));
+
+	return unitsTextures;
 }
 
 void LevelEditorState::handleFunctionalityToolbarButtons()
@@ -458,38 +492,6 @@ std::unique_ptr<sf::Texture> LevelEditorState::loadTexture(const std::string& fi
 	texture->loadFromFile(filepath, area);
 	texture->setRepeated(isRepeated);
 	return texture;
-}
-
-void LevelEditorState::loadAllUnitsTextures()
-{
-	//blocks 
-	unitsTextures.add(LevelEditorUnitsNames::brick, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(0, 0, 50, 50), true));
-	unitsTextures.add(LevelEditorUnitsNames::dirt, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(50, 0, 50, 50), true));
-	unitsTextures.add(LevelEditorUnitsNames::concrete, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(100, 0, 50, 50), true));
-	unitsTextures.add(LevelEditorUnitsNames::granite, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(150, 0, 50, 50), true));
-	
-	//moving blocks
-	unitsTextures.add(LevelEditorUnitsNames::movingBrick, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(0, 0, 50, 50), true));
-	unitsTextures.add(LevelEditorUnitsNames::movingDirt, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(50, 0, 50, 50), true));
-	unitsTextures.add(LevelEditorUnitsNames::movingConcrete, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(100, 0, 50, 50), true));
-	unitsTextures.add(LevelEditorUnitsNames::movingGranite, loadTexture(".\\Textures\\Blocks.png", sf::IntRect(150, 0, 50, 50), true));
-
-	//enemies
-	unitsTextures.add(LevelEditorUnitsNames::deadlyFlower, loadTexture(".\\Textures\\DeadlyFlowerLvlEditor.png"));
-	unitsTextures.add(LevelEditorUnitsNames::skeleton, loadTexture(".\\Textures\\Skeleton.png", sf::IntRect(695, 0, 139, 200)));
-	unitsTextures.add(LevelEditorUnitsNames::fly, loadTexture(".\\Textures\\Fly.png", sf::IntRect(0, 0, 77, 57)));
-	unitsTextures.add(LevelEditorUnitsNames::zombie, loadTexture(".\\Textures\\ZombieGirl.png", sf::IntRect(0, 0, 122, 184)));
-	unitsTextures.add(LevelEditorUnitsNames::gunEnemy, loadTexture(".\\Textures\\GunEnemyLevelEditor.png"));
-	unitsTextures.add(LevelEditorUnitsNames::movingGunEnemyOnFakeBlock, loadTexture(".\\Textures\\GunEnemyOnBrick.png"));
-	unitsTextures.add(LevelEditorUnitsNames::gunEnemyOnFakeBlock, loadTexture(".\\Textures\\GunEnemyOnBrick.png"));
-	unitsTextures.add(LevelEditorUnitsNames::spikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
-	unitsTextures.add(LevelEditorUnitsNames::showingAfterDamageSpikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
-	unitsTextures.add(LevelEditorUnitsNames::hidingSpikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
-	unitsTextures.add(LevelEditorUnitsNames::slimeEnemy, loadTexture(".\\Textures\\Slime.png", sf::IntRect(0, 0, 96, 96)));
-
-	//other
-	unitsTextures.add(LevelEditorUnitsNames::player, loadTexture(".\\Textures\\Stormtrooper.png", sf::IntRect(0, 0, 117, 207)));
-	unitsTextures.add(LevelEditorUnitsNames::coin, loadTexture(".\\Textures\\Coin.png", sf::IntRect(0, 0, 50, 50)));
 }
 
 void LevelEditorState::handleSelectingUnitsByClick()
