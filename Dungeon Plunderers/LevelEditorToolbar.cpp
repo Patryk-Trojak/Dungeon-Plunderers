@@ -446,6 +446,10 @@ void LevelEditorToolbar::makeEnemiesButtonsPage2()
 	unitsButtons.emplace_back(background.getPosition() + sf::Vector2f(300, 0), sf::Vector2f(100, 100),
 		resources[TextureID::GreyButton300x70], unitsTextures.getResource(LevelEditorUnitsNames::showingAfterDamageSpikes),
 		sf::Vector2f(70, 70));
+	
+	unitsButtons.emplace_back(background.getPosition() + sf::Vector2f(300, 0), sf::Vector2f(100, 100),
+		resources[TextureID::GreyButton300x70], unitsTextures.getResource(LevelEditorUnitsNames::slimeEnemy),
+		sf::Vector2f(70, 70));
 
 }
 
@@ -552,6 +556,8 @@ void LevelEditorToolbar::updateCurrentUnitType(const bool wasMousePressed, const
 			currentUnitType = LevelEditorUnitsNames::hidingSpikes;
 		if (unitsButtons[2].wasPressed(mousePosition, wasMousePressed))
 			currentUnitType = LevelEditorUnitsNames::showingAfterDamageSpikes;
+		if (unitsButtons[3].wasPressed(mousePosition, wasMousePressed))
+			currentUnitType = LevelEditorUnitsNames::slimeEnemy;
 		break;
 	case UnitsCategories::coins:
 		if (unitsButtons[0].wasPressed(mousePosition, wasMousePressed))

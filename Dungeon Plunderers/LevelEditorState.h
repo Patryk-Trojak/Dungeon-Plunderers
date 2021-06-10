@@ -20,6 +20,7 @@
 #include "LevelEditorClipboard.h"
 #include "LevelEditorUnitsChangeTracker.h"
 #include "UnitTypeChecker.h"
+#include "SlimeEnemy.h"
 
 enum class Action {
 	none, 

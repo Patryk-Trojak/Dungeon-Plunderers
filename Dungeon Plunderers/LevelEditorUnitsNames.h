@@ -21,6 +21,6 @@ enum class LevelEditorUnitsNames {
 	movingDirt,
 	movingConcrete,
 	movingGranite,
-
+	slimeEnemy,
 	counter //<--- keep number of names
 };

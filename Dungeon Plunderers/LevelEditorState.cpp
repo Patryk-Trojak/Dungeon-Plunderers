@@ -485,6 +485,7 @@ void LevelEditorState::loadAllUnitsTextures()
 	unitsTextures.add(LevelEditorUnitsNames::spikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
 	unitsTextures.add(LevelEditorUnitsNames::showingAfterDamageSpikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
 	unitsTextures.add(LevelEditorUnitsNames::hidingSpikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
+	unitsTextures.add(LevelEditorUnitsNames::slimeEnemy, loadTexture(".\\Textures\\Slime.png", sf::IntRect(0, 0, 96, 96)));
 
 	//other
 	unitsTextures.add(LevelEditorUnitsNames::player, loadTexture(".\\Textures\\Stormtrooper.png", sf::IntRect(0, 0, 117, 207)));
@@ -1621,6 +1622,9 @@ void LevelEditorState::initFunctionConvertUnitsToLevel()
 					break;
 				case LevelEditorUnitsNames::fly:
 					level.enemies.emplace_back(std::make_unique<Fly>(i.getPosition(), i.getMovingDistance(), resources));
+					break;	
+				case LevelEditorUnitsNames::slimeEnemy:
+					level.enemies.emplace_back(std::make_unique<SlimeEnemy>(i.getPosition(), i.getMovingDistance(), resources));
 					break;
 				case LevelEditorUnitsNames::gunEnemyOnFakeBlock:
 					level.enemies.emplace_back(std::make_unique<GunEnemy>(i.getPosition(), resources));

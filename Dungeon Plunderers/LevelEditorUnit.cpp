@@ -316,6 +316,9 @@ void LevelEditorUnit::setOriginDependingOnType()
 	case LevelEditorUnitsNames::fly:
 		unit.setOrigin(38.f, 0.f);
 		break;
+	case LevelEditorUnitsNames::slimeEnemy:
+		unit.setOrigin(63.f, 0.f);
+		break;
 	case LevelEditorUnitsNames::player:
 		unit.setOrigin(62, 0);
 		break;	
@@ -409,6 +412,14 @@ void LevelEditorUnit::setHitboxesDependingOnType()
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(6.17529f, 1.582f), sf::Vector2f(-13.9492f, 183.989f), sf::Color(255, 0, 0, 100)));
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(30.1931f, 1.62155f), sf::Vector2f(-11.7739f, 183.949f), sf::Color(0, 255, 0, 100)));
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(7.58203f, 1.62155f), sf::Vector2f(11.3796f, 183.949f), sf::Color(0, 0, 255, 100)));
+		break;
+	case LevelEditorUnitsNames::slimeEnemy:
+		hitboxComponent.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(33.f, 50.f), sf::Vector2f(-63.f, 46.f)));
+		hitboxComponent.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(57.f, 90.f), sf::Vector2f(-30.f, 6.f)));
+
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(7, 4), sf::Vector2f(-63, 96.f), sf::Color(255, 0, 0, 100)));
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(73.f, 4), sf::Vector2f(-56.f, 96.f), sf::Color(0, 255, 0, 100)));
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(7, 4), sf::Vector2f(17, 96.f), sf::Color(0, 0, 255, 100)));
 		break;
 
 	case LevelEditorUnitsNames::player:
@@ -524,4 +535,9 @@ bool LevelEditorUnit::setMovingHitboxWasTeleported(const bool wasMovingHitboxTel
 void LevelEditorUnit::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(unit, states);
+	for (auto const& i : hitboxComponent.getHitboxes())
+		target.draw(i);
+
+	for (auto const& i : base.getHitboxes())
+		target.draw(i);
 }
