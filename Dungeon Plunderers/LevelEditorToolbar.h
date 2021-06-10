@@ -98,5 +98,8 @@ private:
 	void updateCurrentUnitType(const bool wasMousePressed, const sf::Vector2f& mousePosition);
 	const sf::Font& font;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+	std::unordered_map<UnitsCategories, std::vector<LevelEditorUnitsNames> > unitsInEachCategory;
+	void initUnitsInEachCategory();
 };
 

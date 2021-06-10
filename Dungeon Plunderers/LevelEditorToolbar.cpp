@@ -605,3 +605,30 @@ void LevelEditorToolbar::draw(sf::RenderTarget& target, sf::RenderStates states)
 	for (auto const& i : buttons)
 		target.draw(i.second);
 }
+
+void LevelEditorToolbar::initUnitsInEachCategory()
+{
+	using UnitName = LevelEditorUnitsNames;
+
+	std::vector<LevelEditorUnitsNames> blocks
+	{ UnitName::brick, UnitName::dirt, UnitName::concrete, UnitName::granite };
+
+	std::vector<LevelEditorUnitsNames> movingBlocks
+	{ UnitName::movingBrick, UnitName::movingDirt, UnitName::movingConcrete, UnitName::movingGranite };
+
+	std::vector<LevelEditorUnitsNames> enemiesPage1
+	{ UnitName::deadlyFlower, UnitName::zombie, UnitName::skeleton, UnitName::fly, UnitName::gunEnemy, 
+	  UnitName::gunEnemyOnFakeBlock, UnitName::movingGunEnemyOnFakeBlock };
+	
+	std::vector<LevelEditorUnitsNames> enemiesPage2
+	{ UnitName::spikes, UnitName::hidingSpikes, UnitName::showingAfterDamageSpikes, UnitName::fly, UnitName::slimeEnemy};	
+	
+	std::vector<LevelEditorUnitsNames> coins
+	{ UnitName::coin};
+
+	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::blocks, blocks));
+	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::movingBlocks, movingBlocks));
+	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::enemies, enemiesPage1));
+	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::enemiesPage2, enemiesPage2));
+	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::coins, coins));
+}
