@@ -59,7 +59,8 @@ public:
 	
 private:
 	sf::RectangleShape background;
-	std::vector<TextButton> categoryButtons;
+	std::unordered_map<UnitsCategories,TextButton> categoryButtons;
+	void initCategoryButtons(const sf::Font& font);
 	std::vector<IconButton> unitsButtons;
 	std::vector<Checkbox> checkboxes;
 	std::vector<sf::Text> texts;
