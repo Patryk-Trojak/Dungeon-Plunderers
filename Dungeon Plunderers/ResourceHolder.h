@@ -10,7 +10,6 @@ class ResourceHolder
 {
 public:
 	ResourceHolder();
-	~ResourceHolder();
 	void add(const Key& ID, std::unique_ptr<T> resource);
 	const T* getPointerToResource(const Key& ID) const;
 	const T& getResource(const Key& ID) const;
@@ -27,12 +26,6 @@ template<typename Key, typename T>
 inline ResourceHolder<Key, T>::ResourceHolder()
 {
 }
-
-template<typename Key, typename T>
-inline ResourceHolder<Key, T>::~ResourceHolder()
-{
-}
-
 template<typename Key, typename T>
 inline void ResourceHolder<Key, T>::add(const Key& ID, std::unique_ptr<T> resource)
 {
