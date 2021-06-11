@@ -102,6 +102,7 @@ private:
 	void tryCreateNextPageButton(UnitsCategories currentCategory);
 	void tryCreatePreviousPageButton(UnitsCategories currentCategory);
 	void createGivenCategory(UnitsCategories categoryToCreate);
+	void setRedColorToButtonOfCurrentCategory(UnitsCategories currentCategory);
 	void makeOptions();
 	void makeOptionsPage2();
 	void clearCurrentCategory();

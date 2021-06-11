@@ -24,7 +24,6 @@ LevelEditorToolbar::LevelEditorToolbar(const sf::Vector2f& Position, const Resou
 	background.setTexture(&resources[TextureID::ToolbarBackground]);
 	background.setTextureRect(sf::IntRect(0, 0, 1920, 150));
 	initCategoryButtons(font);
-	createGivenCategory(UnitsCategories::blocks);
 
 	buttons.insert(std::make_pair(ToolbarButtonName::copyButton, TextButton(Position + sf::Vector2f(1500, 0), sf::Vector2f(200, 50),
 		resources[TextureID::GreyButton300x70], Font,
@@ -51,6 +50,7 @@ LevelEditorToolbar::LevelEditorToolbar(const sf::Vector2f& Position, const Resou
 
 	currentState = ToolbarState::shown;
 	togglerVisibilityOfGUI.setPosition(sf::Vector2f(getPosition() + sf::Vector2f(1920.f / 2.f - 75.f, -35.f)));
+	changeCategory(UnitsCategories::blocks);
 }
 
 LevelEditorToolbar::~LevelEditorToolbar()
@@ -62,28 +62,7 @@ void LevelEditorToolbar::update(const bool wasMousePressed, const sf::Vector2f& 
 	for (auto& i : categoryButtons)
 		i.second.update(mousePosition);
 	handleSwitchingCategories(wasMousePressed, mousePosition);
-	switch (currentCategory)
-	{
-	case UnitsCategories::options:
-	case UnitsCategories::optionsPage2:
-		categoryButtons.at(UnitsCategories::options).setCurrentColor(sf::Color::Red);
-		break;
-	case UnitsCategories::blocks:
-		categoryButtons.at(UnitsCategories::blocks).setCurrentColor(sf::Color::Red);
-		break;
-	case UnitsCategories::movingBlocks:
-		categoryButtons.at(UnitsCategories::movingBlocks).setCurrentColor(sf::Color::Red);
-		break;
-	case UnitsCategories::enemies:
-	case UnitsCategories::enemiesPage2:
-		categoryButtons.at(UnitsCategories::enemies).setCurrentColor(sf::Color::Red);
-		break;
-	case UnitsCategories::coins:
-		categoryButtons.at(UnitsCategories::coins).setCurrentColor(sf::Color::Red);
-		break;
-	default:
-		break;
-	}
+
 	for (auto i = unitsButtons.begin(); i != unitsButtons.end(); i++)
 		i->second.update(mousePosition);
 
@@ -180,7 +159,7 @@ void LevelEditorToolbar::setPosition(const sf::Vector2f& Position)
 		leftMarginOfUnitButtons = 150;
 
 	numberOfCategoryButton = 0;
-	for (auto i = unitsButtons.begin(); i != unitsButtons.end(); i++)\
+	for (auto i = unitsButtons.begin(); i != unitsButtons.end(); i++)
 	{
 		i->second.setPosition(Position + sf::Vector2f((i->second.getSize().x + 25.f) * numberOfCategoryButton + leftMarginOfUnitButtons, 50.f));
 		numberOfCategoryButton++;
@@ -362,6 +341,23 @@ void LevelEditorToolbar::createGivenCategory(UnitsCategories categoryToCreate)
 	}
 }
 
+void LevelEditorToolbar::setRedColorToButtonOfCurrentCategory(UnitsCategories currentCategory)
+{
+	auto found = categoryButtons.find(currentCategory);
+	if (found != categoryButtons.end())
+	{
+		found->second.setIdleColor(sf::Color::Red);
+	}
+	else
+	{
+		if(currentCategory == UnitsCategories::enemiesPage2)
+			categoryButtons.at(UnitsCategories::enemies).setIdleColor(sf::Color::Red);
+
+		if (currentCategory == UnitsCategories::optionsPage2)
+			categoryButtons.at(UnitsCategories::options).setIdleColor(sf::Color::Red);
+	}
+}
+
 void LevelEditorToolbar::tryCreateNextPageButton(UnitsCategories currentCategory)
 {
 	std::optional<UnitsCategories> nameOfNextPageCategory = getCategoryNameOfNextPage(currentCategory);
@@ -410,6 +406,7 @@ void LevelEditorToolbar::changeCategory(UnitsCategories categoryToChange)
 	tryCreateNextPageButton(categoryToChange);
 	tryCreatePreviousPageButton(categoryToChange);
 	setPosition(background.getPosition());
+	setRedColorToButtonOfCurrentCategory(categoryToChange);
 }
 
 void LevelEditorToolbar::makeOptions()
@@ -455,6 +452,8 @@ void LevelEditorToolbar::clearCurrentCategory()
 	SliderOfGridTransparent.reset();
 	nextPage.reset();
 	previousPage.reset();
+	for (auto& i : categoryButtons)
+		i.second.setIdleColor(sf::Color::White);
 }
 
 std::optional<UnitsCategories> LevelEditorToolbar::getCategoryNameOfNextPage(UnitsCategories nameOfCurrentCategory)
