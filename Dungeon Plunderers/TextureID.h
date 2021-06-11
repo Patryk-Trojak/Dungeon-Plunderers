@@ -54,7 +54,7 @@ enum class TextureID
     GunEnemy,
     Spikes,
     Slime,
-
+    ZombieInGround,
     //Projectiles
 
     Bullet,
