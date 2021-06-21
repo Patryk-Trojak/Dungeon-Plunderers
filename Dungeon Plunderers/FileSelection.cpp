@@ -140,7 +140,7 @@ void FileSelection::handleSFMLEvent(sf::RenderWindow& window, sf::Event& event)
 				else if (!searchBox.isActive())
 				{
 					numberOfStatesPop = 1;
-				}	
+				}
 
 			}
 			if (event.key.code == sf::Keyboard::Up)
@@ -301,7 +301,7 @@ void FileSelection::draw(sf::RenderTarget& target, sf::RenderStates states) cons
 
 	if (isMouseOverSaveButtons)
 	{
-		if(infoAboutCurrentSave)
+		if (infoAboutCurrentSave)
 			target.draw(*infoAboutCurrentSave, states);
 	}
 	target.setView(HUDView);
@@ -566,8 +566,8 @@ void FileSelection::sortSaveButtons()
 		std::sort(saveButtons.begin(), saveButtons.end(), [](const std::unique_ptr< SaveButton >& a, const std::unique_ptr< SaveButton >& b) {
 			std::string AName = a->getName();
 			std::string BName = b->getName();
-			std::transform(AName.begin(), AName.end(), AName.begin(), std::tolower);
-			std::transform(BName.begin(), BName.end(), BName.begin(), std::tolower);
+			std::transform(AName.begin(), AName.end(), AName.begin(), ::tolower);
+			std::transform(BName.begin(), BName.end(), BName.begin(), ::tolower);
 			return AName < BName;
 			});
 		break;
@@ -575,8 +575,8 @@ void FileSelection::sortSaveButtons()
 		std::sort(saveButtons.begin(), saveButtons.end(), [](const std::unique_ptr< SaveButton >& a, const std::unique_ptr< SaveButton >& b) {
 			std::string AName = a->getName();
 			std::string BName = b->getName();
-			std::transform(AName.begin(), AName.end(), AName.begin(), std::tolower);
-			std::transform(BName.begin(), BName.end(), BName.begin(), std::tolower);
+			std::transform(AName.begin(), AName.end(), AName.begin(), ::tolower);
+			std::transform(BName.begin(), BName.end(), BName.begin(), ::tolower);
 			return AName > BName;
 			});
 		break;
@@ -586,8 +586,8 @@ void FileSelection::sortSaveButtons()
 			{
 				std::string AName = a->getName();
 				std::string BName = b->getName();
-				std::transform(AName.begin(), AName.end(), AName.begin(), std::tolower);
-				std::transform(BName.begin(), BName.end(), BName.begin(), std::tolower);
+				std::transform(AName.begin(), AName.end(), AName.begin(), ::tolower);
+				std::transform(BName.begin(), BName.end(), BName.begin(), ::tolower);
 
 				return AName < BName;
 			}
@@ -601,8 +601,8 @@ void FileSelection::sortSaveButtons()
 			{
 				std::string AName = a->getName();
 				std::string BName = b->getName();
-				std::transform(AName.begin(), AName.end(), AName.begin(), std::tolower);
-				std::transform(BName.begin(), BName.end(), BName.begin(), std::tolower);
+				std::transform(AName.begin(), AName.end(), AName.begin(), ::tolower);
+				std::transform(BName.begin(), BName.end(), BName.begin(), ::tolower);
 
 				return a->getDateOfCreation() > b->getDateOfCreation();
 			}
@@ -616,8 +616,8 @@ void FileSelection::sortSaveButtons()
 			{
 				std::string AName = a->getName();
 				std::string BName = b->getName();
-				std::transform(AName.begin(), AName.end(), AName.begin(), std::tolower);
-				std::transform(BName.begin(), BName.end(), BName.begin(), std::tolower);
+				std::transform(AName.begin(), AName.end(), AName.begin(), ::tolower);
+				std::transform(BName.begin(), BName.end(), BName.begin(), ::tolower);
 				return a->getDateOfLastRun() < b->getDateOfLastRun();
 
 			}
@@ -631,8 +631,8 @@ void FileSelection::sortSaveButtons()
 			{
 				std::string AName = a->getName();
 				std::string BName = b->getName();
-				std::transform(AName.begin(), AName.end(), AName.begin(), std::tolower);
-				std::transform(BName.begin(), BName.end(), BName.begin(), std::tolower);
+				std::transform(AName.begin(), AName.end(), AName.begin(), ::tolower);
+				std::transform(BName.begin(), BName.end(), BName.begin(), ::tolower);
 				return a->getDateOfLastRun() > b->getDateOfLastRun();
 			}
 			else
@@ -698,19 +698,19 @@ void FileSelection::addSave()
 	if (!isAddingSave and !isChangingSaveButtonName())
 	{
 		if (saveCreator.wasPressed(mousePositionHUD, wasMousePressed))
-		if (saveCreator.wasPressed(mousePositionHUD, wasMousePressed))
-		{
-			saveButtons.emplace(saveButtons.begin(), std::make_unique<SaveButton>(sf::Vector2f(547.5, 100.f),
-				stateData.resources[TextureID::SaveButton], stateData.resources[TextureID::TextboxBackground],
-				stateData.resources[TextureID::GreyButton100x50], stateData.resources[TextureID::AcceptButton], stateData.resources[TextureID::DeleteButton], stateData.resources[TextureID::DeleteSaveButton],
-				stateData.resources.font, SaveButtonState::changeableName));
-			isAddingSave = true;
-			saveButtons[0]->setDateOfLastRun("Nigdy");
-			lastSearchedButton = saveButtons.end();
-			setPositionOfSaveButtons();
-			scrollbar.moveViewToPositionY(0);
-			updatePageHeight();
-		}
+			if (saveCreator.wasPressed(mousePositionHUD, wasMousePressed))
+			{
+				saveButtons.emplace(saveButtons.begin(), std::make_unique<SaveButton>(sf::Vector2f(547.5, 100.f),
+					stateData.resources[TextureID::SaveButton], stateData.resources[TextureID::TextboxBackground],
+					stateData.resources[TextureID::GreyButton100x50], stateData.resources[TextureID::AcceptButton], stateData.resources[TextureID::DeleteButton], stateData.resources[TextureID::DeleteSaveButton],
+					stateData.resources.font, SaveButtonState::changeableName));
+				isAddingSave = true;
+				saveButtons[0]->setDateOfLastRun("Nigdy");
+				lastSearchedButton = saveButtons.end();
+				setPositionOfSaveButtons();
+				scrollbar.moveViewToPositionY(0);
+				updatePageHeight();
+			}
 	}
 }
 
@@ -784,8 +784,8 @@ bool FileSelection::isNameOfSaveButtonAlreadyInUse()
 	{
 		std::string AName = saveButtons[numberOfButtonWhichNameIsChanging]->getName();
 		std::string BName = i->getName();
-		std::transform(AName.begin(), AName.end(), AName.begin(), std::tolower);
-		std::transform(BName.begin(), BName.end(), BName.begin(), std::tolower);
+		std::transform(AName.begin(), AName.end(), AName.begin(), ::tolower);
+		std::transform(BName.begin(), BName.end(), BName.begin(), ::tolower);
 		if (AName == BName)
 			numberOfSameNamesOfSaveButtons++;
 	}
