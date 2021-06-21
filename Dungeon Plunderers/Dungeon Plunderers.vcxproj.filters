@@ -918,7 +918,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\Release\logo.ico">
+    <Image Include="logo.ico">
       <Filter>Pliki zasobów</Filter>
     </Image>
   </ItemGroup>
