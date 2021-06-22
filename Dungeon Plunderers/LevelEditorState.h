@@ -23,6 +23,7 @@
 #include "SlimeEnemy.h"
 #include "ZombieInGround.h"
 #include "Ghost.h"
+#include "Bat.h"
 
 enum class Action {
 	none, 
