@@ -100,6 +100,7 @@ void LoadDataState::loadAllTextures()
 	stateData.resources.textures.add(TextureID::Slime, loadTexture(".\\Textures\\Slime.png"));
 	stateData.resources.textures.add(TextureID::ZombieInGround, loadTexture(".\\Textures\\ZombieInGround.png"));
 	stateData.resources.textures.add(TextureID::Ghost, loadTexture(".\\Textures\\Ghost.png"));
+	stateData.resources.textures.add(TextureID::Bat, loadTexture(".\\Textures\\Bat.png"));
 
 	//Projectiles
 
