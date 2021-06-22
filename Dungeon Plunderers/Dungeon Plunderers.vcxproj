@@ -207,6 +207,7 @@
     <ClInclude Include="EffectsHandler.h" />
     <ClInclude Include="Electroball.h" />
     <ClInclude Include="EnemiesHandler.h" />
+    <ClInclude Include="EnemiesTypes.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyHealthBar.h" />
     <ClInclude Include="EnemyProjectile.h" />

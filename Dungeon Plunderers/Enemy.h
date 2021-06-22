@@ -8,28 +8,13 @@
 #include "Block.h"
 #include "Resources.h"
 #include "MovingEnemyComponent.h"
-
-
-enum class EnemyType {
-	deadlyFlower,
-	skeleton,
-	zombieGirl,
-	fly,
-	gunEnemy,
-	spikes, 
-	hidingSpikes,
-	showingAfterDamageSpikes,
-	slimeEnemy,
-	zombieInGround
-};
+#include "EnemiesTypes.h"
 
 enum class EnemyState {
 	normal, 
 	fire,
 	frost
 };
-
-class Block;
 
 class Enemy
 	:public sf::Drawable
