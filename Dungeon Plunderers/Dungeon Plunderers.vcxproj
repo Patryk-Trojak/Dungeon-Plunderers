@@ -219,6 +219,7 @@
     <ClInclude Include="Fly.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameplayState.h" />
+    <ClInclude Include="Ghost.h" />
     <ClInclude Include="GunEnemy.h" />
     <ClInclude Include="Handgun.h" />
     <ClInclude Include="Helicopter.h" />
@@ -364,6 +365,7 @@
     <ClCompile Include="Fly.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameplayState.cpp" />
+    <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="GunEnemy.cpp" />
     <ClCompile Include="Handgun.cpp" />
     <ClCompile Include="Helicopter.cpp" />
