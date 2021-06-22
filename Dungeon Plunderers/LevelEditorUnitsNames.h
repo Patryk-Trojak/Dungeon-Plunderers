@@ -23,5 +23,6 @@ enum class LevelEditorUnitsNames {
 	slimeEnemy,
 	player,
 	zombieInGround,
+	ghost,
 	counter //<--- keep number of names
 };

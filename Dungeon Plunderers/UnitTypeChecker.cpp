@@ -36,6 +36,7 @@ const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> UnitTyp
     enemies[static_cast<int>(LevelEditorUnitsNames::movingGunEnemyOnFakeBlock)] = true;
     enemies[static_cast<int>(LevelEditorUnitsNames::slimeEnemy)] = true;
     enemies[static_cast<int>(LevelEditorUnitsNames::zombieInGround)] = true;
+    enemies[static_cast<int>(LevelEditorUnitsNames::ghost)] = true;
 
     return enemies;
 }();
@@ -54,6 +55,7 @@ const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> UnitTyp
     moving[static_cast<int>(LevelEditorUnitsNames::fly)] = true;
     moving[static_cast<int>(LevelEditorUnitsNames::movingGunEnemyOnFakeBlock)] = true;
     moving[static_cast<int>(LevelEditorUnitsNames::slimeEnemy)] = true;
+    moving[static_cast<int>(LevelEditorUnitsNames::ghost)] = true;
 
     return moving;
 }();

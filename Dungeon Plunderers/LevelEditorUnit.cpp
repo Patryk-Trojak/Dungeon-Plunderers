@@ -322,6 +322,9 @@ void LevelEditorUnit::setOriginDependingOnType()
 	case LevelEditorUnitsNames::zombieInGround:
 		unit.setOrigin(40.f, 0.f);
 		break;
+	case LevelEditorUnitsNames::ghost:
+		unit.setOrigin(35.f, 0.f);
+		break;
 	case LevelEditorUnitsNames::player:
 		unit.setOrigin(62, 0);
 		break;	
@@ -432,6 +435,13 @@ void LevelEditorUnit::setHitboxesDependingOnType()
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(8.f, 4.f), sf::Vector2f(-36.f, 104.f)));
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(56.f, 4.f), sf::Vector2f(-28.f, 104.f)));
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(8.f, 4.f), sf::Vector2f(28.f, 104.f)));
+		break;
+	case LevelEditorUnitsNames::ghost:
+		hitboxComponent.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(80.f, 130.f), sf::Vector2f(-35.f, 0.f)));
+
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(8.f, 4.f), sf::Vector2f(-36.f, 170.f)));
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(56.f, 4.f), sf::Vector2f(-28.f, 170.f)));
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(8.f, 4.f), sf::Vector2f(28.f, 170.f)));
 		break;
 	case LevelEditorUnitsNames::player:
 		hitboxComponent.addHitbox(Hitbox(sf::Vector2f(-45.f, 7.f), sf::Vector2f(90, 200), sf::Vector2f(-45.f, 7.f)));

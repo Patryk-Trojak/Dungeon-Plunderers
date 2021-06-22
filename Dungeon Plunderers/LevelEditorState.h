@@ -22,6 +22,7 @@
 #include "UnitTypeChecker.h"
 #include "SlimeEnemy.h"
 #include "ZombieInGround.h"
+#include "Ghost.h"
 
 enum class Action {
 	none, 

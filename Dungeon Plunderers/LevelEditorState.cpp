@@ -258,6 +258,7 @@ ResourceHolder<LevelEditorUnitsNames, sf::Texture> LevelEditorState::loadAllUnit
 	unitsTextures.add(LevelEditorUnitsNames::hidingSpikes, loadTexture(".\\Textures\\Spikes.png", sf::IntRect(350, 0, 50, 50)));
 	unitsTextures.add(LevelEditorUnitsNames::slimeEnemy, loadTexture(".\\Textures\\Slime.png", sf::IntRect(0, 0, 96, 96)));
 	unitsTextures.add(LevelEditorUnitsNames::zombieInGround, loadTexture(".\\Textures\\ZombieInGround.png", sf::IntRect(0, 0, 100, 108)));
+	unitsTextures.add(LevelEditorUnitsNames::ghost, loadTexture(".\\Textures\\Ghost.png", sf::IntRect(0, 0, 80, 130)));
 
 	//other
 	unitsTextures.add(LevelEditorUnitsNames::player, loadTexture(".\\Textures\\Stormtrooper.png", sf::IntRect(0, 0, 117, 207)));
@@ -1631,6 +1632,9 @@ void LevelEditorState::initFunctionConvertUnitsToLevel()
 					break;
 				case LevelEditorUnitsNames::zombieInGround:
 					level.enemies.emplace_back(std::make_unique<ZombieInGround>(i.getPosition(), resources));
+					break;
+				case LevelEditorUnitsNames::ghost:
+					level.enemies.emplace_back(std::make_unique<Ghost>(i.getPosition(), i.getMovingDistance(), resources));
 					break;
 				case LevelEditorUnitsNames::gunEnemyOnFakeBlock:
 					level.enemies.emplace_back(std::make_unique<GunEnemy>(i.getPosition(), resources));

@@ -122,6 +122,9 @@ void LevelsOfPlayerSelection::initFunctionConvertUnitsToLevel()
 			case LevelEditorUnitsNames::zombieInGround:
 				level.enemies.emplace_back(std::make_unique<ZombieInGround>(i.getPosition(), resources));
 				break;
+			case LevelEditorUnitsNames::ghost:
+				level.enemies.emplace_back(std::make_unique<Ghost>(i.getPosition(), i.getMovingDistance(), resources));
+				break;
 			case LevelEditorUnitsNames::gunEnemyOnFakeBlock:
 				level.enemies.emplace_back(std::make_unique<GunEnemy>(i.getPosition(), resources));
 				level.decorationBlocks.emplace_back(i.getPosition(), sf::Vector2f(100.f, 100.f), BlocksTypes::brick);
