@@ -93,6 +93,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)\External\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,6 +137,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)\External\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -273,6 +275,7 @@
     <ClInclude Include="ResourceHolder.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="Rifle.h" />
+    <ClInclude Include="RockProjectile.h" />
     <ClInclude Include="SaveButton.h" />
     <ClInclude Include="SavedDataManager.h" />
     <ClInclude Include="SaveSelectionState.h" />
@@ -418,6 +421,7 @@
     <ClCompile Include="ResourceHolder.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="Rifle.cpp" />
+    <ClCompile Include="RockProjectile.cpp" />
     <ClCompile Include="SaveButton.cpp" />
     <ClCompile Include="SavedDataManager.cpp" />
     <ClCompile Include="SaveSelectionState.cpp" />
