@@ -21,6 +21,7 @@
 #include "LevelEditorUnitsChangeTracker.h"
 #include "UnitTypeChecker.h"
 #include "SlimeEnemy.h"
+#include "ZombieInGround.h"
 
 enum class Action {
 	none, 

@@ -22,5 +22,6 @@ enum class LevelEditorUnitsNames {
 	movingGranite,
 	slimeEnemy,
 	player,
+	zombieInGround,
 	counter //<--- keep number of names
 };
