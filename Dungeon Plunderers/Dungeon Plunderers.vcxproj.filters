@@ -537,6 +537,9 @@
     <ClInclude Include="Ghost.h">
       <Filter>Gameplay stuff\Enemies\Units</Filter>
     </ClInclude>
+    <ClInclude Include="Bat.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -960,6 +963,9 @@
       <Filter>Gameplay stuff\Player\Player classes</Filter>
     </ClCompile>
     <ClCompile Include="Ghost.cpp">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Bat.cpp">
       <Filter>Gameplay stuff\Enemies\Units</Filter>
     </ClCompile>
   </ItemGroup>

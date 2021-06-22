@@ -179,6 +179,7 @@
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="BackgroundHandler.h" />
     <ClInclude Include="Bar.h" />
+    <ClInclude Include="Bat.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlocksDrawer.h" />
     <ClInclude Include="BlocksHandler.h" />
@@ -325,6 +326,7 @@
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="BackgroundHandler.cpp" />
     <ClCompile Include="Bar.cpp" />
+    <ClCompile Include="Bat.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlocksDrawer.cpp" />
     <ClCompile Include="BlocksHandler.cpp" />
