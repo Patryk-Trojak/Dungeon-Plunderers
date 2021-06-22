@@ -19,7 +19,8 @@ enum class EnemyType {
 	spikes, 
 	hidingSpikes,
 	showingAfterDamageSpikes,
-	slimeEnemy
+	slimeEnemy,
+	zombieInGround
 };
 
 enum class EnemyState {

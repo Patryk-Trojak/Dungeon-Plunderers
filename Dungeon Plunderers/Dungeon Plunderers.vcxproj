@@ -315,6 +315,7 @@
     <ClInclude Include="WizardOnCloudHUD.h" />
     <ClInclude Include="Zombie.h" />
     <ClInclude Include="ZombieBoss.h" />
+    <ClInclude Include="ZombieInGround.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AmmoHUD.cpp" />
@@ -461,6 +462,7 @@
     <ClCompile Include="WizardOnCloudHUD.cpp" />
     <ClCompile Include="Zombie.cpp" />
     <ClCompile Include="ZombieBoss.cpp" />
+    <ClCompile Include="ZombieInGround.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Dungeon Plunderers.rc" />
