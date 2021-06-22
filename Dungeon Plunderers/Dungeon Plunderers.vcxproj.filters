@@ -73,6 +73,36 @@
     <Filter Include="Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances">
       <UniqueIdentifier>{e62a48b1-5fba-428d-8482-054ec5c9f61d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Level editor stuff">
+      <UniqueIdentifier>{042e8350-3bb4-4520-9156-439bd1dfa56c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="My libs">
+      <UniqueIdentifier>{3d581c8e-4b75-4f84-8c9c-7c8fc6131c37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{5fde3f0e-5f5c-4666-8138-91891f728ce0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Settings stuff">
+      <UniqueIdentifier>{f33843dd-285d-48cd-97dd-ad44642f7d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Background">
+      <UniqueIdentifier>{b9381c71-ef97-42b3-b537-9ab11556bebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Blocks">
+      <UniqueIdentifier>{dde0013d-9594-4d85-add2-b2ce8ea7728a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Levels">
+      <UniqueIdentifier>{e3b20e9e-78cd-4239-b0bd-8791983434fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Bonuses">
+      <UniqueIdentifier>{8362e7f1-7cf3-48bf-9737-627c5f2dfb45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Coins">
+      <UniqueIdentifier>{8423c983-cff1-484c-b135-79d2a4f5aa78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay stuff\Player\Player classes">
+      <UniqueIdentifier>{a8a5ec17-bb78-4ec1-a659-6cf97b00a614}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -150,9 +180,6 @@
     <ClInclude Include="TextCursor.h">
       <Filter>All GUI\Menu GUI</Filter>
     </ClInclude>
-    <ClInclude Include="Block.h">
-      <Filter>Gameplay stuff</Filter>
-    </ClInclude>
     <ClInclude Include="LevelSelectionState.h">
       <Filter>States</Filter>
     </ClInclude>
@@ -162,17 +189,11 @@
     <ClInclude Include="Player.h">
       <Filter>Gameplay stuff\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Wizard.h">
-      <Filter>Gameplay stuff\Player</Filter>
-    </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>Gameplay stuff\Weapons</Filter>
     </ClInclude>
     <ClInclude Include="Handgun.h">
       <Filter>Gameplay stuff\Weapons</Filter>
-    </ClInclude>
-    <ClInclude Include="Stormtrooper.h">
-      <Filter>Gameplay stuff\Player</Filter>
     </ClInclude>
     <ClInclude Include="GameplayState.h">
       <Filter>States</Filter>
@@ -182,9 +203,6 @@
     </ClInclude>
     <ClInclude Include="Shotgun.h">
       <Filter>Gameplay stuff\Weapons</Filter>
-    </ClInclude>
-    <ClInclude Include="Coin.h">
-      <Filter>Gameplay stuff</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
@@ -213,9 +231,6 @@
     <ClInclude Include="PotionBar.h">
       <Filter>Gameplay stuff\HUD</Filter>
     </ClInclude>
-    <ClInclude Include="Helicopter.h">
-      <Filter>Gameplay stuff\Player</Filter>
-    </ClInclude>
     <ClInclude Include="WeaponOfHelicopter.h">
       <Filter>Gameplay stuff\Weapons</Filter>
     </ClInclude>
@@ -243,9 +258,6 @@
     <ClInclude Include="LevelEditorState.h">
       <Filter>States</Filter>
     </ClInclude>
-    <ClInclude Include="LevelEditorUnit.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="IconButton.h">
       <Filter>All GUI\Menu GUI</Filter>
     </ClInclude>
@@ -267,9 +279,6 @@
     <ClInclude Include="ControlSettingsState.h">
       <Filter>States</Filter>
     </ClInclude>
-    <ClInclude Include="LevelEditorToolbar.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="LevelEditorUpgradeClassState.h">
       <Filter>States</Filter>
     </ClInclude>
@@ -287,9 +296,6 @@
     </ClInclude>
     <ClInclude Include="Wand.h">
       <Filter>Gameplay stuff\Weapons</Filter>
-    </ClInclude>
-    <ClInclude Include="WizardOnCloud.h">
-      <Filter>Gameplay stuff\Player</Filter>
     </ClInclude>
     <ClInclude Include="Fireball.h">
       <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
@@ -342,68 +348,14 @@
     <ClInclude Include="PlayerHealthBar.h">
       <Filter>Gameplay stuff\HUD</Filter>
     </ClInclude>
-    <ClInclude Include="Bonus.h">
-      <Filter>Gameplay stuff</Filter>
-    </ClInclude>
     <ClInclude Include="Laser.h">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerFormChanger.h">
-      <Filter>Gameplay stuff</Filter>
     </ClInclude>
     <ClInclude Include="Warning.h">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
     </ClInclude>
     <ClInclude Include="Portal.h">
       <Filter>Gameplay stuff</Filter>
-    </ClInclude>
-    <ClInclude Include="RandomEngine.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionsHandler.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="BlocksDrawer.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="BlocksHandler.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="ProjectilesHandler.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="BonusesHandler.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="BackgroundHandler.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="CoinsHandler.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceHolder.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemiesHandler.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="EffectsHandler.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Resources.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Pause.h">
-      <Filter>Pliki źródłowe</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelName.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelData.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Keybinds.h">
-      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="WizardOnCloudHUD.h">
       <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
@@ -420,21 +372,6 @@
     <ClInclude Include="HelicopterHUD.h">
       <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
     </ClInclude>
-    <ClInclude Include="LoadDataState.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureID.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="StatsPlayerCreator.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerData.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Date.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="PersistenceSaver.h">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClInclude>
@@ -444,17 +381,8 @@
     <ClInclude Include="DefaultPersistenceCreator.h">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClInclude>
-    <ClInclude Include="SettingsData.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="PathsToPersistences.h">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerUpgradeState.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelCodeCreator.h">
-      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="EnemyProjectile.h">
       <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
@@ -462,44 +390,146 @@
     <ClInclude Include="PlayerProjectile.h">
       <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
     </ClInclude>
-    <ClInclude Include="LevelEditorClipboard.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelEditorUnitsChangeTracker.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="MySimpleLibrary.hpp">
-      <Filter>States</Filter>
-    </ClInclude>
-    <ClInclude Include="DefaultLevelMaker.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitTypeChecker.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelEditorUnitsNames.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="SnowDust.h">
       <Filter>Gameplay stuff\Effects</Filter>
     </ClInclude>
     <ClInclude Include="FireExplosion.h">
       <Filter>Gameplay stuff\Effects</Filter>
     </ClInclude>
-    <ClInclude Include="SlimeProjectile.h">
-      <Filter>Pliki nagłówkowe</Filter>
+    <ClInclude Include="LevelCodeCreator.h">
+      <Filter>Level editor stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorClipboard.h">
+      <Filter>Level editor stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorToolbar.h">
+      <Filter>Level editor stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorUnit.h">
+      <Filter>Level editor stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorUnitsChangeTracker.h">
+      <Filter>Level editor stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelEditorUnitsNames.h">
+      <Filter>Level editor stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTypeChecker.h">
+      <Filter>Level editor stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomEngine.h">
+      <Filter>My libs</Filter>
+    </ClInclude>
+    <ClInclude Include="MySimpleLibrary.hpp">
+      <Filter>My libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>My libs</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureID.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceHolder.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsData.h">
+      <Filter>Settings stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Keybinds.h">
+      <Filter>Settings stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadDataState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Bonus.h">
+      <Filter>Gameplay stuff\Bonuses</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Gameplay stuff\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Pause.h">
+      <Filter>Gameplay stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundHandler.h">
+      <Filter>Gameplay stuff\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocksDrawer.h">
+      <Filter>Gameplay stuff\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocksHandler.h">
+      <Filter>Gameplay stuff\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BonusesHandler.h">
+      <Filter>Gameplay stuff\Bonuses</Filter>
+    </ClInclude>
+    <ClInclude Include="CoinsHandler.h">
+      <Filter>Gameplay stuff\Coins</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>Gameplay stuff\Coins</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerFormChanger.h">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionsHandler.h">
+      <Filter>Gameplay stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultLevelMaker.h">
+      <Filter>Gameplay stuff\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectsHandler.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelData.h">
+      <Filter>Gameplay stuff\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelName.h">
+      <Filter>Gameplay stuff\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemiesHandler.h">
+      <Filter>Gameplay stuff\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="MovingEnemyComponent.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="SlimeEnemy.h">
-      <Filter>Pliki nagłówkowe</Filter>
+    <ClInclude Include="PlayerUpgradeState.h">
+      <Filter>Gameplay stuff\Player</Filter>
     </ClInclude>
     <ClInclude Include="RockProjectile.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="SlimeProjectile.h">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerData.h">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectilesHandler.h">
+      <Filter>Gameplay stuff\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="SlimeEnemy.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
     </ClInclude>
     <ClInclude Include="ZombieInGround.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsPlayerCreator.h">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Helicopter.h">
+      <Filter>Gameplay stuff\Player\Player classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Stormtrooper.h">
+      <Filter>Gameplay stuff\Player\Player classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard.h">
+      <Filter>Gameplay stuff\Player\Player classes</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardOnCloud.h">
+      <Filter>Gameplay stuff\Player\Player classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -578,9 +608,6 @@
     <ClCompile Include="TextCursor.cpp">
       <Filter>All GUI\Menu GUI</Filter>
     </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>Gameplay stuff</Filter>
-    </ClCompile>
     <ClCompile Include="LevelSelectionState.cpp">
       <Filter>States</Filter>
     </ClCompile>
@@ -590,17 +617,11 @@
     <ClCompile Include="Player.cpp">
       <Filter>Gameplay stuff\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Wizard.cpp">
-      <Filter>Gameplay stuff\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Weapon.cpp">
       <Filter>Gameplay stuff\Weapons</Filter>
     </ClCompile>
     <ClCompile Include="Handgun.cpp">
       <Filter>Gameplay stuff\Weapons</Filter>
-    </ClCompile>
-    <ClCompile Include="Stormtrooper.cpp">
-      <Filter>Gameplay stuff\Player</Filter>
     </ClCompile>
     <ClCompile Include="GameplayState.cpp">
       <Filter>States</Filter>
@@ -610,9 +631,6 @@
     </ClCompile>
     <ClCompile Include="Shotgun.cpp">
       <Filter>Gameplay stuff\Weapons</Filter>
-    </ClCompile>
-    <ClCompile Include="Coin.cpp">
-      <Filter>Gameplay stuff</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
@@ -641,9 +659,6 @@
     <ClCompile Include="PotionBar.cpp">
       <Filter>Gameplay stuff\HUD</Filter>
     </ClCompile>
-    <ClCompile Include="Helicopter.cpp">
-      <Filter>Gameplay stuff\Player</Filter>
-    </ClCompile>
     <ClCompile Include="WeaponOfHelicopter.cpp">
       <Filter>Gameplay stuff\Weapons</Filter>
     </ClCompile>
@@ -671,9 +686,6 @@
     <ClCompile Include="LevelEditorState.cpp">
       <Filter>States</Filter>
     </ClCompile>
-    <ClCompile Include="LevelEditorUnit.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="IconButton.cpp">
       <Filter>All GUI\Menu GUI</Filter>
     </ClCompile>
@@ -695,9 +707,6 @@
     <ClCompile Include="ControlSettingsState.cpp">
       <Filter>States</Filter>
     </ClCompile>
-    <ClCompile Include="LevelEditorToolbar.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="LevelEditorUpgradeClassState.cpp">
       <Filter>States</Filter>
     </ClCompile>
@@ -715,9 +724,6 @@
     </ClCompile>
     <ClCompile Include="Wand.cpp">
       <Filter>Gameplay stuff\Weapons</Filter>
-    </ClCompile>
-    <ClCompile Include="WizardOnCloud.cpp">
-      <Filter>Gameplay stuff\Player</Filter>
     </ClCompile>
     <ClCompile Include="Fireball.cpp">
       <Filter>Gameplay stuff\Projectiles\Players Projectile</Filter>
@@ -770,68 +776,14 @@
     <ClCompile Include="Boss.cpp">
       <Filter>Gameplay stuff\Enemies\Abstract classes</Filter>
     </ClCompile>
-    <ClCompile Include="Bonus.cpp">
-      <Filter>Gameplay stuff</Filter>
-    </ClCompile>
     <ClCompile Include="Laser.cpp">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerFormChanger.cpp">
-      <Filter>Gameplay stuff</Filter>
     </ClCompile>
     <ClCompile Include="Warning.cpp">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
     </ClCompile>
     <ClCompile Include="Portal.cpp">
       <Filter>Gameplay stuff</Filter>
-    </ClCompile>
-    <ClCompile Include="RandomEngine.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionsHandler.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="BlocksDrawer.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="BlocksHandler.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="ProjectilesHandler.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="BonusesHandler.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="BackgroundHandler.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="CoinsHandler.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceHolder.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemiesHandler.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="EffectsHandler.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Resources.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Pause.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="LevelName.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="LevelData.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Keybinds.cpp">
-      <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="WizardOnCloudHUD.cpp">
       <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
@@ -848,21 +800,6 @@
     <ClCompile Include="HelicopterHUD.cpp">
       <Filter>Gameplay stuff\HUD\PlayersHUD</Filter>
     </ClCompile>
-    <ClCompile Include="LoadDataState.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureID.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="StatsPlayerCreator.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerData.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Date.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="PersistenceSaver.cpp">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClCompile>
@@ -872,17 +809,8 @@
     <ClCompile Include="DefaultPersistenceCreator.cpp">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
     </ClCompile>
-    <ClCompile Include="SettingsData.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="PathsToPersistences.cpp">
       <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles\Persistances</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerUpgradeState.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="LevelCodeCreator.cpp">
-      <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="EnemyProjectile.cpp">
       <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
@@ -890,38 +818,140 @@
     <ClCompile Include="PlayerProjectile.cpp">
       <Filter>Gameplay stuff\Projectiles\Abstract class</Filter>
     </ClCompile>
-    <ClCompile Include="LevelEditorClipboard.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="LevelEditorUnitsChangeTracker.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="DefaultLevelMaker.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitTypeChecker.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="SnowDust.cpp">
       <Filter>Gameplay stuff\Effects</Filter>
     </ClCompile>
     <ClCompile Include="FireExplosion.cpp">
       <Filter>Gameplay stuff\Effects</Filter>
     </ClCompile>
-    <ClCompile Include="SlimeProjectile.cpp">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="LevelCodeCreator.cpp">
+      <Filter>Level editor stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorClipboard.cpp">
+      <Filter>Level editor stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorUnit.cpp">
+      <Filter>Level editor stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorToolbar.cpp">
+      <Filter>Level editor stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelEditorUnitsChangeTracker.cpp">
+      <Filter>Level editor stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTypeChecker.cpp">
+      <Filter>Level editor stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomEngine.cpp">
+      <Filter>My libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>My libs</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureID.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceHolder.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Keybinds.cpp">
+      <Filter>Settings stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsData.cpp">
+      <Filter>Settings stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadDataState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Gameplay stuff\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Bonus.cpp">
+      <Filter>Gameplay stuff\Bonuses</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundHandler.cpp">
+      <Filter>Gameplay stuff\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocksDrawer.cpp">
+      <Filter>Gameplay stuff\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocksHandler.cpp">
+      <Filter>Gameplay stuff\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BonusesHandler.cpp">
+      <Filter>Gameplay stuff\Bonuses</Filter>
+    </ClCompile>
+    <ClCompile Include="CoinsHandler.cpp">
+      <Filter>Gameplay stuff\Coins</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionsHandler.cpp">
+      <Filter>Gameplay stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultLevelMaker.cpp">
+      <Filter>Gameplay stuff\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectsHandler.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemiesHandler.cpp">
+      <Filter>Gameplay stuff\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelData.cpp">
+      <Filter>Gameplay stuff\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelName.cpp">
+      <Filter>Gameplay stuff\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Pause.cpp">
+      <Filter>Gameplay stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerData.cpp">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectilesHandler.cpp">
+      <Filter>Gameplay stuff\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsPlayerCreator.cpp">
+      <Filter>Gameplay stuff\Player</Filter>
     </ClCompile>
     <ClCompile Include="MovingEnemyComponent.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="SlimeEnemy.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="RockProjectile.cpp">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="PlayerUpgradeState.cpp">
+      <Filter>States</Filter>
     </ClCompile>
     <ClCompile Include="ZombieInGround.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="SlimeEnemy.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="SlimeProjectile.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="RockProjectile.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>Gameplay stuff\Coins</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerFormChanger.cpp">
+      <Filter>Gameplay stuff\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Helicopter.cpp">
+      <Filter>Gameplay stuff\Player\Player classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Wizard.cpp">
+      <Filter>Gameplay stuff\Player\Player classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Stormtrooper.cpp">
+      <Filter>Gameplay stuff\Player\Player classes</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardOnCloud.cpp">
+      <Filter>Gameplay stuff\Player\Player classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
