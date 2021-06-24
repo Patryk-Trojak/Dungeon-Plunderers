@@ -36,3 +36,9 @@ void Fireball::addEffects(std::vector<std::unique_ptr< Effect> >& effects, const
 {
     effects.emplace_back(std::make_unique<FireExplosion>(projectile.getPosition(), resources[TextureID::FireExplosion]));
 }
+
+void Fireball::onCollisionWithEnemy(Enemy& enemy)
+{
+    enemy.tryTakeDamage(damage);
+    enemy.tryChangeState(EnemyState::fire, 3);
+}
