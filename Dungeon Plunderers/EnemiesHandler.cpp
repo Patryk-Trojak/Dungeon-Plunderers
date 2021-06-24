@@ -49,6 +49,7 @@ void EnemiesHandler::updateEnemies(float deltaTime, const sf::Vector2f& playerPo
     for (auto& i : enemies)
     {
         i->moveWithBlock(deltaTime);
+        i->updateCurrentState(deltaTime);
         if (i->movingEnemyComponent)
             i->movingEnemyComponent->move(deltaTime);
         if (i->shouldUpdate)
