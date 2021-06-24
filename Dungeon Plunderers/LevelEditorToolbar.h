@@ -17,6 +17,7 @@ enum class UnitsCategories {
 	movingBlocks,
 	enemies,
 	enemiesPage2,
+	enemiesPage3,
 	coins
 };
 

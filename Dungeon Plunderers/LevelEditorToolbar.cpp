@@ -155,7 +155,7 @@ void LevelEditorToolbar::setPosition(const sf::Vector2f& Position)
 		numberOfCategoryButton++;
 	}
 	float leftMarginOfUnitButtons = 0;
-	if (currentCategory == UnitsCategories::enemiesPage2)
+	if (currentCategory == UnitsCategories::enemiesPage2 or currentCategory == UnitsCategories::enemiesPage3)
 		leftMarginOfUnitButtons = 150;
 
 	numberOfCategoryButton = 0;
@@ -350,7 +350,7 @@ void LevelEditorToolbar::setRedColorToButtonOfCurrentCategory(UnitsCategories cu
 	}
 	else
 	{
-		if(currentCategory == UnitsCategories::enemiesPage2)
+		if(currentCategory == UnitsCategories::enemiesPage2 or currentCategory == UnitsCategories::enemiesPage3)
 			categoryButtons.at(UnitsCategories::enemies).setIdleColor(sf::Color::Red);
 
 		if (currentCategory == UnitsCategories::optionsPage2)
@@ -462,7 +462,10 @@ std::optional<UnitsCategories> LevelEditorToolbar::getCategoryNameOfNextPage(Uni
 	{
 		case UnitsCategories::enemies:
 			return UnitsCategories::enemiesPage2;
-
+		
+		case UnitsCategories::enemiesPage2:
+			return UnitsCategories::enemiesPage3;
+		 
 		case UnitsCategories::options:
 			return UnitsCategories::optionsPage2;
 
@@ -477,6 +480,9 @@ std::optional<UnitsCategories> LevelEditorToolbar::getCategoryNameOfPreviousPage
 	{
 	case UnitsCategories::enemiesPage2:
 		return UnitsCategories::enemies;
+	
+	case UnitsCategories::enemiesPage3:
+		return UnitsCategories::enemiesPage2;
 
 	case UnitsCategories::optionsPage2:
 		return UnitsCategories::options;
@@ -539,7 +545,10 @@ void LevelEditorToolbar::initUnitsInEachCategory()
 	
 	std::vector<LevelEditorUnitsNames> enemiesPage2
 	{ UnitName::spikes, UnitName::hidingSpikes, UnitName::showingAfterDamageSpikes, UnitName::fly, UnitName::slimeEnemy,
-	  UnitName::zombieInGround, UnitName::ghost, UnitName::bat};	
+	  UnitName::zombieInGround, UnitName::ghost};
+
+	std::vector<LevelEditorUnitsNames> enemiesPage3
+	{ UnitName::bat};	
 	
 	std::vector<LevelEditorUnitsNames> coins
 	{ UnitName::coin};
@@ -548,5 +557,6 @@ void LevelEditorToolbar::initUnitsInEachCategory()
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::movingBlocks, movingBlocks));
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::enemies, enemiesPage1));
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::enemiesPage2, enemiesPage2));
+	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::enemiesPage3, enemiesPage3));
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::coins, coins));
 }
