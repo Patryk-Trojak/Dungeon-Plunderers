@@ -128,6 +128,12 @@ void LevelsOfPlayerSelection::initFunctionConvertUnitsToLevel()
 			case LevelEditorUnitsNames::bat:
 				level.enemies.emplace_back(std::make_unique<Bat>(i.getPosition(), i.getMovingDistance(), resources));
 				break;
+			case LevelEditorUnitsNames::spinningSpikes:
+				level.enemies.emplace_back(std::make_unique<SpinningSpikes>(i.getPosition(), sf::Vector2f(0.f, 0.f), resources));
+				break;
+			case LevelEditorUnitsNames::movingSpinningSpikes:
+				level.enemies.emplace_back(std::make_unique<SpinningSpikes>(i.getPosition(), i.getMovingDistance(), resources));
+				break;
 			case LevelEditorUnitsNames::gunEnemyOnFakeBlock:
 				level.enemies.emplace_back(std::make_unique<GunEnemy>(i.getPosition(), resources));
 				level.decorationBlocks.emplace_back(i.getPosition(), sf::Vector2f(100.f, 100.f), BlocksTypes::brick);

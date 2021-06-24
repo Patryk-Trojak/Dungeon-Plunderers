@@ -260,6 +260,8 @@ ResourceHolder<LevelEditorUnitsNames, sf::Texture> LevelEditorState::loadAllUnit
 	unitsTextures.add(LevelEditorUnitsNames::zombieInGround, loadTexture(".\\Textures\\ZombieInGround.png", sf::IntRect(0, 0, 100, 108)));
 	unitsTextures.add(LevelEditorUnitsNames::ghost, loadTexture(".\\Textures\\Ghost.png", sf::IntRect(0, 0, 80, 130)));
 	unitsTextures.add(LevelEditorUnitsNames::bat, loadTexture(".\\Textures\\BatLevelEditor.png"));
+	unitsTextures.add(LevelEditorUnitsNames::spinningSpikes, loadTexture(".\\Textures\\SpinningSpikes.png", sf::IntRect(0, 0, 150, 150)));
+	unitsTextures.add(LevelEditorUnitsNames::movingSpinningSpikes, loadTexture(".\\Textures\\SpinningSpikes.png", sf::IntRect(0, 0, 150, 150)));
 
 	//other
 	unitsTextures.add(LevelEditorUnitsNames::player, loadTexture(".\\Textures\\Stormtrooper.png", sf::IntRect(0, 0, 117, 207)));
@@ -1639,6 +1641,12 @@ void LevelEditorState::initFunctionConvertUnitsToLevel()
 					break;
 				case LevelEditorUnitsNames::bat:
 					level.enemies.emplace_back(std::make_unique<Bat>(i.getPosition(), i.getMovingDistance(), resources));
+					break;
+				case LevelEditorUnitsNames::spinningSpikes:
+					level.enemies.emplace_back(std::make_unique<SpinningSpikes>(i.getPosition(), sf::Vector2f( 0.f, 0.f ), resources));
+					break;
+				case LevelEditorUnitsNames::movingSpinningSpikes:
+					level.enemies.emplace_back(std::make_unique<SpinningSpikes>(i.getPosition(), i.getMovingDistance(), resources));
 					break;
 				case LevelEditorUnitsNames::gunEnemyOnFakeBlock:
 					level.enemies.emplace_back(std::make_unique<GunEnemy>(i.getPosition(), resources));

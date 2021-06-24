@@ -548,7 +548,7 @@ void LevelEditorToolbar::initUnitsInEachCategory()
 	  UnitName::zombieInGround, UnitName::ghost};
 
 	std::vector<LevelEditorUnitsNames> enemiesPage3
-	{ UnitName::bat};	
+	{ UnitName::bat, UnitName::movingSpinningSpikes, UnitName::spinningSpikes};	
 	
 	std::vector<LevelEditorUnitsNames> coins
 	{ UnitName::coin};

@@ -24,6 +24,7 @@
 #include "ZombieInGround.h"
 #include "Ghost.h"
 #include "Bat.h"
+#include "SpinningSpikes.h"
 
 enum class Action {
 	none, 
