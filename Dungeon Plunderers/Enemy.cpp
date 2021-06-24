@@ -161,6 +161,7 @@ void Enemy::tryTakeDamage(int amount)
 void Enemy::tryChangeState(EnemyState newEnemyState, float newStateDuration)
 {
 	currentState = newEnemyState;
+	timeToChangeToNormalState = newStateDuration;
 }
 
 void Enemy::draw(sf::RenderTarget& target, sf::RenderStates states) const
