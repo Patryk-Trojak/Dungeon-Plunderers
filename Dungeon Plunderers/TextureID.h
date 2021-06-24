@@ -57,6 +57,7 @@ enum class TextureID
     ZombieInGround,
     Ghost,
     Bat,
+    SpinningSpikes,
     //Projectiles
 
     Bullet,
