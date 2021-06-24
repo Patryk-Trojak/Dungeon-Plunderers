@@ -54,7 +54,11 @@ void Enemy::updateCurrentState(float deltaTime)
 
 void Enemy::playAnimation(const float deltaTime)
 {
-	animation.play(enemy, deltaTime);
+	float newDeltaTime = deltaTime;
+	if (currentState == EnemyState::frost)
+		newDeltaTime = deltaTime / 2.f; //just to slow down animation because in frost state enemies move slower
+
+	animation.play(enemy, newDeltaTime);
 }
 
 void Enemy::moveWithBlock(float deltaTime) 
