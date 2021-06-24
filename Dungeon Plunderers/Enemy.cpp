@@ -16,7 +16,8 @@ Enemy::Enemy(const sf::Vector2f& Position, const sf::Texture& TextureOfEnemy, co
 	isMortal(true),
 	isReiquireSATCollision(isReiquireSATCollision),
 	currentState(EnemyState::normal),
-	timeToChangeToNormalState(0)
+	timeToChangeToNormalState(0),
+	fireDamage(0)
 {
 	enemy.setPosition(Position);
 	animation.setFrame(enemy, 1);
@@ -49,6 +50,8 @@ void Enemy::updateCurrentState(float deltaTime)
 
 		if (timeToChangeToNormalState <= 0)
 			currentState = EnemyState::normal;
+
+		tryTakeDamageWhenIsInFireState(deltaTime);
 	}
 }
 
@@ -166,6 +169,19 @@ void Enemy::tryChangeState(EnemyState newEnemyState, float newStateDuration)
 {
 	currentState = newEnemyState;
 	timeToChangeToNormalState = newStateDuration;
+}
+
+void Enemy::tryTakeDamageWhenIsInFireState(float deltaTime)
+{
+	if (currentState == EnemyState::fire)
+	{
+		fireDamage += 20.f * deltaTime;
+		while (fireDamage > 1.f)
+		{
+			fireDamage -= 1.f;
+			tryTakeDamage(1);
+		}
+	}
 }
 
 void Enemy::draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -64,6 +64,8 @@ protected:
 	bool wasDamageDealtToPlayer;
 	bool isMortal;
 	int currentHp;
+	float fireDamage;
+	void tryTakeDamageWhenIsInFireState(float deltaTime);
 	std::vector<Block>::const_iterator blockItsStandingOn;
 	bool isStandingOnBlock{ false };
 	const float playersDamageAfterCollision;
