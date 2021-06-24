@@ -297,6 +297,7 @@
     <ClInclude Include="SlimeProjectile.h" />
     <ClInclude Include="SnowDust.h" />
     <ClInclude Include="Spikes.h" />
+    <ClInclude Include="SpinningSpikes.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StatsPlayerCreator.h" />
     <ClInclude Include="Stormtrooper.h" />
@@ -446,6 +447,7 @@
     <ClCompile Include="SlimeProjectile.cpp" />
     <ClCompile Include="SnowDust.cpp" />
     <ClCompile Include="Spikes.cpp" />
+    <ClCompile Include="SpinningSpikes.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StatsPlayerCreator.cpp" />
     <ClCompile Include="Stormtrooper.cpp" />

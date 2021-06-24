@@ -540,6 +540,9 @@
     <ClInclude Include="Bat.h">
       <Filter>Gameplay stuff\Enemies\Units</Filter>
     </ClInclude>
+    <ClInclude Include="SpinningSpikes.h">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -966,6 +969,9 @@
       <Filter>Gameplay stuff\Enemies\Units</Filter>
     </ClCompile>
     <ClCompile Include="Bat.cpp">
+      <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="SpinningSpikes.cpp">
       <Filter>Gameplay stuff\Enemies\Units</Filter>
     </ClCompile>
   </ItemGroup>

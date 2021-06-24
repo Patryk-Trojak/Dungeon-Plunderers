@@ -12,5 +12,6 @@ enum class EnemyType {
 	slimeEnemy,
 	zombieInGround,
 	ghost,
-	bat
+	bat,
+	spinningSpikes
 };
