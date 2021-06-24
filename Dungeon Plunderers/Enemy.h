@@ -9,12 +9,7 @@
 #include "Resources.h"
 #include "MovingEnemyComponent.h"
 #include "EnemiesTypes.h"
-
-enum class EnemyState {
-	normal, 
-	fire,
-	frost
-};
+#include "EnemyStates.h"
 
 class Enemy
 	:public sf::Drawable

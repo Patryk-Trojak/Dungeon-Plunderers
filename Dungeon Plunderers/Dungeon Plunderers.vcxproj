@@ -212,6 +212,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyHealthBar.h" />
     <ClInclude Include="EnemyProjectile.h" />
+    <ClInclude Include="EnemyStates.h" />
     <ClInclude Include="Feedback.h" />
     <ClInclude Include="FileSelection.h" />
     <ClInclude Include="Fireball.h" />

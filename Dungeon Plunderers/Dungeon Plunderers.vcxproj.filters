@@ -543,6 +543,9 @@
     <ClInclude Include="SpinningSpikes.h">
       <Filter>Gameplay stuff\Enemies\Units</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyStates.h">
+      <Filter>Gameplay stuff\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
