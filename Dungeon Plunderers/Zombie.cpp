@@ -7,7 +7,7 @@ Zombie::Zombie(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionD
 		300, 10,
 		false)
 {
-    movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, initialScale, sf::Vector2f(200.f, 0.f), ChangeDirectionDistance);
+    movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, currentState, initialScale, sf::Vector2f(200.f, 0.f), ChangeDirectionDistance);
     name = EnemyType::zombieGirl;
 	enemy.setOrigin(46.f, 0.f);
     this->initialScale = initialScale;

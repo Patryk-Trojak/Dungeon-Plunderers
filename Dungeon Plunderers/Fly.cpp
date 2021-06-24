@@ -7,7 +7,7 @@ Fly::Fly(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionDistanc
 		300, 10,	
         false)
 {
-    movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, initialScale, sf::Vector2f(200.f, 200.f), ChangeDirectionDistance);
+    movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, currentState, initialScale, sf::Vector2f(200.f, 200.f), ChangeDirectionDistance);
     name = EnemyType::fly;
 	enemy.setOrigin(38.f, 0.f);
     hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(56.325f, 13.2431f), sf::Vector2f(-21.0206f, 40.8756f)));

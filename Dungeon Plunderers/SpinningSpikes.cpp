@@ -8,7 +8,7 @@ SpinningSpikes::SpinningSpikes(const sf::Vector2f& Position, const sf::Vector2f 
         false)
 {
     if(ChangeDirectionDistance.x != 0.f or ChangeDirectionDistance.y != 0.f)
-        movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, initialScale, sf::Vector2f(200.f, 0.f), ChangeDirectionDistance);
+        movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, currentState, initialScale, sf::Vector2f(200.f, 0.f), ChangeDirectionDistance);
     name = EnemyType::spinningSpikes;
     enemy.setOrigin(75.0f, 75.0f);
     this->initialScale = initialScale;

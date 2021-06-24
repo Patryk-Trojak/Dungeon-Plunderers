@@ -9,7 +9,7 @@ SlimeEnemy::SlimeEnemy(const sf::Vector2f& Position, const sf::Vector2f ChangeDi
 		false),
 	canShoot(true)
 {
-	movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, initialScale, sf::Vector2f(200.f, 200.f), ChangeDirectionDistance);
+	movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, currentState, initialScale, sf::Vector2f(200.f, 200.f), ChangeDirectionDistance);
 	name = EnemyType::slimeEnemy;
 	enemy.setOrigin(63.f, 0.f);
 	this->initialScale = initialScale;

@@ -1,12 +1,13 @@
 #include "pch.h"
 #include "MovingEnemyComponent.h"
 
-MovingEnemyComponent::MovingEnemyComponent(sf::Sprite& enemy, const sf::Vector2f& initialScaleOfEnemy,
+MovingEnemyComponent::MovingEnemyComponent(sf::Sprite& enemy, const EnemyState& currentEnemyState, const sf::Vector2f& initialScaleOfEnemy,
 	const sf::Vector2f& MaxVelocity, const sf::Vector2f ChangeDirectionDistance)
 	: enemy(enemy),
 	initialScaleOfEnemy(initialScaleOfEnemy),
 	Movable(MaxVelocity),
-	changeDirectionDistance(ChangeDirectionDistance)
+	changeDirectionDistance(ChangeDirectionDistance),
+	currentEnemyState(currentEnemyState)
 {
 	maxVelocity = MaxVelocity;
 
@@ -33,6 +34,7 @@ MovingEnemyComponent::~MovingEnemyComponent()
 
 void MovingEnemyComponent::move(const float deltaTime)
 {
+	updateCurrentVelocityDependsOnCurrentState();
 	distanceMoved += currentVelocity * deltaTime;
 	enemy.move(currentVelocity * deltaTime);
 	if (abs(distanceMoved.x) >= abs(changeDirectionDistance.x))
@@ -76,4 +78,24 @@ void MovingEnemyComponent::updateScale(const float PositionXOfPlayer)
 		else
 			enemy.setScale(-initialScaleOfEnemy.x, initialScaleOfEnemy.y);
 	}
+}
+
+void MovingEnemyComponent::updateCurrentVelocityDependsOnCurrentState()
+{
+	bool isVelocityNegative;
+	sf::Vector2f newAbsVelocity;
+	if (currentEnemyState == EnemyState::frost)
+		newAbsVelocity = maxVelocity / 2.f;
+	else
+		newAbsVelocity = maxVelocity;
+
+	if (currentVelocity.x > 0)
+		currentVelocity.x = newAbsVelocity.x;
+	else
+		currentVelocity.x = -newAbsVelocity.x;
+
+	if (currentVelocity.y > 0)
+		currentVelocity.y = newAbsVelocity.y;
+	else
+		currentVelocity.y = -newAbsVelocity.y;
 }

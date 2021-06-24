@@ -8,7 +8,7 @@ Bat::Bat(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionDistanc
         300, 10,
         false)
 {
-    movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, initialScale, sf::Vector2f(200.f, 200.f), ChangeDirectionDistance);
+    movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, currentState, initialScale, sf::Vector2f(200.f, 200.f), ChangeDirectionDistance);
     name = EnemyType::bat;
     enemy.setOrigin(36.f, 0.f);
 

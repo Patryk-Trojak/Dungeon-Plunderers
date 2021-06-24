@@ -7,7 +7,7 @@ Skeleton::Skeleton(const sf::Vector2f& Position, const sf::Vector2f ChangeDirect
 	300, 10,
 	false)
 {
-	movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, initialScale, sf::Vector2f(200.f, 0.f), ChangeDirectionDistance);
+	movingEnemyComponent = std::make_unique<MovingEnemyComponent>(enemy, currentState, initialScale, sf::Vector2f(200.f, 0.f), ChangeDirectionDistance);
 	name = EnemyType::skeleton;
 	enemy.setOrigin(45.f, 0.f);
 	this->initialScale = initialScale;
@@ -63,8 +63,6 @@ Skeleton::Skeleton(const sf::Vector2f& Position, const sf::Vector2f ChangeDirect
 	hitboxComponent.addHitbox(Hitbox(sf::Vector2f(), sf::Vector2f(2.11473f, 8.62155f), sf::Vector2f(18.9092f, 152.024f)));
 
 	base.addHitbox(Hitbox(Position, sf::Vector2f(54.0173f, 4), sf::Vector2f(-12.9769f, 199.982f)));
-
-	//animation.play();
 }
 
 Skeleton::~Skeleton()
