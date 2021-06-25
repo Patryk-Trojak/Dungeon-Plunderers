@@ -26,6 +26,9 @@ GunEnemy::GunEnemy(const sf::Vector2f& Position, const Resources& resources, con
 	hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(56.2037f, 55.8681f), sf::Vector2f(0.f, 0.f), sf::Vector2f(27.5986f, 27.4306)));
 	hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(24.0033f, 72.097f), sf::Vector2f(0.f, 0.f), sf::Vector2f(11.5315f, 35.5314)));
 	hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(134.987f, 7.98015f), sf::Vector2f(0.f, 0.f), sf::Vector2f(35.4911f, 3.49023)));
+
+	isResistantToGivenState[EnemyState::fire] = true;
+	isResistantToGivenState[EnemyState::frost] = true;
 }
 
 
