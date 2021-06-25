@@ -37,6 +37,11 @@ void Effect::setOrigin(const sf::Vector2f& origin)
 	effect.setOrigin(origin);
 }
 
+void Effect::setPosition(const sf::Vector2f& position)
+{
+	effect.setPosition(position);
+}
+
 void Effect::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(effect, states);
