@@ -44,6 +44,9 @@ Spikes::Spikes(const sf::Vector2f& Position, const Resources& resources, SpikeTy
 	base.addHitbox(Hitbox(Position, sf::Vector2f(15, 2), sf::Vector2f(0.f, 52.f)));
 	base.addHitbox(Hitbox(Position, sf::Vector2f(20, 2), sf::Vector2f(15.f, 52.f)));
 	base.addHitbox(Hitbox(Position, sf::Vector2f(15, 2), sf::Vector2f(35.f, 52.f)));
+
+	isResistantToGivenState[EnemyState::fire] = true;
+	isResistantToGivenState[EnemyState::frost] = true;
 }
 
 Spikes::~Spikes()
