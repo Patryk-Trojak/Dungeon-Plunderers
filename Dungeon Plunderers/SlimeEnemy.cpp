@@ -15,6 +15,9 @@ SlimeEnemy::SlimeEnemy(const sf::Vector2f& Position, const sf::Vector2f ChangeDi
 	this->initialScale = initialScale;
 	for (auto i = 0; i < 10; i++)
 		hitboxComponent.addHitbox(Hitbox());
+
+	fire.setOrigin(sf::Vector2f(13.5f, 5.f));
+	fire.setScale(sf::Vector2f(2.f, 2.f));
 }
 
 SlimeEnemy::~SlimeEnemy()

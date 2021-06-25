@@ -10,6 +10,7 @@
 #include "MovingEnemyComponent.h"
 #include "EnemiesTypes.h"
 #include "EnemyStates.h"
+#include "Fire.h"
 
 class Enemy
 	:public sf::Drawable
@@ -65,7 +66,10 @@ protected:
 	bool isMortal;
 	int currentHp;
 	float fireDamage;
+	Fire fire;
 	void tryTakeDamageWhenIsInFireState(float deltaTime);
+	void updatePositionOfFireWhenIsInFireState();
+	void animateFireWhenIsInFireState(float deltaTime);
 	std::vector<Block>::const_iterator blockItsStandingOn;
 	bool isStandingOnBlock{ false };
 	const float playersDamageAfterCollision;

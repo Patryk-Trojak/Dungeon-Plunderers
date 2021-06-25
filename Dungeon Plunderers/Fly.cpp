@@ -32,10 +32,10 @@ Fly::Fly(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionDistanc
     hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(12.595f, 2.66417f), sf::Vector2f(-29.1115f, 2.81299f)));
     hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(10.0242f, 2.82832f), sf::Vector2f(-28.0397f, 0.00466919f))); 
 
-
     base.addHitbox(Hitbox(Position, sf::Vector2f(56, 4), sf::Vector2f(7 - 31.206f, 98), sf::Color(0, 255, 0, 100)));
 
-	//animation.play();
+    fire.setOrigin(sf::Vector2f(13.5f, -2.f));
+    fire.setScale(sf::Vector2f(2.f, 1.f));
 }
 
 Fly::~Fly()

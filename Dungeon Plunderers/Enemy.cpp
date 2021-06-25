@@ -17,7 +17,8 @@ Enemy::Enemy(const sf::Vector2f& Position, const sf::Texture& TextureOfEnemy, co
 	isReiquireSATCollision(isReiquireSATCollision),
 	currentState(EnemyState::normal),
 	timeToChangeToNormalState(0),
-	fireDamage(0)
+	fireDamage(0),
+	fire(Position, resources[TextureID::Fire])
 {
 	enemy.setPosition(Position);
 	animation.setFrame(enemy, 1);
@@ -52,6 +53,8 @@ void Enemy::updateCurrentState(float deltaTime)
 			currentState = EnemyState::normal;
 
 		tryTakeDamageWhenIsInFireState(deltaTime);
+		updatePositionOfFireWhenIsInFireState();
+		animateFireWhenIsInFireState(deltaTime);
 	}
 }
 
@@ -162,7 +165,6 @@ void Enemy::tryTakeDamage(int amount)
 		currentHp -= amount;
 		healthBar.setValue(currentHp);
 	}
-
 }
 
 void Enemy::tryChangeState(EnemyState newEnemyState, float newStateDuration)
@@ -184,9 +186,22 @@ void Enemy::tryTakeDamageWhenIsInFireState(float deltaTime)
 	}
 }
 
+void Enemy::updatePositionOfFireWhenIsInFireState()
+{
+	if (currentState == EnemyState::fire)
+		fire.setPosition(enemy.getPosition());
+}
+
+void Enemy::animateFireWhenIsInFireState(float deltaTime)
+{
+	fire.update(deltaTime);
+}
+
 void Enemy::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(enemy, states);
+	if(currentState == EnemyState::fire)
+		target.draw(fire, states);
 	target.draw(healthBar, states);
 }
 

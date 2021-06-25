@@ -24,6 +24,9 @@ ZombieInGround::ZombieInGround(const sf::Vector2f& Position, const Resources& re
 	base.addHitbox(Hitbox(Position, sf::Vector2f(45.f, 4.f), sf::Vector2f(-18.f, 108.f)));
 
 	matchHitboxesToAnimation();
+
+	fire.setOrigin(sf::Vector2f(13.5f, -2.f));
+	fire.setScale(sf::Vector2f(2.f, 2.f));
 }
 
 ZombieInGround::~ZombieInGround()

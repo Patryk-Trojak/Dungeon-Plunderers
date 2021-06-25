@@ -37,11 +37,12 @@ Zombie::Zombie(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionD
     hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(4.82344f, 11.9538f), sf::Vector2f(-27.8908f, 133.828f)));
     hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(4.82346f, 6.08176f), sf::Vector2f(-32.5045f, 138.232f)));
     hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(21.7507f, 3.96713f), sf::Vector2f(-38.0538f, 102.241f))); 
-   hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(4.82344f, 11.9538f), sf::Vector2f(-27.8908f, 133.828f)));//24
+    hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(4.82344f, 11.9538f), sf::Vector2f(-27.8908f, 133.828f)));//24
 
    base.addHitbox(Hitbox(Position, sf::Vector2f(30.1931f, 1.62155f), sf::Vector2f(-11.7739f, 183.949f)));
 
-	//animation.play();
+   fire.setOrigin(sf::Vector2f(13.5f, -8.f));
+   fire.setScale(sf::Vector2f(3.f, 3.f));
 }
 
 Zombie::~Zombie()

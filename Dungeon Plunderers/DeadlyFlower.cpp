@@ -44,9 +44,10 @@ DeadlyFlower::DeadlyFlower(const sf::Vector2f& Position, const Resources& resour
 	hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(13.9504f, 3.992f) * initialScale.x, sf::Vector2f(3.03043f, 103.994f)));
 	hitboxComponent.addHitbox(Hitbox(Position, sf::Vector2f(13.9504f, 3.992f) * initialScale.x, sf::Vector2f(3.03043f, 103.994f)));
 
+	base.addHitbox(Hitbox(Position, sf::Vector2f(40, 5), sf::Vector2f(-20.f, 206))); 
 
-
-	base.addHitbox(Hitbox(Position, sf::Vector2f(40, 5), sf::Vector2f(-20.f, 206))); //1
+	fire.setOrigin(sf::Vector2f(13.5f, -15.f));
+	fire.setScale(sf::Vector2f(3.f, 3.f));
 }
 
 DeadlyFlower::~DeadlyFlower()

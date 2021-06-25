@@ -63,6 +63,9 @@ Skeleton::Skeleton(const sf::Vector2f& Position, const sf::Vector2f ChangeDirect
 	hitboxComponent.addHitbox(Hitbox(sf::Vector2f(), sf::Vector2f(2.11473f, 8.62155f), sf::Vector2f(18.9092f, 152.024f)));
 
 	base.addHitbox(Hitbox(Position, sf::Vector2f(54.0173f, 4), sf::Vector2f(-12.9769f, 199.982f)));
+
+	fire.setOrigin(sf::Vector2f(13.5f, -14.f));
+	fire.setScale(sf::Vector2f(3.f, 3.f));
 }
 
 Skeleton::~Skeleton()

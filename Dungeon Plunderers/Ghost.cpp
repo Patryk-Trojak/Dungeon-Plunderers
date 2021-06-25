@@ -20,6 +20,9 @@ Ghost::Ghost(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionDis
         hitboxComponent.addHitbox(Hitbox());
     }
     base.addHitbox(Hitbox(Position, sf::Vector2f(56, 44), sf::Vector2f(10, 130), sf::Color(0, 255, 0, 100)));
+
+    fire.setOrigin(sf::Vector2f(13.5f, 2.f));
+    fire.setScale(sf::Vector2f(3.f, 2.5f));
 }
 
 Ghost::~Ghost()
