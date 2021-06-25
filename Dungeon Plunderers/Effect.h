@@ -10,6 +10,7 @@ public:
 	virtual ~Effect();
 	void update(const float deltaTime);
 	bool getIsOver() const;
+	void setScale(const sf::Vector2f& scale);
 protected:
 	sf::Sprite effect;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;

@@ -27,6 +27,11 @@ bool Effect::getIsOver() const
 	return isOver;
 }
 
+void Effect::setScale(const sf::Vector2f& scale)
+{
+	effect.setScale(scale);
+}
+
 void Effect::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(effect, states);
