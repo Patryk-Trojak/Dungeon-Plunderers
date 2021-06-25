@@ -20,6 +20,9 @@ SpinningSpikes::SpinningSpikes(const sf::Vector2f& Position, const sf::Vector2f 
 
     base.addHitbox(Hitbox(Position, sf::Vector2f(30.1931f, 1.62155f), sf::Vector2f(-11.7739f, 183.949f)));
     isMortal = false;
+
+    isResistantToGivenState[EnemyState::fire] = true;
+    isResistantToGivenState[EnemyState::frost] = true;
 }
 
 SpinningSpikes::~SpinningSpikes()
