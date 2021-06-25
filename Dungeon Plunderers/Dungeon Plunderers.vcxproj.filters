@@ -546,6 +546,9 @@
     <ClInclude Include="EnemyStates.h">
       <Filter>Gameplay stuff\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="Fire.h">
+      <Filter>Gameplay stuff\Effects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -976,6 +979,9 @@
     </ClCompile>
     <ClCompile Include="SpinningSpikes.cpp">
       <Filter>Gameplay stuff\Enemies\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="Fire.cpp">
+      <Filter>Gameplay stuff\Effects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

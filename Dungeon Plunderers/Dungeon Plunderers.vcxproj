@@ -215,6 +215,7 @@
     <ClInclude Include="EnemyStates.h" />
     <ClInclude Include="Feedback.h" />
     <ClInclude Include="FileSelection.h" />
+    <ClInclude Include="Fire.h" />
     <ClInclude Include="Fireball.h" />
     <ClInclude Include="FireExplosion.h" />
     <ClInclude Include="FirstMenuState.h" />
@@ -363,6 +364,7 @@
     <ClCompile Include="EnemyProjectile.cpp" />
     <ClCompile Include="Feedback.cpp" />
     <ClCompile Include="FileSelection.cpp" />
+    <ClCompile Include="Fire.cpp" />
     <ClCompile Include="Fireball.cpp" />
     <ClCompile Include="FireExplosion.cpp" />
     <ClCompile Include="FirstMenuState.cpp" />
