@@ -23,6 +23,9 @@ Enemy::Enemy(const sf::Vector2f& Position, const sf::Texture& TextureOfEnemy, co
 	enemy.setPosition(Position);
 	animation.setFrame(enemy, 1);
 	calculeteGlobalBoundsOfSprite();
+
+	isResistantToGivenState.emplace(std::make_pair(EnemyState::fire, false));
+	isResistantToGivenState.emplace(std::make_pair(EnemyState::frost, false));
 }
 
 Enemy::~Enemy()
@@ -169,8 +172,11 @@ void Enemy::tryTakeDamage(int amount)
 
 void Enemy::tryChangeState(EnemyState newEnemyState, float newStateDuration)
 {
-	currentState = newEnemyState;
-	timeToChangeToNormalState = newStateDuration;
+	if (!isResistantToGivenState[newEnemyState])
+	{
+		currentState = newEnemyState;
+		timeToChangeToNormalState = newStateDuration;
+	}	
 }
 
 void Enemy::tryTakeDamageWhenIsInFireState(float deltaTime)

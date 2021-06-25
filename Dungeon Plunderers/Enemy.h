@@ -1,6 +1,7 @@
 #pragma once
 #include<SFML/Graphics.hpp>
 #include<memory>
+#include<unordered_map>
 #include "HitboxComponent.h"
 #include "AnimationComponent.h"
 #include "EnemyProjectile.h"
@@ -73,5 +74,6 @@ protected:
 	std::vector<Block>::const_iterator blockItsStandingOn;
 	bool isStandingOnBlock{ false };
 	const float playersDamageAfterCollision;
+	std::unordered_map<EnemyState, bool> isResistantToGivenState;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
