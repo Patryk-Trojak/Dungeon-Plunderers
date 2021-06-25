@@ -53,6 +53,7 @@ void LoadDataState::loadAllTextures()
 	stateData.resources.textures.add(TextureID::Blood5, loadTexture(".\\Textures\\Blood5.png"));
 	stateData.resources.textures.add(TextureID::SnowDust, loadTexture(".\\Textures\\SnowDust.png"));
 	stateData.resources.textures.add(TextureID::FireExplosion, loadTexture(".\\Textures\\FireExplosion.png"));
+	stateData.resources.textures.add(TextureID::Fire, loadTexture(".\\Textures\\Fire.png"));
 
 	//blocks
 	stateData.resources.textures.add(TextureID::Brick, loadTexture(".\\Textures\\Blocks.png", true, sf::IntRect(0, 0, 50, 50)));
