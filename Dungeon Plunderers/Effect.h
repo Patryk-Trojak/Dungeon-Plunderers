@@ -11,6 +11,7 @@ public:
 	void update(const float deltaTime);
 	bool getIsOver() const;
 	void setScale(const sf::Vector2f& scale);
+	void setOrigin(const sf::Vector2f& origin);
 protected:
 	sf::Sprite effect;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;

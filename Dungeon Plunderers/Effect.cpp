@@ -32,6 +32,11 @@ void Effect::setScale(const sf::Vector2f& scale)
 	effect.setScale(scale);
 }
 
+void Effect::setOrigin(const sf::Vector2f& origin)
+{
+	effect.setOrigin(origin);
+}
+
 void Effect::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(effect, states);
