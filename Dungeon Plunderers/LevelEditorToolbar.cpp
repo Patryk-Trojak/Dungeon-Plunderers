@@ -544,7 +544,7 @@ void LevelEditorToolbar::initUnitsInEachCategory()
 	  UnitName::gunEnemyOnFakeBlock, UnitName::movingGunEnemyOnFakeBlock };
 	
 	std::vector<LevelEditorUnitsNames> enemiesPage2
-	{ UnitName::spikes, UnitName::hidingSpikes, UnitName::showingAfterDamageSpikes, UnitName::fly, UnitName::slimeEnemy,
+	{ UnitName::spikes, UnitName::hidingSpikes, UnitName::showingAfterDamageSpikes, UnitName::slimeEnemy,
 	  UnitName::zombieInGround, UnitName::ghost};
 
 	std::vector<LevelEditorUnitsNames> enemiesPage3
