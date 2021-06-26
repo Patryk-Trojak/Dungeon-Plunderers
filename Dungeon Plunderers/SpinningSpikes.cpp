@@ -18,7 +18,9 @@ SpinningSpikes::SpinningSpikes(const sf::Vector2f& Position, const sf::Vector2f 
         hitboxComponent.addHitbox(Hitbox());
     }
 
-    base.addHitbox(Hitbox(Position, sf::Vector2f(30.1931f, 1.62155f), sf::Vector2f(-11.7739f, 183.949f)));
+    base.addHitbox(Hitbox(Position, sf::Vector2f(12.f, 4.f), sf::Vector2f(-75.f, 100.f)));
+    base.addHitbox(Hitbox(Position, sf::Vector2f(12.f, 4.f), sf::Vector2f(63.f, 100.f)));
+    base.addHitbox(Hitbox(Position, sf::Vector2f(126.f, 4.f), sf::Vector2f(-63.f, 100.f)));
     isMortal = false;
 
     isResistantToGivenState[EnemyState::fire] = true;
