@@ -4,7 +4,7 @@
 
 Ghost::Ghost(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionDistance, const Resources& resources)
     :Enemy(Position, resources[TextureID::Ghost], resources,
-        Animation(1, 1, sf::Vector2i(80, 130), 6, 0.05f), sf::Vector2f(-38.f, -20.f),
+        Animation(1, 1, sf::Vector2i(80, 130), 6, 0.05f), sf::Vector2f(-52.f, -20.f),
         300, 10,
         false)
 {
