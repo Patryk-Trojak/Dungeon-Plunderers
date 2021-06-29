@@ -15,7 +15,7 @@ void EnemiesHandler::setBlocksWhichEnemiesStandingOn(const std::vector<Block>& b
     {
         for (auto block = blocks.begin(); block != blocks.end(); block++)
         {
-            if (block->hitboxComponent.intersects(enemy->base))
+            if (enemy->base.allHitboxesIntersectWith(block->hitboxComponent))
             {
                 enemy->setBlockWhichItsStandingOn(block);
             }
@@ -24,7 +24,7 @@ void EnemiesHandler::setBlocksWhichEnemiesStandingOn(const std::vector<Block>& b
         {
             for (auto block = decorationBlocks.begin(); block != decorationBlocks.end(); block++)
             {
-                if (block->hitboxComponent.intersects(enemy->base))
+                if (enemy->base.allHitboxesIntersectWith(block->hitboxComponent))
                 {
                     enemy->setBlockWhichItsStandingOn(block);
                 }
