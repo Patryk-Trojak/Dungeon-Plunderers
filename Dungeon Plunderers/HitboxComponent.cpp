@@ -131,6 +131,22 @@ bool HitboxComponent::intersects(const Hitbox& hitbox) const
 	return false;
 }
 
+bool HitboxComponent::allHitboxesIntersectWith(const HitboxComponent& hitboxComponent) const
+{
+	for (auto const& i : this->hitboxes)
+	{
+		for (auto const& j : hitboxComponent.getHitboxes())
+		{
+			if (!i.intersects(j))
+			{
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+
 bool HitboxComponent::intersectsSAT(const HitboxComponent& hitboxComponent) const
 {
 	for (auto const& i : this->hitboxes)

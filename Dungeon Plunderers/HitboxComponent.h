@@ -22,6 +22,7 @@ public:
 	bool intersects(const std::vector<sf::FloatRect>& floatRects) const;
 	bool intersects(const HitboxComponent& hitboxComponent) const;
 	bool intersects(const Hitbox& hitbox) const;
+	bool allHitboxesIntersectWith(const HitboxComponent& hitboxComponent) const;
 	bool intersectsSAT(const HitboxComponent& hitboxComponent) const;
 
 	bool contains(const sf::Vector2f& Point) const;
