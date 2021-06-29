@@ -22,7 +22,9 @@ Bat::Bat(const sf::Vector2f& Position, const sf::Vector2f ChangeDirectionDistanc
     {
         hitboxComponent.addHitbox(Hitbox());
     }
-    base.addHitbox(Hitbox(Position, sf::Vector2f(22, 30), sf::Vector2f(-12, 130), sf::Color(0, 255, 0, 100)));
+    base.addHitbox(Hitbox(Position, sf::Vector2f(12.f, 4.f), sf::Vector2f(-28.f, 156.f)));
+    base.addHitbox(Hitbox(Position, sf::Vector2f(12.f, 4.f), sf::Vector2f(12.f, 156.f)));
+    base.addHitbox(Hitbox(Position, sf::Vector2f(28.f, 4.f), sf::Vector2f(-16.f, 156.f)));
 
     fire.setOrigin(sf::Vector2f(13.5f, -23.f));
     fire.setScale(sf::Vector2f(2.f, 1.f));
