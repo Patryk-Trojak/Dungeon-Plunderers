@@ -13,14 +13,12 @@ LevelEditorState::LevelEditorState(StateData& stateData, const std::string& file
 	sliderOfView(sf::Vector2f(850.f, 50.f), sf::Vector2f(300, 15),
 		100, 5000, 300.f,
 		stateData.resources[TextureID::Slider], stateData.resources[TextureID::Axis], stateData.resources[TextureID::SliderButton], stateData.resources.font),
-	player(sf::Vector2f(500, 503.f), unitsTextures, LevelEditorUnitsNames::player),
 	changeTracker(units, numberOfSelectedUnits, unitsTextures),
 	clipboard(units, numberOfSelectedUnits, unitsTextures)
 {
 	initFunctionConvertUnitsToLevel();
 	loadUnitsFromFile();
 
-	player.setTexture(unitsTextures.getResource(LevelEditorUnitsNames::player));
 	guineaPig = PersistenceLoader::loadLevelEditorPlayerData();
 	stateData.savedPlayerData = guineaPig;
 	initMessageOfIssues();
@@ -93,7 +91,6 @@ void LevelEditorState::update(const float deltaTime)
 	handleSelectingUnitsByClick();
 	handleChangingSizeOfBlocks();
 	handleMovingUnits();
-	updatePositionOfPlayer();
 
 	updatePositionsOfBackgrounds(backgrounds);
 	updatePositionsOfBackgrounds(helpLines);
@@ -213,7 +210,6 @@ void LevelEditorState::draw(sf::RenderTarget& target, sf::RenderStates states) c
 	if(toolbar.getShowGrid())
 		drawHelpLines(target, states);
 	drawUnits(target, states);
-	target.draw(player, states);
 
 	if(selectedArea)
 		target.draw(*selectedArea, states);
@@ -315,9 +311,7 @@ void LevelEditorState::loadUnitsFromFile()
 	{
 		file >> dateOfLastRun;
 		file >> dateOfCreation;
-		file >> position.x;
-		file >> position.y;
-		player.setPositionRelativeToHitbox(position);
+
 		while (!file.eof())
 		{
 			file >> position.x;
@@ -349,9 +343,8 @@ void LevelEditorState::saveUnitsToFile()
 	std::ofstream file;
 	file.open(filepath);
 	file << dateOfLastRun << std::endl;
-	file << dateOfCreation << std::endl;
-	file << player.hitboxComponent[0].getLeft() << std::endl;
-	file << player.hitboxComponent[0].getTop();
+	file << dateOfCreation;
+
 	for (auto i = units.begin(); i != units.end(); i++)
 	{
 		file << std::endl;
@@ -374,7 +367,8 @@ void LevelEditorState::createCode()
 	
 	std::ofstream file;
 	file.open("currentLevelCode.txt");
-	file << "initialPositionOfPlayer = sf::Vector2f(" << player.hitboxComponent[0].getLeft() << ".f, " << player.hitboxComponent[0].getTop() << ".f);" << std::endl;
+	auto player = findPlayerInUnits();
+	file << "initialPositionOfPlayer = sf::Vector2f(" << player->hitboxComponent[0].getLeft() << ".f, " << player->hitboxComponent[0].getTop() << ".f);" << std::endl;
 	for (auto const &i : units)
 	{
 		switch (i.getType())
@@ -543,9 +537,6 @@ void LevelEditorState::handleSelectingUnitsByClick()
 
 bool LevelEditorState::isMouseOverUnits() const
 {
-	if (player.hitboxComponent.contains(mousePositionView))
-		return true;
-
 	for (auto const &i : units)
 	{
 		if (i.hitboxComponent.contains(mousePositionView))
@@ -566,9 +557,6 @@ bool LevelEditorState::isMouseOverUnits() const
 
 bool LevelEditorState::isMouseOverBlocks() const
 {
-	if (player.hitboxComponent.contains(mousePositionView))
-		return false;
-
 	for (auto const& i : units)
 	{
 		if (UnitTypeChecker::isBlock(i.getType()))
@@ -605,159 +593,10 @@ bool LevelEditorState::isMouseOverEnemyGuns() const
 	return false;
 }
 
-void LevelEditorState::updatePositionOfPlayer()
+std::vector<LevelEditorUnit>::iterator LevelEditorState::findPlayerInUnits()
 {
-	if (!sf::Mouse::isButtonPressed(sf::Mouse::Left) )
-	{
-		if (currentAction == Action::movingPlayer)
-		{
-			updatePlayerPositionIfColliding();
-
-			setSliderOfView();
-
-			currentAction = Action::none;
-		}
-	}
-
-	if (wasMousePressed and !toolbar.isMouseOverToolbar(mousePositionHUD) and !sliderOfView.isSliding() and !sliderOfView.isMouseOver(mousePositionHUD))
-	{
-		if (player.hitboxComponent.contains(lastMousePosition))
-		{
-			currentAction = Action::movingPlayer;
-		}
-	}
-
-	if(currentAction == Action::movingPlayer)
-	{
-		if ((sf::Mouse::isButtonPressed(sf::Mouse::Left)))
-		{
-			if (abs(UnitShift.x) >= tileSize)
-			{
-				int numberOfTileToShift = static_cast<int>(UnitShift.x) / tileSize;
-				player.move(sf::Vector2f(numberOfTileToShift * tileSize, 0));
-				UnitShift.x -= numberOfTileToShift * tileSize;
-			}
-			if (abs(UnitShift.y) >= tileSize)
-			{
-				int numberOfTileToShift = static_cast<int>(UnitShift.y) / tileSize;
-				player.move(sf::Vector2f(0.f, numberOfTileToShift * tileSize));			
-				UnitShift.y -= numberOfTileToShift * tileSize;
-			}
-		}	
-	}
-}
-
-void LevelEditorState::updatePlayerPositionIfColliding()
-{
-	bool isColliding = false;
-
-	if (player.maxTopHitboxes() < -310.f or player.maxBottomHitboxes() > 1390)
-	{
-		isColliding = true;
-	}
-
-
-	for (auto const& i : units)
-	{
-		if (player.hitboxComponent.intersects(i.hitboxComponent))
-		{
-			isColliding = true;
-			break;
-		}
-		if (player.hitboxComponent.intersects(i.moveHitboxes))
-		{
-			isColliding = true;
-			break;
-		}
-	}
-
-
-	if (isColliding)
-	{
-		sf::Vector2f currentShift;
-
-		int totalShift = tileSize;
-
-		sf::FloatRect hitboxOfPlayer = player.hitboxComponent[0].getGlobalBounds();
-		sf::Vector2f initialPositionOfPlayerHitbox = sf::Vector2f(player.hitboxComponent[0].getGlobalBounds().left, player.hitboxComponent[0].getGlobalBounds().top);
-		sf::Vector2f initialPostionOfPoint = player.hitboxComponent.getHitboxes()[0].getCenter();
-
-		bool isContainsPoint = false;
-		sf::Vector2f point;
-
-		while (isColliding)
-		{
-			for (int j = 0; j < 4; j++)
-			{
-				for (int i = 0; i <= totalShift; i += tileSize)
-				{
-					isContainsPoint = false;
-					switch (j)
-					{
-					case 0:
-						point.x = initialPostionOfPoint.x + (totalShift - i);
-						point.y = initialPostionOfPoint.y + i;
-						break;
-					case 1:
-						point.x = initialPostionOfPoint.x - (totalShift - i);
-						point.y = initialPostionOfPoint.y + i;
-						break;
-					case 2:
-						point.x = initialPostionOfPoint.x + (totalShift - i);
-						point.y = initialPostionOfPoint.y - i;
-						break;
-					case 3:
-						point.x = initialPostionOfPoint.x - (totalShift - i);
-						point.y = initialPostionOfPoint.y - i;
-						break;
-					}
-					currentShift = point - initialPostionOfPoint;
-					if (player.maxTopHitboxes() + currentShift.y > -310.f and player.maxBottomHitboxes() + currentShift.y < 1390)
-					{
-						for (auto const& i : units)
-						{
-							if (i.hitboxComponent.contains(point))
-							{
-								isContainsPoint = true;
-								break;
-							}
-						}
-						if (!isContainsPoint)
-						{
-							hitboxOfPlayer.left = initialPositionOfPlayerHitbox.x + currentShift.x;
-							hitboxOfPlayer.top = initialPositionOfPlayerHitbox.y + currentShift.y;
-
-							isColliding = false;
-							for (auto const& i : units)
-							{
-								if (i.hitboxComponent.intersects(hitboxOfPlayer))
-								{
-									isColliding = true;
-									break;
-								}
-								if (i.moveHitboxes.intersects(hitboxOfPlayer))
-								{
-									isColliding = true;
-									break;
-								}
-							}
-							if (!isColliding)
-							{
-								player.move(currentShift);
-								break;
-							}
-						}
-					}
-				}
-				if (!isColliding)
-				{
-					break;
-				}
-			}
-			totalShift += tileSize;
-		}
-
-	}
+	return std::find_if(units.begin(), units.end(), [](const LevelEditorUnit& unit){
+		return unit.getType() == LevelEditorUnitsNames::player; });
 }
 
 void LevelEditorState::addUnitByClick()
@@ -1198,8 +1037,6 @@ void LevelEditorState::updatePositionIfUnitsColliding()
 									break;
 								}
 							}
-							if(player.hitboxComponent.contains(point))
-								isContainsPoint = true;
 
 							if (!isContainsPoint)
 							{
@@ -1264,10 +1101,6 @@ std::vector<LevelEditorUnit>::reverse_iterator LevelEditorState::findCollidingSe
 	for (auto selected = units.rbegin(); selected != units.rbegin() + numberOfSelectedUnits; ++selected)
 	{
 		if (selected->maxTopHitboxes() < -310.f or selected->maxBottomHitboxes() > 1390)
-			return selected;
-		if (selected->hitboxComponent.intersects(player.hitboxComponent))
-			return selected;
-		if (selected->moveHitboxes.intersects(player.hitboxComponent))
 			return selected;
 	}
 
@@ -1334,16 +1167,6 @@ std::vector<LevelEditorUnit>::reverse_iterator LevelEditorState::findCollidingSe
 
 bool LevelEditorState::isCollidingWithNoSelectedUnits(const std::vector<std::tuple<sf::FloatRect, sf::Vector2f, LevelEditorUnitsNames>>& unitsHitboxes, const std::vector<std::tuple<sf::FloatRect, sf::Vector2f, LevelEditorUnitsNames>>& unitsMoveHitboxes) const
 {
-	for (auto const& selected : unitsHitboxes)
-	{
-		if(player.hitboxComponent.intersects(std::get<0>(selected)))
-			return true;
-	}
-	for (auto const& selected : unitsMoveHitboxes)
-	{
-		if (player.hitboxComponent.intersects(std::get<0>(selected)))
-			return true;
-	}
 	for (auto i = units.begin(); i != units.end() - numberOfSelectedUnits; i++)
 	{
 		for (auto const & selected : unitsHitboxes)
@@ -1572,16 +1395,17 @@ void LevelEditorState::deleteSelectedUnits()
 void LevelEditorState::initFunctionConvertUnitsToLevel()
 {
 		const std::vector<LevelEditorUnit>& levelEditorUnits = units;
-		const sf::Vector2f initPlayerPosition = player.getPositionOfUpperLeftCorner();
-		convertUnitsToLevel = [&levelEditorUnits, initPlayerPosition](const Resources& resources)
+		convertUnitsToLevel = [&levelEditorUnits](const Resources& resources)
 		{ 
 			Level level;
-			level.initialPositionOfPlayer = initPlayerPosition;
 			level.endOfLevelPosition = sf::Vector2f(200.f, 200.f);
 			for (auto const& i : levelEditorUnits)
 			{
 				switch (i.getType())
 				{
+				case LevelEditorUnitsNames::player:
+					level.initialPositionOfPlayer = i.getPosition();
+					break;
 				case LevelEditorUnitsNames::brick:
 					level.blocks.emplace_back(i.getPosition(), sf::Vector2f(i.getGlobalBounds().width, i.getGlobalBounds().height), BlocksTypes::brick);
 					break;
@@ -1713,20 +1537,6 @@ void LevelEditorState::setSliderOfView()
 {
 	float minPosition = computeMinPositionXOfUnit();
 	float maxPosition = computeMaxPositionXOfUnit();
-	if (minPosition == 0 and maxPosition == 0)// when there are no units
-	{
-		minPosition = player.getPosition().x;
-		maxPosition = minPosition + 1000.f;
-	}
-	else
-	{
-		if (minPosition > player.getPosition().x)
-			minPosition = player.getPosition().x;
-
-		if (maxPosition < player.getPosition().x)
-			maxPosition = player.getPosition().x;
-	}
-
 
 	sliderOfView.setMin(minPosition);
 	sliderOfView.setMax(maxPosition);
@@ -1758,7 +1568,7 @@ float LevelEditorState::computeMaxPositionXOfUnit()
 	}
 	else
 	{
-		return 0.f;
+		return 1000.f;
 	}
 }
 

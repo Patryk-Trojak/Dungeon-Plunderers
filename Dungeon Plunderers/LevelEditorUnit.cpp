@@ -6,10 +6,8 @@ LevelEditorUnit::LevelEditorUnit(const sf::Vector2f& Position, const ResourceHol
 	placementIssue(UnitPlacementIssues::none),
 	IsSetCorrectly(true)
 {
-	if (name != LevelEditorUnitsNames::player)
-	{
-		unit.setTexture(unitsTextures.getResource(name));
-	}
+	unit.setTexture(unitsTextures.getResource(name));
+
 	unit.setPosition(Position);
 	if (UnitTypeChecker::isBlock(name))
 	{

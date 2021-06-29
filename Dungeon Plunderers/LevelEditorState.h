@@ -30,7 +30,6 @@ enum class Action {
 	none, 
 	addingUnit,
 	movingUnit,
-	movingPlayer,
 	changinSizeOfUnit,
 	changingMovingDistance,
 	creatingSelectedArea
@@ -78,12 +77,10 @@ private:
 	sf::Vector2f MouseShiftRelativeToHUDView;
 
 	sf::Vector2f lastViewPosition{ 0, 0 };
-	LevelEditorUnit player;
 	bool isMouseOverUnits() const;
 	bool isMouseOverBlocks() const;
 	bool isMouseOverEnemyGuns() const;
-	void updatePositionOfPlayer();
-	void updatePlayerPositionIfColliding();
+	std::vector<LevelEditorUnit>::iterator findPlayerInUnits();
 
 	//Adding Units
 	void addUnitByClick();

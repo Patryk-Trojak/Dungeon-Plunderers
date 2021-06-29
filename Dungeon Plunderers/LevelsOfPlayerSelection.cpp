@@ -57,17 +57,18 @@ void LevelsOfPlayerSelection::moveToNextState(SaveButton& clicked)
 
 void LevelsOfPlayerSelection::initFunctionConvertUnitsToLevel()
 {
-	const auto& levelEditorUnits = units;
-	const sf::Vector2f initPlayerPosition = positionOfPlayer;
-	convertUnitsToLevel = [&levelEditorUnits, initPlayerPosition](const Resources& resources)
+	const std::vector<LevelEditorUnit>& levelEditorUnits = units;
+	convertUnitsToLevel = [&levelEditorUnits](const Resources& resources)
 	{
 		Level level;
-		level.initialPositionOfPlayer = initPlayerPosition;
 		level.endOfLevelPosition = sf::Vector2f(200.f, 200.f);
 		for (auto const& i : levelEditorUnits)
 		{
 			switch (i.getType())
 			{
+			case LevelEditorUnitsNames::player:
+				level.initialPositionOfPlayer = i.getPosition();
+				break;
 			case LevelEditorUnitsNames::brick:
 				level.blocks.emplace_back(i.getPosition(), sf::Vector2f(i.getGlobalBounds().width, i.getGlobalBounds().height), BlocksTypes::brick);
 				break;
@@ -149,6 +150,7 @@ void LevelsOfPlayerSelection::initFunctionConvertUnitsToLevel()
 		}
 		return level;
 	};
+
 }
 
 void LevelsOfPlayerSelection::loadUnitsFromFile(const std::string& filepath)
@@ -160,14 +162,13 @@ void LevelsOfPlayerSelection::loadUnitsFromFile(const std::string& filepath)
 	sf::Vector2f size(50.f, 50.f);
 	LevelEditorUnitsNames name;
 	int tempType;
+	int useless;
 	units.reserve(1000);
-	std::string temp;
 	if (file.is_open())
 	{
-		file >> temp;
-		file >> temp;
-		file >> positionOfPlayer.x;
-		file >> positionOfPlayer.y;
+		file >> useless;
+		file >> useless;
+
 		while (!file.eof())
 		{
 			file >> position.x;
