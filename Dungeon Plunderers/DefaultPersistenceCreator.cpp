@@ -19,10 +19,8 @@ void DefaultPersistenceCreator::createNewPlayerLevelSave(const std::string& name
 {
 	std::ofstream file;
 	file.open(PathsToPersistences::toPlayerLevelsFilesDirectory + nameOfFile + ".txt");
-	file << "Nigdy" << std::endl;//48
-	file << Date::getCurrentDate() << std::endl;//49
-	file << "490" << std::endl;//48
-	file << "490";//48
+	file << "Nigdy" << std::endl;
+	file << Date::getCurrentDate();
 	file.close();
 }
 
