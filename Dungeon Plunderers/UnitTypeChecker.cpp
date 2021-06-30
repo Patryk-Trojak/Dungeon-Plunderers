@@ -92,6 +92,14 @@ const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> UnitTyp
     return blocks;
 }();
 
+const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> UnitTypeChecker::undeletable = [] {
+    std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> undeletable;
+    undeletable.fill(false);
+
+    undeletable[static_cast<int>(LevelEditorUnitsNames::player)] = true;
+
+    return undeletable;
+}();
 
 bool UnitTypeChecker::isGround(LevelEditorUnitsNames name)
 {
@@ -132,4 +140,9 @@ bool UnitTypeChecker::isMovingBlock(LevelEditorUnitsNames name)
         return true;
 
     return false;
+}
+
+bool UnitTypeChecker::isUndeletable(LevelEditorUnitsNames name)
+{
+    return undeletable[static_cast<int>(name)];
 }

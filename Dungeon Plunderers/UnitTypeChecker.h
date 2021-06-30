@@ -22,12 +22,14 @@ public:
 	static bool isEnemy(LevelEditorUnitsNames name);
 	static bool isCoin(LevelEditorUnitsNames name);
 	static bool isMovingBlock(LevelEditorUnitsNames name);
+	static bool isUndeletable(LevelEditorUnitsNames name);
 private:
 	static const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> blocks;
 	static const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> enemies;
 	static const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> coins;
 	static const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> moving;
 	static const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> ground;
+	static const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> undeletable;
 };
 
 
