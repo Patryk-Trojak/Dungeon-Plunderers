@@ -1384,10 +1384,12 @@ void LevelEditorState::selectUnitsBySelectedArea()
 
 void LevelEditorState::deleteSelectedUnits()
 {
-	for (int i = 0; i < numberOfSelectedUnits; i++)
-	{
-		units.pop_back();
-	}
+	units.erase(std::remove_if(units.end() - numberOfSelectedUnits, units.end(),
+		[](const LevelEditorUnit& unit) 
+		{
+			return !UnitTypeChecker::isUndeletable(unit.getType()); 
+		}), units.end());
+
 	numberOfSelectedUnits = 0;
 	updateAfterChanges();
 }
