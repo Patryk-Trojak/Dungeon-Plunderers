@@ -81,7 +81,7 @@ private:
 	bool isMouseOverBlocks() const;
 	bool isMouseOverEnemyGuns() const;
 	std::vector<LevelEditorUnit>::iterator findPlayerInUnits();
-
+	void tryAddPlayerToUnits();
 	//Adding Units
 	void addUnitByClick();
 	void addBlocksByCreatedArea();

@@ -18,6 +18,7 @@ LevelEditorState::LevelEditorState(StateData& stateData, const std::string& file
 {
 	initFunctionConvertUnitsToLevel();
 	loadUnitsFromFile();
+	tryAddPlayerToUnits();
 
 	guineaPig = PersistenceLoader::loadLevelEditorPlayerData();
 	stateData.savedPlayerData = guineaPig;
@@ -597,6 +598,14 @@ std::vector<LevelEditorUnit>::iterator LevelEditorState::findPlayerInUnits()
 {
 	return std::find_if(units.begin(), units.end(), [](const LevelEditorUnit& unit){
 		return unit.getType() == LevelEditorUnitsNames::player; });
+}
+
+void LevelEditorState::tryAddPlayerToUnits()
+{
+	if (findPlayerInUnits() == units.end())
+	{
+		units.emplace_back(sf::Vector2f(0.f, 400.f), unitsTextures, LevelEditorUnitsNames::player);
+	}
 }
 
 void LevelEditorState::addUnitByClick()
