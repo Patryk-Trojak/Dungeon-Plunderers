@@ -97,6 +97,7 @@ const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> UnitTyp
     undeletable.fill(false);
 
     undeletable[static_cast<int>(LevelEditorUnitsNames::player)] = true;
+    undeletable[static_cast<int>(LevelEditorUnitsNames::portal)] = true;
 
     return undeletable;
 }();

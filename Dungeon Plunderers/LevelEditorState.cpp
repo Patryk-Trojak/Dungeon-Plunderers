@@ -19,6 +19,7 @@ LevelEditorState::LevelEditorState(StateData& stateData, const std::string& file
 	initFunctionConvertUnitsToLevel();
 	loadUnitsFromFile();
 	tryAddPlayerToUnits();
+	tryAddPortalToUnits();
 
 	guineaPig = PersistenceLoader::loadLevelEditorPlayerData();
 	stateData.savedPlayerData = guineaPig;
@@ -262,6 +263,7 @@ ResourceHolder<LevelEditorUnitsNames, sf::Texture> LevelEditorState::loadAllUnit
 
 	//other
 	unitsTextures.add(LevelEditorUnitsNames::player, loadTexture(".\\Textures\\Stormtrooper.png", sf::IntRect(0, 0, 117, 207)));
+	unitsTextures.add(LevelEditorUnitsNames::portal, loadTexture(".\\Textures\\Portal.png", sf::IntRect(0, 0, 117, 207)));
 	unitsTextures.add(LevelEditorUnitsNames::coin, loadTexture(".\\Textures\\Coin.png", sf::IntRect(0, 0, 50, 50)));
 
 	return unitsTextures;
@@ -605,6 +607,20 @@ void LevelEditorState::tryAddPlayerToUnits()
 	if (findPlayerInUnits() == units.end())
 	{
 		units.emplace_back(sf::Vector2f(0.f, 400.f), unitsTextures, LevelEditorUnitsNames::player);
+	}
+}
+
+std::vector<LevelEditorUnit>::iterator LevelEditorState::findPortalInUnits()
+{
+	return std::find_if(units.begin(), units.end(), [](const LevelEditorUnit& unit) {
+		return unit.getType() == LevelEditorUnitsNames::portal; });
+}
+
+void LevelEditorState::tryAddPortalToUnits()
+{
+	if (findPortalInUnits() == units.end())
+	{
+		units.emplace_back(sf::Vector2f(500.f, 400.f), unitsTextures, LevelEditorUnitsNames::portal);
 	}
 }
 
@@ -1409,13 +1425,15 @@ void LevelEditorState::initFunctionConvertUnitsToLevel()
 		convertUnitsToLevel = [&levelEditorUnits](const Resources& resources)
 		{ 
 			Level level;
-			level.endOfLevelPosition = sf::Vector2f(200.f, 200.f);
 			for (auto const& i : levelEditorUnits)
 			{
 				switch (i.getType())
 				{
 				case LevelEditorUnitsNames::player:
 					level.initialPositionOfPlayer = i.getPosition();
+					break;
+				case LevelEditorUnitsNames::portal:
+					level.endOfLevelPosition = i.getPosition();
 					break;
 				case LevelEditorUnitsNames::brick:
 					level.blocks.emplace_back(i.getPosition(), sf::Vector2f(i.getGlobalBounds().width, i.getGlobalBounds().height), BlocksTypes::brick);

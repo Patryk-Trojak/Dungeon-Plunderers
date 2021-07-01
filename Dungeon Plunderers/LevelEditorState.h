@@ -82,6 +82,9 @@ private:
 	bool isMouseOverEnemyGuns() const;
 	std::vector<LevelEditorUnit>::iterator findPlayerInUnits();
 	void tryAddPlayerToUnits();
+
+	std::vector<LevelEditorUnit>::iterator findPortalInUnits();
+	void tryAddPortalToUnits();
 	//Adding Units
 	void addUnitByClick();
 	void addBlocksByCreatedArea();

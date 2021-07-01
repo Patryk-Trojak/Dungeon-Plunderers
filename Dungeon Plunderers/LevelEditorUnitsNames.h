@@ -1,22 +1,22 @@
 #pragma once
 
 enum class LevelEditorUnitsNames {
-	brick, //blocks
+	brick,
 	dirt,
 	concrete,
 	granite,
 	coin,
-	deadlyFlower, //ground Enemies(Not moving)
+	deadlyFlower,
 	spikes,
 	hidingSpikes,
 	showingAfterDamageSpikes,
 	gunEnemy,
-	zombie,//ground Enemies(moving)
+	zombie,
 	skeleton,
-	gunEnemyOnFakeBlock,//flying Enemies
-	fly,		//moving flying Enemies
+	gunEnemyOnFakeBlock,
+	fly,
 	movingGunEnemyOnFakeBlock,
-	movingBrick, //moving blocks
+	movingBrick,
 	movingDirt,
 	movingConcrete,
 	movingGranite,
@@ -27,5 +27,6 @@ enum class LevelEditorUnitsNames {
 	bat,
 	spinningSpikes,
 	movingSpinningSpikes,
-	counter //<--- keep number of names
+	portal,
+	counter //<--- keeps number of names
 };

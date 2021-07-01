@@ -69,6 +69,9 @@ void LevelsOfPlayerSelection::initFunctionConvertUnitsToLevel()
 			case LevelEditorUnitsNames::player:
 				level.initialPositionOfPlayer = i.getPosition();
 				break;
+			case LevelEditorUnitsNames::portal:
+				level.endOfLevelPosition = i.getPosition();
+				break;
 			case LevelEditorUnitsNames::brick:
 				level.blocks.emplace_back(i.getPosition(), sf::Vector2f(i.getGlobalBounds().width, i.getGlobalBounds().height), BlocksTypes::brick);
 				break;

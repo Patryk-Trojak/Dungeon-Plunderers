@@ -469,6 +469,9 @@ void LevelEditorUnit::setHitboxesDependingOnType()
 	case LevelEditorUnitsNames::player:
 		hitboxComponent.addHitbox(Hitbox(sf::Vector2f(-45.f, 7.f), sf::Vector2f(90, 200), sf::Vector2f(-45.f, 7.f)));
 	break;
+	case LevelEditorUnitsNames::portal:
+		hitboxComponent.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(108.f, 216.f)));
+	break;
 	case LevelEditorUnitsNames::gunEnemy:
 		hitboxComponent.addHitbox(Hitbox(getUpperLeftCorner() + sf::Vector2f(-28.f, -28.f), sf::Vector2f(56.f, 56.f), sf::Vector2f(-28.f, -28.f)));
 		hitboxComponent.addHitbox(Hitbox(getUpperLeftCorner() + sf::Vector2f(-100.f, -12.f), sf::Vector2f(200.f, 24.f), sf::Vector2f(-100.f, -12.f)));
