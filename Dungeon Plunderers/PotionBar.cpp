@@ -29,7 +29,7 @@ void PotionBar::setPositionOfPotions(const sf::Vector2f& Position)
 	auto potion = potions.begin();
 	while (potion != potions.end())
 	{
-		potion->setPosition(sf::Vector2f(Position.x + 11.f + (potion - potions.begin()) * 62, Position.y + 6.f));
+		potion->setPosition(sf::Vector2f(Position.x + 12.f + (potion - potions.begin()) * 56.f, Position.y + 8.f));
 		potion++;
 	}
 }
