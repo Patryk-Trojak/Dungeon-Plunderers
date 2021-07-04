@@ -11,6 +11,7 @@ public:
 		const int experienceToNextLevel, const int currentExperience, const int currentLevel);
 	virtual ~LevelBar();
 	void setCurrentLevel(const int Level);
+	void setPosition(const sf::Vector2f& Position);
 private:
 	sf::Text currentLevel;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;

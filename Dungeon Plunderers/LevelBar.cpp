@@ -28,6 +28,12 @@ void LevelBar::setCurrentLevel(const int Level)
 	currentLevel.setString(std::to_string(Level));
 }
 
+void LevelBar::setPosition(const sf::Vector2f& Position)
+{
+	Bar::setPosition(Position);
+	this->currentLevel.setPosition(Position + sf::Vector2f(50 / 2 - this->currentLevel.getGlobalBounds().width / 2.f, -7.f));
+}
+
 void LevelBar::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(background, states);
