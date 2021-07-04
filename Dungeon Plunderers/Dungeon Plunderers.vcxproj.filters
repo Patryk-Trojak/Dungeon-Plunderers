@@ -100,6 +100,9 @@
     <Filter Include="Gameplay stuff\Player\Player classes">
       <UniqueIdentifier>{a8a5ec17-bb78-4ec1-a659-6cf97b00a614}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Gameplay stuff\Trampolines">
+      <UniqueIdentifier>{b469a8cd-bfff-4af4-afad-a244ecd57d0a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -537,6 +540,12 @@
     <ClInclude Include="Fire.h">
       <Filter>Gameplay stuff\Effects</Filter>
     </ClInclude>
+    <ClInclude Include="Trampoline.h">
+      <Filter>Gameplay stuff\Trampolines</Filter>
+    </ClInclude>
+    <ClInclude Include="TrampolinesHandler.h">
+      <Filter>Gameplay stuff\Trampolines</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -961,6 +970,12 @@
     </ClCompile>
     <ClCompile Include="Fire.cpp">
       <Filter>Gameplay stuff\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Trampoline.cpp">
+      <Filter>Gameplay stuff\Trampolines</Filter>
+    </ClCompile>
+    <ClCompile Include="TrampolinesHandler.cpp">
+      <Filter>Gameplay stuff\Trampolines</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

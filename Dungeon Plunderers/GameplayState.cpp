@@ -15,7 +15,8 @@ GameplayState::GameplayState(StateData& stateData, const std::function<Level(con
     createCurrentLevel(createCurrentLevel),
     backgroundsHandler(backgrounds, stateData.resources),
     pause(stateData.resources),
-    collisionsHandler(stateData.resources, level, currentPlayer, stateData.savedPlayerData, projectiles, projectilesOfEnemies, bonuses, effects, bonusesHandler)
+    collisionsHandler(stateData.resources, level, currentPlayer, stateData.savedPlayerData, projectiles, projectilesOfEnemies, bonuses, effects, bonusesHandler),
+    trampolinesHandler(level.trampolines)
 {
     level = createCurrentLevel(stateData.resources);
     numberOfLevel = static_cast<int>(level.name);
@@ -28,6 +29,7 @@ GameplayState::GameplayState(StateData& stateData, const std::function<Level(con
     viewRightPos = view.getCenter().x + view.getSize().x / 2.f;
     enemiesHandler.setBlocksWhichEnemiesStandingOn(level.blocks, level.decorationBlocks);
     coinsHandler.setBlocksWhichCoinsStandingOn(level.blocks);
+    trampolinesHandler.setBlocksWhichTrampolinesStandingOn(level.blocks);
 
     blocksDrawer.addBlocksToVertexArray(level.blocks, false);
     blocksDrawer.addBlocksToVertexArray(level.decorationBlocks, true);
@@ -41,7 +43,6 @@ GameplayState::GameplayState(StateData& stateData, const std::function<Level(con
         level.clear();
         movingBlocks.clear();
     };
-
 }
 
 GameplayState::~GameplayState()
@@ -72,6 +73,7 @@ void GameplayState::animateAllStuff(float deltaTime)
     playerProjectilesHandler.animateProjectiles(deltaTime);
     enemyProjectilesHandler.animateProjectiles(deltaTime);
     coinsHandler.animateCoins(deltaTime);
+    trampolinesHandler.animateTrampolines(deltaTime);
     effectsHandler.animateEffects(deltaTime);
     enemiesHandler.animateEnemies(deltaTime);
     if (playerFormChanger)
@@ -119,6 +121,7 @@ void GameplayState::update(const float deltaTime)
             blocksHandler.moveAllBlocks(newDeltaTime);
             enemiesHandler.updateEnemies(newDeltaTime, currentPlayer->getPosition());
             coinsHandler.moveCoinsWithBlocks(newDeltaTime);
+            trampolinesHandler.moveTrampolinesWithBlocks(newDeltaTime);
 
             if (!isPlayerInBossArea)
                 collisionsHandler.AllProjectilesAndBlock();
@@ -127,9 +130,8 @@ void GameplayState::update(const float deltaTime)
 
             collisionsHandler.PlayerAndEnemies(newDeltaTime);
             collisionsHandler.PlayerAndBonuses();
-
+            collisionsHandler.PlayerAndTrampolines();
             collisionsHandler.ProjectilesAndEnemies();
-
             collisionsHandler.PlayerAndCoins();
             collisionsHandler.BonusesAndBlocks(newDeltaTime);
             updatePlayerLevel();
@@ -173,6 +175,7 @@ void GameplayState::draw(sf::RenderTarget& target, sf::RenderStates states) cons
     if (!isPlayerInBossArea)
         target.draw(portal);
     coinsHandler.drawCoins(target, viewRightPos, viewLeftPos);
+    trampolinesHandler.drawTrampolines(target, viewRightPos, viewLeftPos);
     target.draw(blocksDrawer);
     playerProjectilesHandler.drawProjectiles(target, viewRightPos, viewLeftPos);
     enemyProjectilesHandler.drawProjectiles(target, viewRightPos, viewLeftPos);
@@ -310,6 +313,7 @@ void GameplayState::handleWithInfoAboutEndOfLevel()
             backgroundsHandler.initBackgrounds(currentPlayer->getPosition());
             enemiesHandler.setBlocksWhichEnemiesStandingOn(level.blocks, level.decorationBlocks);
             coinsHandler.setBlocksWhichCoinsStandingOn(level.blocks);
+            trampolinesHandler.setBlocksWhichTrampolinesStandingOn(level.blocks);
             initView();
 
             blocksHandler.initIteratorsToMovingBlocks();

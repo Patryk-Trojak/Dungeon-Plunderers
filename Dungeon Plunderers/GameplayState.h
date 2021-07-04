@@ -45,6 +45,7 @@
 #include "Pause.h"
 #include "DefaultLevelMaker.h"
 #include "LevelName.h"
+#include "TrampolinesHandler.h"
 
 
 class Player;
@@ -70,6 +71,7 @@ private:
     BlocksHandler blocksHandler;
     EnemiesHandler enemiesHandler;
     CoinsHandler coinsHandler;
+    TrampolinesHandler trampolinesHandler;
     std::vector<std::vector<Block>::const_iterator> movingBlocks;
     BlocksDrawer blocksDrawer;
 

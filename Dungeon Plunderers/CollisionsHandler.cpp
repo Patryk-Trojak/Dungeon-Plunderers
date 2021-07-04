@@ -86,6 +86,21 @@ void CollisionsHandler::PlayerAndCoins()
 	}
 }
 
+void CollisionsHandler::PlayerAndTrampolines()
+{
+	for (auto & i : level.trampolines)
+	{
+		if (intersect(*player, i))
+		{
+			if (i.getNumberOfFrameAnimation() == 1)
+			{
+				i.onCollisionWithPlayer(*player);
+				break;
+			}		
+		}
+	}
+}
+
 void CollisionsHandler::PlayerAndEnemies(const float deltaTime)
 {
 	timeSinceLastDamageDealtToPlayer += deltaTime;
@@ -323,6 +338,11 @@ bool CollisionsHandler::intersect(const Player& player, Projectile& projectile)
 	}
 
 	return false;
+}
+
+bool CollisionsHandler::intersect(const Player& player, const Trampoline& trampoline)
+{
+	return trampoline.hitboxComponent.intersects(player.globalBoundsOfHitboxes);
 }
 
 template<typename ProjectilesType>

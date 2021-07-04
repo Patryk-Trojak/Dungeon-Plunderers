@@ -23,6 +23,7 @@ public:
 	~CollisionsHandler();
 	void PlayerAndBlock(float deltaTime);
 	void PlayerAndCoins();
+	void PlayerAndTrampolines();
 	void PlayerAndEnemies(const float deltaTime);
 	void PlayerAndEnemyProjectiles();
 	void PlayerAndBonuses();
@@ -38,6 +39,7 @@ private:
 	bool intersect(const Player& player, const Coin& coin);
 	bool intersect(const Player& player, Enemy& enemy);
 	bool intersect(const Player& player, Projectile& projectile);
+	bool intersect(const Player& player, const Trampoline& trampoline);
 
 	template<typename ProjectilesType>
 	void ProjectilesAndBlock(std::vector< std::unique_ptr<ProjectilesType> >& projectiles);
