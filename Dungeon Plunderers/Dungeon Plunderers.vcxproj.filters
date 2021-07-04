@@ -22,9 +22,6 @@
     <Filter Include="All GUI\Menu GUI">
       <UniqueIdentifier>{f8bba11c-bb59-498a-8bbf-72c522921e4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Managers">
-      <UniqueIdentifier>{676d42ed-96ec-4519-9754-252951417553}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Gameplay stuff">
       <UniqueIdentifier>{b446b96e-f3c4-49b6-814b-71e41bc143be}</UniqueIdentifier>
     </Filter>
@@ -123,9 +120,6 @@
     <ClInclude Include="Button.h">
       <Filter>All GUI\Menu GUI</Filter>
     </ClInclude>
-    <ClInclude Include="SupportGameState.h">
-      <Filter>States</Filter>
-    </ClInclude>
     <ClInclude Include="SettingsState.h">
       <Filter>States</Filter>
     </ClInclude>
@@ -167,12 +161,6 @@
     </ClInclude>
     <ClInclude Include="AnimationComponent.h">
       <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="SavedDataManager.h">
-      <Filter>Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureHolder.h">
-      <Filter>Managers</Filter>
     </ClInclude>
     <ClInclude Include="MessageBox.h">
       <Filter>All GUI</Filter>
@@ -572,9 +560,6 @@
     <ClCompile Include="Button.cpp">
       <Filter>All GUI\Menu GUI</Filter>
     </ClCompile>
-    <ClCompile Include="SupportGameState.cpp">
-      <Filter>States</Filter>
-    </ClCompile>
     <ClCompile Include="SettingsState.cpp">
       <Filter>States</Filter>
     </ClCompile>
@@ -613,12 +598,6 @@
     </ClCompile>
     <ClCompile Include="AnimationComponent.cpp">
       <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="SavedDataManager.cpp">
-      <Filter>Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureHolder.cpp">
-      <Filter>Managers</Filter>
     </ClCompile>
     <ClCompile Include="MessageBox.cpp">
       <Filter>All GUI</Filter>

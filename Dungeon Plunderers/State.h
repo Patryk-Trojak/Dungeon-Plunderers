@@ -4,7 +4,6 @@
 #include <stack>
 #include <memory>
 #include <array>
-#include "TextureHolder.h"
 #include "PlayerData.h"
 #include "Block.h"
 #include "Block.h"

@@ -1,7 +1,6 @@
 #pragma once
 #include "State.h"
 #include "MenuState.h"
-#include "SupportGameState.h"
 #include "SaveSelectionState.h"
 #include "SettingsState.h"
 #include "Block.h"

@@ -282,7 +282,6 @@
     <ClInclude Include="Rifle.h" />
     <ClInclude Include="RockProjectile.h" />
     <ClInclude Include="SaveButton.h" />
-    <ClInclude Include="SavedDataManager.h" />
     <ClInclude Include="SaveSelectionState.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="SecondMenuState.h" />
@@ -304,11 +303,9 @@
     <ClInclude Include="StatsPlayerCreator.h" />
     <ClInclude Include="Stormtrooper.h" />
     <ClInclude Include="StormtrooperHUD.h" />
-    <ClInclude Include="SupportGameState.h" />
     <ClInclude Include="Textbox.h" />
     <ClInclude Include="TextButton.h" />
     <ClInclude Include="TextCursor.h" />
-    <ClInclude Include="TextureHolder.h" />
     <ClInclude Include="TextureID.h" />
     <ClInclude Include="UnitTypeChecker.h" />
     <ClInclude Include="Wand.h" />
@@ -433,7 +430,6 @@
     <ClCompile Include="Rifle.cpp" />
     <ClCompile Include="RockProjectile.cpp" />
     <ClCompile Include="SaveButton.cpp" />
-    <ClCompile Include="SavedDataManager.cpp" />
     <ClCompile Include="SaveSelectionState.cpp" />
     <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="SecondMenuState.cpp" />
@@ -455,11 +451,9 @@
     <ClCompile Include="StatsPlayerCreator.cpp" />
     <ClCompile Include="Stormtrooper.cpp" />
     <ClCompile Include="StormtrooperHUD.cpp" />
-    <ClCompile Include="SupportGameState.cpp" />
     <ClCompile Include="Textbox.cpp" />
     <ClCompile Include="TextButton.cpp" />
     <ClCompile Include="TextCursor.cpp" />
-    <ClCompile Include="TextureHolder.cpp" />
     <ClCompile Include="TextureID.cpp" />
     <ClCompile Include="UnitTypeChecker.cpp" />
     <ClCompile Include="Wand.cpp" />

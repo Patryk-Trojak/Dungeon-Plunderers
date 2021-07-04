@@ -1,6 +1,5 @@
 #pragma once
 #include "Player.h"
-#include "TextureHolder.h"
 #include "PlayerData.h"
 #include "Wand.h"
 
