@@ -24,26 +24,14 @@ void LoadDataState::update(const float deltaTime)
 
 void LoadDataState::loadAllTextures()
 {
-
-	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-
-
-
 	stateData.resources.textures.add(TextureID::Crosshair, loadTexture(".\\Textures\\Crosshair.png"));
 	stateData.resources.textures.add(TextureID::Cursor, loadTexture(".\\Textures\\Cursor.png"));
-
 	stateData.resources.textures.add(TextureID::RifleAmmoBox, loadTexture(".\\Textures\\RifleAmmoBox.png"));
 	stateData.resources.textures.add(TextureID::AmmoForShutgunBonus, loadTexture(".\\Textures\\AmmoForShutgunBonus.png"));
-
 	stateData.resources.textures.add(TextureID::BackgroundGame, loadTexture(".\\Textures\\pavement.png", true));
-
 	stateData.resources.textures.add(TextureID::ToolbarBackground, loadTexture(".\\Textures\\ToolbarBackground.png", true));
-
 	stateData.resources.textures.add(TextureID::Portal, loadTexture(".\\Textures\\Portal.png"));
-
 	stateData.resources.textures.add(TextureID::Warning, loadTexture(".\\Textures\\Warning.png"));
-
-
 
 	stateData.resources.textures.add(TextureID::PotionBar, loadTexture(".\\Textures\\PotionBar.png"));
 	stateData.resources.textures.add(TextureID::Blood1, loadTexture(".\\Textures\\Blood1.png"));
@@ -62,6 +50,8 @@ void LoadDataState::loadAllTextures()
 	stateData.resources.textures.add(TextureID::Granite, loadTexture(".\\Textures\\Blocks.png", true, sf::IntRect(150, 0, 50, 50)));
 	stateData.resources.textures.add(TextureID::Blocks, loadTexture(".\\Textures\\Blocks.png"));
 
+	stateData.resources.textures.add(TextureID::Trampoline, loadTexture(".\\Textures\\Trampoline.png"));
+
 	stateData.resources.textures.add(TextureID::CppLogo, loadTexture(".\\Textures\\C++Logo.png"));
 	stateData.resources.textures.add(TextureID::Coin, loadTexture(".\\Textures\\Coin.png"));
 	stateData.resources.textures.add(TextureID::Cloud, loadTexture(".\\Textures\\Cloud.png"));
@@ -74,24 +64,17 @@ void LoadDataState::loadAllTextures()
 	stateData.resources.textures.add(TextureID::Stormtrooper, loadTexture(".\\Textures\\Stormtrooper.png"));
 
 	stateData.resources.textures.add(TextureID::PlayerHealthBarBackground, loadTexture(".\\Textures\\PlayerHealthBar.png", true, sf::IntRect(0, 0, 225, 54)));
-
 	stateData.resources.textures.add(TextureID::PlayerHealthBarHealth, loadTexture(".\\Textures\\PlayerHealthBar.png", true, sf::IntRect(225, 0, 165, 48)));
-
 	stateData.resources.textures.add(TextureID::ManaBarBackground, loadTexture(".\\Textures\\ManaBar.png", true, sf::IntRect(0, 0, 225, 54)));
 	stateData.resources.textures.add(TextureID::ManaBarMana, loadTexture(".\\Textures\\ManaBar.png", true, sf::IntRect(225, 0, 168, 48)));
-
-
 	stateData.resources.textures.add(TextureID::EnemyHealthBarBackground, loadTexture(".\\Textures\\EnemyHealthBar.png", false, sf::IntRect(0, 0, 110, 26)));
 	stateData.resources.textures.add(TextureID::EnemyHealthBarHealth, loadTexture(".\\Textures\\EnemyHealthBar.png", false, sf::IntRect(110, 0, 108, 24)));
-
 	stateData.resources.textures.add(TextureID::LevelBarBackground, loadTexture(".\\Textures\\LevelBar.png", false, sf::IntRect(0, 0, 225, 54)));
 	stateData.resources.textures.add(TextureID::LevelBarLevel, loadTexture(".\\Textures\\LevelBar.png", false, sf::IntRect(225, 0, 153, 48)));
-
 	stateData.resources.textures.add(TextureID::Wizard, loadTexture(".\\Textures\\Wizard.png"));
 	stateData.resources.textures.add(TextureID::ShadowWizard, loadTexture(".\\Textures\\ShadowWizard.png"));
 
 	//Enemies
-
 	stateData.resources.textures.add(TextureID::DeadlyFlower, loadTexture(".\\Textures\\DeadlyFlower.png"));
 	stateData.resources.textures.add(TextureID::Fly, loadTexture(".\\Textures\\Fly.png"));
 	stateData.resources.textures.add(TextureID::Skeleton2, loadTexture(".\\Textures\\Skeleton.png"));
@@ -105,13 +88,11 @@ void LoadDataState::loadAllTextures()
 	stateData.resources.textures.add(TextureID::SpinningSpikes, loadTexture(".\\Textures\\SpinningSpikes.png"));
 
 	//Projectiles
-
 	stateData.resources.textures.add(TextureID::Bullet, loadTexture(".\\Textures\\Bullet.png"));
 	stateData.resources.textures.add(TextureID::Electroball, loadTexture(".\\Textures\\ElectroBall.png"));
 	stateData.resources.textures.add(TextureID::Fireball, loadTexture(".\\Textures\\Fireball.png"));
 	stateData.resources.textures.add(TextureID::Icicle, loadTexture(".\\Textures\\Icicle.png"));
 	stateData.resources.textures.add(TextureID::ShadowBall, loadTexture(".\\Textures\\ShadowBall.png"));
-
 	stateData.resources.textures.add(TextureID::RockProjectile, loadTexture(".\\Textures\\RockProjectile.png"));
 	stateData.resources.textures.add(TextureID::SlimeProjectile, loadTexture(".\\Textures\\SlimeProjectile.png"));
 	stateData.resources.textures.add(TextureID::ProjectileOfDeadlyFlower, loadTexture(".\\Textures\\ProjectileOfDeadlyFlower.png"));
@@ -127,66 +108,39 @@ void LoadDataState::loadAllTextures()
 	stateData.resources.textures.add(TextureID::IceWand, loadTexture(".\\Textures\\IceWand.png"));
 	stateData.resources.textures.add(TextureID::ShadowWand, loadTexture(".\\Textures\\ShadowWand.png"));
 
-
 	//Buttons
 	stateData.resources.textures.add(TextureID::GreyButton100x50, loadTexture(".\\Textures\\GreyButton100x50.png"));
 	stateData.resources.textures.add(TextureID::GreyButton200x150, loadTexture(".\\Textures\\GreyButton200x150.png"));
 	stateData.resources.textures.add(TextureID::GreyButton300x70, loadTexture(".\\Textures\\GreyButton300x70.png"));
 	stateData.resources.textures.add(TextureID::GreyButton750x86, loadTexture(".\\Textures\\GreyButton750x86.png"));
 	stateData.resources.textures.add(TextureID::BackButton, loadTexture(".\\Textures\\BackButton.png"));
-
 	stateData.resources.textures.add(TextureID::DeleteSaveButton, loadTexture(".\\Textures\\DeleteSaveButton.png"));
 	stateData.resources.textures.add(TextureID::Plus, loadTexture(".\\Textures\\Plus.png"));
 	stateData.resources.textures.add(TextureID::Minus, loadTexture(".\\Textures\\Minus.png"));
-
 	stateData.resources.textures.add(TextureID::Arrow, loadTexture(".\\Textures\\Arrow.png"));
-
 	stateData.resources.textures.add(TextureID::SliderButton, loadTexture(".\\Textures\\SliderButton.png"));
 	stateData.resources.textures.add(TextureID::Slider, loadTexture(".\\Textures\\Slider.png"));
 	stateData.resources.textures.add(TextureID::Axis, loadTexture(".\\Textures\\Axis.png"));
-
 	stateData.resources.textures.add(TextureID::MachinegunButton, loadTexture(".\\Textures\\MachinegunButton.png"));
-
 	stateData.resources.textures.add(TextureID::Checbox50x50, loadTexture(".\\Textures\\Checbox50x50.png"));
-
 	stateData.resources.textures.add(TextureID::MessageboxBackground, loadTexture(".\\Textures\\MessageboxBackground.png"));
 	stateData.resources.textures.add(TextureID::RedButton750x86, loadTexture(".\\Textures\\RedButton750x86.png"));
 	stateData.resources.textures.add(TextureID::SaveButton, loadTexture(".\\Textures\\SaveButton.png"));
 	stateData.resources.textures.add(TextureID::DarkRedButton750x86, loadTexture(".\\Textures\\DarkRedButton750x86.png"));
-
-
 	stateData.resources.textures.add(TextureID::TextboxBackground, loadTexture(".\\Textures\\Textbox.png"));
 	stateData.resources.textures.add(TextureID::Searcher, loadTexture(".\\Textures\\Searcher.png"));
 	stateData.resources.textures.add(TextureID::SearchBox, loadTexture(".\\Textures\\SearchBox.png"));
-
 	stateData.resources.textures.add(TextureID::SkipButton, loadTexture(".\\Textures\\SkipButton.png"));
 	stateData.resources.textures.add(TextureID::AcceptButton, loadTexture(".\\Textures\\AcceptButton.png"));
-
 	stateData.resources.textures.add(TextureID::ScrollerButton, loadTexture(".\\Textures\\ScrollerButton.png"));
-
 	stateData.resources.textures.add(TextureID::Loupe, loadTexture(".\\Textures\\Loupe.png"));
-
 	stateData.resources.textures.add(TextureID::RedButton89x43, loadTexture(".\\Textures\\RedButton89x43.png"));
-
 	stateData.resources.textures.add(TextureID::DeleteButton, loadTexture(".\\Textures\\DeleteButton.png"));
 	stateData.resources.textures.add(TextureID::Delete, loadTexture(".\\Textures\\Delete.png"));
-
 	stateData.resources.textures.add(TextureID::InformationAboutSaveBackground, loadTexture(".\\Textures\\InformationAboutSaveBackground.png"));
-
 	stateData.resources.textures.add(TextureID::ShopBackground, loadTexture(".\\Textures\\ShopBackground.png"));
-
-
-
-
+	stateData.resources.textures.add(TextureID::InfinitySymbol, loadTexture(".\\Textures\\InfinitySymbol.png"));	
 	stateData.resources.textures.add(TextureID::InfinitySymbol, loadTexture(".\\Textures\\InfinitySymbol.png"));
-	
-		
-		stateData.resources.textures.add(TextureID::InfinitySymbol, loadTexture(".\\Textures\\InfinitySymbol.png"));
-
-
-		std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-
-	
 }
 
 void LoadDataState::loadKeybinds()
@@ -200,8 +154,6 @@ void LoadDataState::loadSettings()
 	file.open(".//Settings//config.txt");
 	if (!file.good())
 	{
-		
-
 		std::ofstream newFile;
 		newFile.open(".//Settings//config.txt");
 
@@ -265,7 +217,6 @@ void LoadDataState::loadSettings()
 		}
 	}
 	file.close();
-
 }
 
 

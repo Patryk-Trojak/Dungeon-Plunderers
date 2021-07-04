@@ -26,6 +26,7 @@ enum class TextureID
     Blocks,
     CppLogo,
     Coin,
+    Trampoline,
     Cloud,
     MagicShield,
     HealthPotion,
