@@ -168,6 +168,13 @@ PlayerType Player::getType()
 	return name;
 }
 
+void Player::setCurrentValocity(const sf::Vector2f& newVelocity)
+{
+	currentVelocity = newVelocity;
+	if (newVelocity.y < 0.f)
+		isAbleToFall = true;
+}
+
 
 float Player::top() const
 {

@@ -54,6 +54,7 @@ public:
 	void setInitialHp(int initHp);
 	PlayerType getType();
 	int collectedMoney{ 0 };
+	void setCurrentValocity(const sf::Vector2f& newVelocity);
 protected:
 	PlayerType name;
 	void move(const float deltaTime) override;
