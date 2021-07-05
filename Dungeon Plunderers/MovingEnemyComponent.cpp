@@ -89,13 +89,13 @@ void MovingEnemyComponent::updateCurrentVelocityDependsOnCurrentState()
 	else
 		newAbsVelocity = maxVelocity;
 
-	if (currentVelocity.x > 0)
+	if (currentVelocity.x > 0.f)
 		currentVelocity.x = newAbsVelocity.x;
-	else
+	else if(currentVelocity.x != 0.f)
 		currentVelocity.x = -newAbsVelocity.x;
 
-	if (currentVelocity.y > 0)
+	if (currentVelocity.y > 0.f)
 		currentVelocity.y = newAbsVelocity.y;
-	else
+	else if (currentVelocity.x != 0.f)
 		currentVelocity.y = -newAbsVelocity.y;
 }
