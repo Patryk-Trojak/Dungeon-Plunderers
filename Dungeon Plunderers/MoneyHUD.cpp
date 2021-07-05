@@ -24,6 +24,12 @@ void MoneyHUD::setMoney(const int Money)
 	money.setString(std::to_string(Money));
 }
 
+void MoneyHUD::setPosition(const sf::Vector2f& position)
+{
+	coin.setPosition(position);
+	money.setPosition(sf::Vector2f(position.x + 60, position.y - 2));
+}
+
 void MoneyHUD::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(coin, states);

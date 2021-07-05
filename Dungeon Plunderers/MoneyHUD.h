@@ -9,7 +9,7 @@ public:
 	MoneyHUD(const sf::Vector2f& Position, const Resources& resources, const int Money);
 	virtual ~MoneyHUD();
 	void setMoney(const int Money);
-
+	void setPosition(const sf::Vector2f& position);
 private:
 	sf::Text money;
 	sf::Sprite coin;
