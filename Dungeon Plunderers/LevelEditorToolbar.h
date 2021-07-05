@@ -18,7 +18,7 @@ enum class UnitsCategories {
 	enemies,
 	enemiesPage2,
 	enemiesPage3,
-	coins
+	others
 };
 
 enum class ToolbarButtonName {

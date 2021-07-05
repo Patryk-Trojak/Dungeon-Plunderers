@@ -262,10 +262,10 @@ void LevelEditorToolbar::initCategoryButtons(const sf::Font& font)
 		resources[TextureID::GreyButton300x70], font,
 		L"Potworki", 30)));
 
-	categoryButtons.emplace(std::make_pair(UnitsCategories::coins,
+	categoryButtons.emplace(std::make_pair(UnitsCategories::others,
 		TextButton(sf::Vector2f(0.f, 0.f), sf::Vector2f(200.f, 50.f),
 		resources[TextureID::GreyButton300x70], font,
-		L"Monety", 30)));
+		L"Inne", 30)));
 
 	categoryButtons.emplace(std::make_pair(UnitsCategories::options,
 		TextButton(sf::Vector2f(0.f, 0.f), sf::Vector2f(200.f, 50.f),
@@ -550,7 +550,7 @@ void LevelEditorToolbar::initUnitsInEachCategory()
 	std::vector<LevelEditorUnitsNames> enemiesPage3
 	{ UnitName::bat, UnitName::movingSpinningSpikes, UnitName::spinningSpikes};	
 	
-	std::vector<LevelEditorUnitsNames> coins
+	std::vector<LevelEditorUnitsNames> others
 	{ UnitName::coin};
 
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::blocks, blocks));
@@ -558,5 +558,5 @@ void LevelEditorToolbar::initUnitsInEachCategory()
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::enemies, enemiesPage1));
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::enemiesPage2, enemiesPage2));
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::enemiesPage3, enemiesPage3));
-	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::coins, coins));
+	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::others, others));
 }
