@@ -5,9 +5,13 @@ WizardHUD::WizardHUD(const sf::Vector2f& HUDViewCenter, const Resources& resourc
     const std::shared_ptr<Player>& currentPlayer, const std::shared_ptr<Player>& playerBaseVersion, const PlayerData& playerData)
     : PlayerHUD(HUDViewCenter, resources,
         currentPlayer, playerBaseVersion, playerData),
-    manaBar(HUDViewCenter + sf::Vector2f(-550.f, 400.f), resources, 0, 0),
-    manaPotionBar(HUDViewCenter + sf::Vector2f(0.f, 436.f), resources[TextureID::PotionBar], resources[TextureID::ManaPotion], 0)
+    manaBar(HUDViewCenter + sf::Vector2f(-175.f, 445.f), resources, 0, 0),
+    manaPotionBar(HUDViewCenter + sf::Vector2f(270.f, 445.f), resources[TextureID::PotionBar], resources[TextureID::ManaPotion], 0)
 {
+    levelBar.setPosition(HUDViewCenter + sf::Vector2f(-675.f, 445.f)); 
+    healthBars[0].setPosition(HUDViewCenter + sf::Vector2f(-425.f, 445.f));
+    healthPotionsBar.setPosition(HUDViewCenter + sf::Vector2f(75.f, 445.f));
+    moneyHUD.setPosition(HUDViewCenter + sf::Vector2f(465.f, 445.f));
 }
 
 void WizardHUD::update()
