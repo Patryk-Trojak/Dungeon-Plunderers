@@ -24,6 +24,12 @@ void PotionBar::setCurrentNumberOfPotion(const int CurrentNumberOfPotion)
 	currentNumberOfPotion = CurrentNumberOfPotion;
 }
 
+void PotionBar::setPosition(const sf::Vector2f& position)
+{
+	potionBar.setPosition(position);
+	setPositionOfPotions(position);
+}
+
 void PotionBar::setPositionOfPotions(const sf::Vector2f& Position)
 {
 	auto potion = potions.begin();

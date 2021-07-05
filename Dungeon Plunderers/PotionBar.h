@@ -11,6 +11,7 @@ public:
 		const int CurrentNumberOfPotion);
 	virtual ~PotionBar();
 	void setCurrentNumberOfPotion(const int CurrentNumberOfPotion);
+	void setPosition(const sf::Vector2f& position);
 private:
 	void setPositionOfPotions(const sf::Vector2f& Position);
 	sf::Sprite potionBar;
