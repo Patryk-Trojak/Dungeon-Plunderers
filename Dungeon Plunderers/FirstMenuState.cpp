@@ -56,12 +56,10 @@ void FirstMenuState::draw(sf::RenderTarget & target, sf::RenderStates states) co
 
 void FirstMenuState::initButtons()
 {
-	buttons.insert(std::pair< std::string, TextButton >("GoToLevelsOfPlayerSelectionState", TextButton(sf::Vector2f(810, 300), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Kreator Leveli", 50, ContentAlignment::center)));
-	buttons.insert(std::pair< std::string, TextButton >("GoToSaveSelectionState", TextButton(sf::Vector2f(810, 400), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Graj", 50, ContentAlignment::center)));
+	buttons.insert(std::pair< std::string, TextButton >("GoToSaveSelectionState", TextButton(sf::Vector2f(810, 300), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Graj", 50, ContentAlignment::center)));
+	buttons.insert(std::pair< std::string, TextButton >("GoToLevelsOfPlayerSelectionState", TextButton(sf::Vector2f(810, 400), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Kreator Leveli", 50, ContentAlignment::center)));
 	buttons.insert(std::pair< std::string, TextButton >("GoToSettingsState", TextButton(sf::Vector2f(810, 500), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Opcje", 50, ContentAlignment::center)));
-	buttons.insert(std::pair< std::string, TextButton >("GoToInformationAboutGameState", TextButton(sf::Vector2f(810, 600), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Informacje", 50, ContentAlignment::center)));
-	buttons.insert(std::pair< std::string, TextButton >("GoToSupportGameState", TextButton(sf::Vector2f(810, 700), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Weprzyj", 50, ContentAlignment::center)));
-	buttons.insert(std::pair< std::string, TextButton >("ExitButton", TextButton(sf::Vector2f(810, 800), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Wyjdü", 50, ContentAlignment::center)));
+	buttons.insert(std::pair< std::string, TextButton >("ExitButton", TextButton(sf::Vector2f(810, 600), sf::Vector2f(300, 70), stateData.resources[TextureID::GreyButton300x70], stateData.resources.font, L"Wyjdü", 50, ContentAlignment::center)));
 }
 
 void FirstMenuState::handleFunctionalityOfButtons()
@@ -82,10 +80,6 @@ void FirstMenuState::handleFunctionalityOfButtons()
 		stateData.states.push(std::make_unique<SettingsState>(stateData));
  	}
 
-	if (buttons.at("GoToSupportGameState").wasPressed(mousePositionView, wasMousePressed))
-	{
-		wasMousePressed = false;
-	}
 	if (buttons.at("ExitButton").wasPressed(mousePositionView, wasMousePressed))
 	{
 		wasMousePressed = false;
