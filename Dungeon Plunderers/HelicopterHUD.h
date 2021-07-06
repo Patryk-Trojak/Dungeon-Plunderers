@@ -11,6 +11,12 @@ public:
         const std::shared_ptr<Player>& currentPlayer, const std::shared_ptr<Player>& playerBaseVersion, const PlayerData& playerData);
 
     void update() override;
+
+private:
+    Bar helicopterHealthBar;
+    void updateHealthBars();
+
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
 
 
