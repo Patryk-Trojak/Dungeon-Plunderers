@@ -4,7 +4,7 @@
 
 Bar::Bar(const sf::Vector2f& Position, const sf::Texture& textureOfBackground, const sf::Texture& textureOfBar, const sf::Font& font,
 	const int maxValue, const int currentValue,
-	const sf::Vector2f& offsetOfBar, const sf::Vector2f& offset)
+	const sf::Vector2f& offsetOfBar, unsigned int characterSize, const sf::Vector2f& offset)
 	:maxValue(maxValue),
 	offset(offset),
 	initialSizeOfBarTexture(textureOfBar.getSize()),
@@ -18,6 +18,7 @@ Bar::Bar(const sf::Vector2f& Position, const sf::Texture& textureOfBackground, c
 	value.setFont(font);
 	value.setOutlineColor(sf::Color::Black);
 	value.setOutlineThickness(2);
+	value.setCharacterSize(characterSize);
 	setValue(currentValue);
 	value.setOrigin(sf::Vector2f(value.getGlobalBounds().left, value.getGlobalBounds().top) - value.getPosition());
 }
