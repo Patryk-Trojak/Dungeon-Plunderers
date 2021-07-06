@@ -40,6 +40,7 @@ const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> UnitTyp
     enemies[static_cast<int>(LevelEditorUnitsNames::bat)] = true;
     enemies[static_cast<int>(LevelEditorUnitsNames::spinningSpikes)] = true;
     enemies[static_cast<int>(LevelEditorUnitsNames::movingSpinningSpikes)] = true;
+    enemies[static_cast<int>(LevelEditorUnitsNames::trampoline)] = true;
 
     return enemies;
 }();
@@ -79,6 +80,7 @@ const std::array<bool, static_cast<int>(LevelEditorUnitsNames::counter)> UnitTyp
     ground[static_cast<int>(LevelEditorUnitsNames::skeleton)] = true;
     ground[static_cast<int>(LevelEditorUnitsNames::slimeEnemy)] = true;
     ground[static_cast<int>(LevelEditorUnitsNames::zombieInGround)] = true;
+    ground[static_cast<int>(LevelEditorUnitsNames::trampoline)] = true;
 
     return ground;
 }();

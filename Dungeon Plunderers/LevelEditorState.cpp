@@ -265,6 +265,7 @@ ResourceHolder<LevelEditorUnitsNames, sf::Texture> LevelEditorState::loadAllUnit
 	unitsTextures.add(LevelEditorUnitsNames::player, loadTexture(".\\Textures\\Stormtrooper.png", sf::IntRect(0, 0, 117, 207)));
 	unitsTextures.add(LevelEditorUnitsNames::portal, loadTexture(".\\Textures\\Portal.png", sf::IntRect(0, 0, 117, 207)));
 	unitsTextures.add(LevelEditorUnitsNames::coin, loadTexture(".\\Textures\\Coin.png", sf::IntRect(0, 0, 50, 50)));
+	unitsTextures.add(LevelEditorUnitsNames::trampoline, loadTexture(".\\Textures\\Trampoline.png", sf::IntRect(357, 0, 51, 60)));
 
 	return unitsTextures;
 }
@@ -1511,6 +1512,9 @@ void LevelEditorState::initFunctionConvertUnitsToLevel()
 					break;
 				case LevelEditorUnitsNames::gunEnemy:
 					level.enemies.emplace_back(std::make_unique<GunEnemy>(i.getPosition(), resources));
+					break;
+				case LevelEditorUnitsNames::trampoline:
+					level.trampolines.emplace_back(i.getPosition(), resources);
 					break;
 				}
 			} 

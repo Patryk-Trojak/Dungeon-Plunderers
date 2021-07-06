@@ -551,7 +551,7 @@ void LevelEditorToolbar::initUnitsInEachCategory()
 	{ UnitName::bat, UnitName::movingSpinningSpikes, UnitName::spinningSpikes};	
 	
 	std::vector<LevelEditorUnitsNames> others
-	{ UnitName::coin};
+	{ UnitName::coin, UnitName::trampoline };
 
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::blocks, blocks));
 	unitsInEachCategory.emplace(std::make_pair(UnitsCategories::movingBlocks, movingBlocks));

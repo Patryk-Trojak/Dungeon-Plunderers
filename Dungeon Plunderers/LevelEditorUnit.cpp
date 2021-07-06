@@ -495,6 +495,14 @@ void LevelEditorUnit::setHitboxesDependingOnType()
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(15, 2), sf::Vector2f(0.f, 52.f)));
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(20, 2), sf::Vector2f(15.f, 52.f)));
 		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(15, 2), sf::Vector2f(35.f, 52.f)));
+		break;	
+	case LevelEditorUnitsNames::trampoline:
+		hitboxComponent.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(50.f, 50.f), sf::Vector2f(0.f, 10.f)));
+		hitboxComponent.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(50.f, 10.f), sf::Vector2f(0.f, 0.f)));
+
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(3.f, 3.f), sf::Vector2f(0.f, 60.f)));
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(45.f, 3.f), sf::Vector2f(3.f, 60.f)));
+		base.addHitbox(Hitbox(getUpperLeftCorner(), sf::Vector2f(3.f, 3.f), sf::Vector2f(48.f, 60.f)));
 		break;
 	default:
 		break;

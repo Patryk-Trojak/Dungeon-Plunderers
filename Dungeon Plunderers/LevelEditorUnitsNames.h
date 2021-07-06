@@ -28,5 +28,6 @@ enum class LevelEditorUnitsNames {
 	spinningSpikes,
 	movingSpinningSpikes,
 	portal,
+	trampoline,
 	counter //<--- keeps number of names
 };

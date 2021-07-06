@@ -149,6 +149,9 @@ void LevelsOfPlayerSelection::initFunctionConvertUnitsToLevel()
 			case LevelEditorUnitsNames::gunEnemy:
 				level.enemies.emplace_back(std::make_unique<GunEnemy>(i.getPosition(), resources));
 				break;
+			case LevelEditorUnitsNames::trampoline:
+				level.trampolines.emplace_back(i.getPosition(), resources);
+				break;
 			}
 		}
 		return level;
