@@ -38,6 +38,8 @@ enum class TextureID
     PlayerHealthBarHealth,
     ShieldHealthBarBackground,
     ShieldHealthBar,
+    CloudHealthBarBackground,
+    CloudHealthBar,
     ShopBackground,
     ManaBarBackground,
     ManaBarMana,
