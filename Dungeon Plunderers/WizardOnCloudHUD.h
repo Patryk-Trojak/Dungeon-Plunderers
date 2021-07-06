@@ -14,6 +14,7 @@ public:
 private:
     void updateHealthBars();
     Bar shieldHealthBar;
+    Bar cloudHealthBar;
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
