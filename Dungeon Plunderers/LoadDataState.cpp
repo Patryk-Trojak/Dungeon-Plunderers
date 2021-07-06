@@ -65,6 +65,8 @@ void LoadDataState::loadAllTextures()
 
 	stateData.resources.textures.add(TextureID::PlayerHealthBarBackground, loadTexture(".\\Textures\\PlayerHealthBar.png", true, sf::IntRect(0, 0, 225, 54)));
 	stateData.resources.textures.add(TextureID::PlayerHealthBarHealth, loadTexture(".\\Textures\\PlayerHealthBar.png", true, sf::IntRect(225, 0, 165, 48)));
+	stateData.resources.textures.add(TextureID::ShieldHealthBarBackground, loadTexture(".\\Textures\\ShieldHealthBar.png", true, sf::IntRect(0, 0, 113, 32)));
+	stateData.resources.textures.add(TextureID::ShieldHealthBar, loadTexture(".\\Textures\\ShieldHealthBar.png", true, sf::IntRect(113, 0, 78, 27)));
 	stateData.resources.textures.add(TextureID::ManaBarBackground, loadTexture(".\\Textures\\ManaBar.png", true, sf::IntRect(0, 0, 225, 54)));
 	stateData.resources.textures.add(TextureID::ManaBarMana, loadTexture(".\\Textures\\ManaBar.png", true, sf::IntRect(225, 0, 168, 48)));
 	stateData.resources.textures.add(TextureID::EnemyHealthBarBackground, loadTexture(".\\Textures\\EnemyHealthBar.png", false, sf::IntRect(0, 0, 110, 26)));

@@ -36,6 +36,8 @@ enum class TextureID
     Stormtrooper,
     PlayerHealthBarBackground,
     PlayerHealthBarHealth,
+    ShieldHealthBarBackground,
+    ShieldHealthBar,
     ShopBackground,
     ManaBarBackground,
     ManaBarMana,
