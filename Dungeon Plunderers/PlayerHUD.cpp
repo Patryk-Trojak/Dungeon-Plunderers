@@ -8,9 +8,9 @@ PlayerHUD::PlayerHUD(const sf::Vector2f& HUDViewCenter, const Resources& resourc
     healthPotionsBar(HUDViewCenter + sf::Vector2f(-50, 445.f), resources[TextureID::PotionBar], resources[TextureID::HealthPotion], 3),
     currentPlayer(currentPlayer),
     playerBaseVersion(playerBaseVersion),
-    playerData(playerData)
+    playerData(playerData),
+    healthBar(HUDViewCenter + sf::Vector2f(-300.f, 445.f), resources, currentPlayer->getInitialHp(), currentPlayer->getCurrentHp())
 {
-    healthBars.emplace_back(HUDViewCenter + sf::Vector2f(-300.f, 445.f), resources, currentPlayer->getInitialHp(), currentPlayer->getCurrentHp());
 }
 
 PlayerHUD::~PlayerHUD()
@@ -27,8 +27,8 @@ void PlayerHUD::update()
 
 void PlayerHUD::updateHealthBars()
 {
-    healthBars[0].setMaxValue(currentPlayer->getInitialHp());
-    healthBars[0].setValue(currentPlayer->getCurrentHp());
+    healthBar.setMaxValue(currentPlayer->getInitialHp());
+    healthBar.setValue(currentPlayer->getCurrentHp());
 }
 
 void PlayerHUD::updateMoneyHUD()
@@ -63,6 +63,5 @@ void PlayerHUD::draw(sf::RenderTarget& target, sf::RenderStates states) const
     target.draw(levelBar);
     target.draw(moneyHUD);
     target.draw(healthPotionsBar);
-    for(auto const& i : healthBars)
-        target.draw(i);
+    target.draw(healthBar);
 }

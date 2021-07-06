@@ -26,7 +26,7 @@ protected:
     void updateLevelBar();
     void updateHealthPotionsBar();
 
-    std::vector<PlayerHealthBar> healthBars;
+    PlayerHealthBar healthBar;
     MoneyHUD moneyHUD;
     LevelBar levelBar;
     PotionBar healthPotionsBar;

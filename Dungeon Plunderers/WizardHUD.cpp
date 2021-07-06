@@ -9,7 +9,7 @@ WizardHUD::WizardHUD(const sf::Vector2f& HUDViewCenter, const Resources& resourc
     manaPotionBar(HUDViewCenter + sf::Vector2f(270.f, 445.f), resources[TextureID::PotionBar], resources[TextureID::ManaPotion], 0)
 {
     levelBar.setPosition(HUDViewCenter + sf::Vector2f(-675.f, 445.f)); 
-    healthBars[0].setPosition(HUDViewCenter + sf::Vector2f(-425.f, 445.f));
+    healthBar.setPosition(HUDViewCenter + sf::Vector2f(-425.f, 445.f));
     healthPotionsBar.setPosition(HUDViewCenter + sf::Vector2f(75.f, 445.f));
     moneyHUD.setPosition(HUDViewCenter + sf::Vector2f(465.f, 445.f));
 }
