@@ -21,7 +21,7 @@ public:
     virtual ~PlayerHUD();
     virtual void update();
 protected:
-    void updateHealthBars();
+    virtual void updateHealthBars();
     void updateMoneyHUD();
     void updateLevelBar();
     void updateHealthPotionsBar();
