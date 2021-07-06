@@ -590,9 +590,4 @@ bool LevelEditorUnit::setMovingHitboxWasTeleported(const bool wasMovingHitboxTel
 void LevelEditorUnit::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(unit, states);
-	for (auto const& i : hitboxComponent.getHitboxes())
-		target.draw(i);
-
-	for (auto const& i : base.getHitboxes())
-		target.draw(i);
 }
