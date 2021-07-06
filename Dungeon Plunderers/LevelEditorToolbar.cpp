@@ -13,7 +13,7 @@ LevelEditorToolbar::LevelEditorToolbar(const sf::Vector2f& Position, const Resou
 	velocityOfView(3000),
 	IsRoundPositionTo5pxOn(false),
 	showGrid(true),
-	GridTransparentInPercent(50.f),
+	GridTransparentInPercent(30.f),
 	togglerVisibilityOfGUI(sf::Vector2f(getPosition() + sf::Vector2f(1920.f / 2.f - 75.f, -35.f)), sf::Vector2f(150.f, 35.f),
 		resources[TextureID::GreyButton300x70], resources.font, L"Ukryj",
 		30)
