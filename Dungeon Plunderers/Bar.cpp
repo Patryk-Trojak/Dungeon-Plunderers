@@ -19,6 +19,7 @@ Bar::Bar(const sf::Vector2f& Position, const sf::Texture& textureOfBackground, c
 	value.setOutlineColor(sf::Color::Black);
 	value.setOutlineThickness(2);
 	setValue(currentValue);
+	value.setOrigin(sf::Vector2f(value.getGlobalBounds().left, value.getGlobalBounds().top) - value.getPosition());
 }
 
 Bar::~Bar()
