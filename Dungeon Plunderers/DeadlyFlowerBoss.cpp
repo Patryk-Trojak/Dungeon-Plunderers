@@ -6,6 +6,8 @@ DeadlyFlowerBoss::DeadlyFlowerBoss(const sf::Vector2f& Position, const Resources
 	textureOfProjectile1(resources[TextureID::ProjectileOfBoss])
 {
 	animation.setNumberOfFrames(17);
+	healthBar.setScale(sf::Vector2f(2.f, 2.f));
+	healthBar.setOffset(sf::Vector2f(63.f, -55.f));
 }
 
 DeadlyFlowerBoss::~DeadlyFlowerBoss()
