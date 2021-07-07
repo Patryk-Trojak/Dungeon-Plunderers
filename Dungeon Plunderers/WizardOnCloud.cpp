@@ -117,6 +117,7 @@ void WizardOnCloud::addShieldHp(const int value)
 	{
 		shieldHitboxes.clearHitboxes();
 		HasShield = false;
+		shieldHp = 0;
 	}
 }
 
