@@ -5,6 +5,7 @@ DeadlyFlowerBoss::DeadlyFlowerBoss(const sf::Vector2f& Position, const Resources
 	:DeadlyFlower(Position, resources, sf::Vector2f(2.f, 2.f)),
 	textureOfProjectile1(resources[TextureID::ProjectileOfBoss])
 {
+	animation.setNumberOfFrames(17);
 }
 
 DeadlyFlowerBoss::~DeadlyFlowerBoss()
