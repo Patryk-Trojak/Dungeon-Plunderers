@@ -104,6 +104,7 @@ void LoadDataState::loadAllTextures()
 	stateData.resources.textures.add(TextureID::ProjectileOfDeadlyFlower, loadTexture(".\\Textures\\ProjectileOfDeadlyFlower.png"));
 	stateData.resources.textures.add(TextureID::ProjectileOfBoss, loadTexture(".\\Textures\\ProjectileOfBoss.png"));
 	stateData.resources.textures.add(TextureID::ProjectileOfBoss2, loadTexture(".\\Textures\\ProjectileOfBoss2.png"));
+	stateData.resources.textures.add(TextureID::EnemyBullet, loadTexture(".\\Textures\\EnemyBullet.png"));
 	stateData.resources.textures.add(TextureID::Laser, loadTexture(".\\Textures\\Laser.png", true));
 	//Weapons
 	stateData.resources.textures.add(TextureID::Handgun, loadTexture(".\\Textures\\Handgun.png"));

@@ -79,6 +79,7 @@ enum class TextureID
     ProjectileOfDeadlyFlower,
     ProjectileOfBoss,
     ProjectileOfBoss2,
+    EnemyBullet,
     Laser,
     //Weapons
     Handgun,
