@@ -15,6 +15,7 @@ public:
 	void setPosition(const sf::Vector2f& Position);
 	sf::Vector2f getOffset() const;
 	sf::Vector2f getSize() const;
+	void setScale(const sf::Vector2f& scale);
 protected:
 	sf::Sprite background;
 	sf::Sprite bar;

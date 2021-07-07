@@ -55,6 +55,15 @@ sf::Vector2f Bar::getSize() const
 	return sf::Vector2f(background.getTexture()->getSize().x, background.getTexture()->getSize().y);
 }
 
+void Bar::setScale(const sf::Vector2f& scale)
+{
+	bar.setScale(scale);
+	background.setScale(scale);
+	value.setScale(scale);
+	value.setOrigin(0.f, 0.f);
+	value.setOrigin(sf::Vector2f((value.getGlobalBounds().left - value.getPosition().x) / scale.x, (value.getGlobalBounds().top - value.getPosition().y) / scale.y));
+}
+
 
 void Bar::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
