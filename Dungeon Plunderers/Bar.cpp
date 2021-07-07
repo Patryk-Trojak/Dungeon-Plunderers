@@ -13,7 +13,7 @@ Bar::Bar(const sf::Vector2f& Position, const sf::Texture& textureOfBackground, c
 	background.setTexture(textureOfBackground);
 	background.setPosition(Position + offset);
 	bar.setTexture(textureOfBar);
-	bar.setPosition(Position + offset + offsetOfBar);
+	bar.setPosition(Position + offset + sf::Vector2f(offsetOfBar.x * background.getScale().x, offsetOfBar.y * background.getScale().y));
 
 	value.setFont(font);
 	value.setOutlineColor(sf::Color::Black);
@@ -42,7 +42,7 @@ void Bar::setMaxValue(const int newMaxValue)
 void Bar::setPosition(const sf::Vector2f& Position)
 {
 	background.setPosition(Position);
-	bar.setPosition(Position + offsetOfBar);
+	bar.setPosition(Position + sf::Vector2f(offsetOfBar.x * background.getScale().x, offsetOfBar.y * background.getScale().y));
 	value.setPosition(bar.getPosition() + sf::Vector2f((initialSizeOfBarTexture.x * bar.getScale().x - value.getGlobalBounds().width) / 2, (initialSizeOfBarTexture.y * bar.getScale().y - value.getGlobalBounds().height) / 2));
 }
 
