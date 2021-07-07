@@ -13,6 +13,7 @@ public:
 	void setValue(const int newValue);
 	void setMaxValue(const int newMaxValue);
 	void setPosition(const sf::Vector2f& Position);
+	void setOffset(const sf::Vector2f& offset);
 	sf::Vector2f getOffset() const;
 	sf::Vector2f getSize() const;
 	void setScale(const sf::Vector2f& scale);
@@ -21,7 +22,7 @@ protected:
 	sf::Sprite bar;
 	sf::Text value;
 	const sf::Vector2f initialSizeOfBarTexture;
-	const sf::Vector2f offset;
+	sf::Vector2f offset;
 	const sf::Vector2f offsetOfBar;
 	int maxValue;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;

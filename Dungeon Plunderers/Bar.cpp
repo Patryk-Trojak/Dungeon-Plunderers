@@ -46,6 +46,11 @@ void Bar::setPosition(const sf::Vector2f& Position)
 	value.setPosition(bar.getPosition() + sf::Vector2f((initialSizeOfBarTexture.x * bar.getScale().x - value.getGlobalBounds().width) / 2, (initialSizeOfBarTexture.y * bar.getScale().y - value.getGlobalBounds().height) / 2));
 }
 
+void Bar::setOffset(const sf::Vector2f& offset)
+{
+	this->offset = offset;
+}
+
 sf::Vector2f Bar::getOffset() const
 {
 	return offset;
