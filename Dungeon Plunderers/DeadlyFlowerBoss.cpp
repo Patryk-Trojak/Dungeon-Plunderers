@@ -8,6 +8,9 @@ DeadlyFlowerBoss::DeadlyFlowerBoss(const sf::Vector2f& Position, const Resources
 	animation.setNumberOfFrames(17);
 	healthBar.setScale(sf::Vector2f(2.f, 2.f));
 	healthBar.setOffset(sf::Vector2f(63.f, -55.f));
+
+	fire.setOrigin(sf::Vector2f(13.f, -15.f));
+	fire.setScale(sf::Vector2f(6.f, 6.f));
 }
 
 DeadlyFlowerBoss::~DeadlyFlowerBoss()
