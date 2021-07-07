@@ -16,7 +16,7 @@ void DeadlyFlowerBoss::attack(std::vector<std::unique_ptr<EnemyProjectile>>& Pro
 {
 	timerOfWave += deltaTime;
 	timerOfShooting += deltaTime;
-	initialPositionOfProjectiles = enemy.getPosition() + sf::Vector2f(-120, 25) * initialScale.x;
+	initialPositionOfProjectiles = enemy.getPosition() + sf::Vector2f(-120, 50) * initialScale.x;
 
 	if (timerOfWave > 2)
 	{
