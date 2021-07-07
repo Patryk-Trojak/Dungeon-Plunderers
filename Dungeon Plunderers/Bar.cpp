@@ -31,7 +31,7 @@ void Bar::setValue(const int newValue)
 {
 	bar.setTextureRect(sf::IntRect(0, 0, static_cast<float>(newValue) / static_cast<float>(maxValue)* static_cast<float>(initialSizeOfBarTexture.x), initialSizeOfBarTexture.y));
 	value.setString(std::to_wstring(newValue) + L"/" + std::to_wstring(maxValue));
-	value.setPosition(bar.getPosition() + sf::Vector2f((bar.getTexture()->getSize().x - value.getGlobalBounds().width) / 2, (bar.getTexture()->getSize().y - value.getGlobalBounds().height) / 2));
+	value.setPosition(bar.getPosition() + sf::Vector2f((initialSizeOfBarTexture.x * bar.getScale().x - value.getGlobalBounds().width) / 2, (initialSizeOfBarTexture.y * bar.getScale().y - value.getGlobalBounds().height) / 2));
 }
 
 void Bar::setMaxValue(const int newMaxValue)
@@ -43,7 +43,7 @@ void Bar::setPosition(const sf::Vector2f& Position)
 {
 	background.setPosition(Position);
 	bar.setPosition(Position + offsetOfBar);
-	value.setPosition(bar.getPosition() + sf::Vector2f((bar.getTexture()->getSize().x - value.getGlobalBounds().width) / 2, (bar.getTexture()->getSize().y - value.getGlobalBounds().height) / 2));
+	value.setPosition(bar.getPosition() + sf::Vector2f((initialSizeOfBarTexture.x * bar.getScale().x - value.getGlobalBounds().width) / 2, (initialSizeOfBarTexture.y * bar.getScale().y - value.getGlobalBounds().height) / 2));
 }
 
 sf::Vector2f Bar::getOffset() const
