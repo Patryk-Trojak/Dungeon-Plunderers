@@ -123,6 +123,12 @@ void Animation::setTimeOfFrameChange(float TimeOfFrameChange)
 	timeOfFrameChange = TimeOfFrameChange;
 }
 
+void Animation::setNumberOfFrames(int numberOfFrames)
+{
+	this->numberOfFrames = numberOfFrames;
+	endFrame.left = (numberOfFrames - 1) * endFrame.width;
+}
+
 void Animation::resetTimerOfAnimation()
 {
 	timer = 0.f;

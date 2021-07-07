@@ -12,6 +12,7 @@ public:
 	void playBackwards(sf::Sprite& sprite, const float deltaTime);
 	void setFrame(sf::Sprite &sprite, int numberOfFrame);
 	void setTimeOfFrameChange(float TimeOfFrameChange);
+	void setNumberOfFrames(int numberOfFrames);
 	void resetTimerOfAnimation();
 	int getNumberOfCurrentFrame() const;
 	bool wasFrameChanged() const;
