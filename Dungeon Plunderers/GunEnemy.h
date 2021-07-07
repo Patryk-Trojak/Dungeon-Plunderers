@@ -1,6 +1,6 @@
 #pragma once
 #include "RangedEnemy.h"
-//#include "Bullet.h"
+#include "EnemyBullet.h"
 #define _USE_MATH_DEFINES 
 #include <math.h>
 
