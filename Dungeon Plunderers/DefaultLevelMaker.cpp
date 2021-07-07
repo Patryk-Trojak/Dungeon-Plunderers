@@ -53,7 +53,7 @@ std::unique_ptr<Enemy> DefaultLevelMaker::createBoss(LevelName levelName, Player
 	switch (levelName)
 	{
 	case LevelName::Level1:
-		return std::make_unique<DeadlyFlowerBoss>(sf::Vector2f(3501.22593, 500.000000), resources);
+		return std::make_unique<DeadlyFlowerBoss>(sf::Vector2f(3501.f, 505.f), resources);
 	case LevelName::Level2:
 		return std::make_unique<SkeletonBoss>(sf::Vector2f(3501.22593, 500.000000), resources);
 	case LevelName::Level3:
