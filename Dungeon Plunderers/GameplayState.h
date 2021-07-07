@@ -158,4 +158,6 @@ private:
 
     void handleChanginFormFromNormalToBossVersion();
     void handleChanginFormFromBossToNormalVersion();
+
+    void changeFormFromBossToNormalVersion(bool createFormChanger);
 };

@@ -563,21 +563,40 @@ void GameplayState::handleChanginFormFromBossToNormalVersion()
     {
         if (stateData.keybinds.isPressed(KeybindID::GetOffPlaneOrCloud))
         {
-            currentPlayer = playerNormalVersion;
-
-            if (currentPlayer->getType() == PlayerType::stormtrooper)
+            changeFormFromBossToNormalVersion(true);
+        }
+        else
+        {
+            if (currentPlayer->getType() == PlayerType::wizardOnCloud)
             {
-                currentPlayer->setPosition(currentPlayer->getPosition() + sf::Vector2f(320.f, 0.f));
+                if (std::static_pointer_cast<WizardOnCloud>(currentPlayer)->getCloudHp() <= 0)
+                    changeFormFromBossToNormalVersion(false);
             }
             else
             {
-                currentPlayer->setPosition(currentPlayer->getPosition());
-                currentPlayer->setValue(playerBossVersion->getCurrentHp());
-                currentPlayer->setInitialHp(playerBossVersion->getInitialHp());
+                if (currentPlayer->getCurrentHp() <= 0)
+                    changeFormFromBossToNormalVersion(false);
             }
-            createHUD(currentPlayer->getType());
-            makePlayerFormChanger();
-            timeSinceChangePlayerForm = 0.f;
         }
     }
+}
+
+void GameplayState::changeFormFromBossToNormalVersion(bool createFormChanger)
+{
+    currentPlayer = playerNormalVersion;
+
+    if (currentPlayer->getType() == PlayerType::stormtrooper)
+    {
+        currentPlayer->setPosition(currentPlayer->getPosition() + sf::Vector2f(320.f, 0.f));
+    }
+    else
+    {
+        currentPlayer->setPosition(currentPlayer->getPosition());
+        currentPlayer->setValue(playerBossVersion->getCurrentHp());
+        currentPlayer->setInitialHp(playerBossVersion->getInitialHp());
+    }
+    createHUD(currentPlayer->getType());
+    if(createFormChanger)
+        makePlayerFormChanger();
+    timeSinceChangePlayerForm = 0.f;
 }
