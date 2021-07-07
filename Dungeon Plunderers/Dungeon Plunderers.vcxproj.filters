@@ -546,6 +546,9 @@
     <ClInclude Include="TrampolinesHandler.h">
       <Filter>Gameplay stuff\Trampolines</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyBullet.h">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -976,6 +979,9 @@
     </ClCompile>
     <ClCompile Include="TrampolinesHandler.cpp">
       <Filter>Gameplay stuff\Trampolines</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBullet.cpp">
+      <Filter>Gameplay stuff\Projectiles\Enemy%27s Projectiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

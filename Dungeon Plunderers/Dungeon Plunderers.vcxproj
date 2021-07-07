@@ -210,6 +210,7 @@
     <ClInclude Include="EnemiesHandler.h" />
     <ClInclude Include="EnemiesTypes.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyBullet.h" />
     <ClInclude Include="EnemyHealthBar.h" />
     <ClInclude Include="EnemyProjectile.h" />
     <ClInclude Include="EnemyStates.h" />
@@ -359,6 +360,7 @@
     <ClCompile Include="Electroball.cpp" />
     <ClCompile Include="EnemiesHandler.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyBullet.cpp" />
     <ClCompile Include="EnemyHealthBar.cpp" />
     <ClCompile Include="EnemyProjectile.cpp" />
     <ClCompile Include="Feedback.cpp" />
