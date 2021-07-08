@@ -62,6 +62,7 @@ void LevelsOfPlayerSelection::initFunctionConvertUnitsToLevel()
 	{
 		Level level;
 		level.endOfLevelPosition = sf::Vector2f(200.f, 200.f);
+		level.name = LevelName::playerLevel;
 		for (auto const& i : levelEditorUnits)
 		{
 			switch (i.getType())

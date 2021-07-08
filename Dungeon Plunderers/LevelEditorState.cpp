@@ -1426,6 +1426,7 @@ void LevelEditorState::initFunctionConvertUnitsToLevel()
 		convertUnitsToLevel = [&levelEditorUnits](const Resources& resources)
 		{ 
 			Level level;
+			level.name = LevelName::playerLevel;
 			for (auto const& i : levelEditorUnits)
 			{
 				switch (i.getType())
