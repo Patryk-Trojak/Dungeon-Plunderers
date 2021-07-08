@@ -75,7 +75,8 @@ void CollisionsHandler::PlayerAndCoins()
 		bool isLastCoin = msl::isLastElement(level.coins, coin);
 		if(intersect(*player, *(*coin)))
 		{
-			player->collectedMoney += 50;
+			if(level.name != LevelName::playerLevel)
+				player->collectedMoney += 50;
 			msl::fastErase(level.coins, coin); 
 		}
 		else
