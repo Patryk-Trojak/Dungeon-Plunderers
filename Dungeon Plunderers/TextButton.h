@@ -1,5 +1,6 @@
 #pragma once
 #include "Button.h"
+#include <set>
 
 class TextButton
 	:public Button
@@ -20,9 +21,14 @@ public:
 protected:
 	sf::Text text;
 	ContentAlignment currentAlignment;
+	void updateOriginOfText();
 	void alignContent(ContentAlignment howAlignText);
 	float leftMargin;
 	int countLines();
+	sf::String::ConstIterator findFirstCharacterOfLastLine();
+	void centerContentVertically();
+	bool isLetterWithDescenderInLastLineOfText();
+	float calculateDescenderHeight();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
 
