@@ -496,7 +496,8 @@ bool GameplayState::hasPlayerWon()
     
     if (level.name == LevelName::playerLevel)
     {
-       
+        if (currentPlayer->hitboxComponent.intersects(portal.hitboxes))
+            return true;
     }
 
     return false;
