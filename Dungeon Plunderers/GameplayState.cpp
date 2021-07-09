@@ -457,9 +457,14 @@ void GameplayState::endLevelIfPlayerHasWon()
     if (hasPlayerWon())
     {
         stateData.savedPlayerData.money += currentPlayer->collectedMoney;
+        if (static_cast<int>(level.name) == stateData.savedPlayerData.numberOfUnlockedLevels)
+        {
+            stateData.savedPlayerData.numberOfUnlockedLevels++;
+        }
         isBossKilled = true;
         makeMessageBoxAboutWin();
         collectedMoneyOnLevel = 0;
+        PersistenceSaver::save(stateData.savedPlayerData, stateData.nameOfCurrentlyLoadedPlayerSave);
     }
 }
 
