@@ -29,6 +29,8 @@ void LevelSelectionState::update(const float deltaTime)
 	}
 	handleFunctionalityOfButtons();
 	updateBackToPreviousState();
+	if (feedback)
+		feedback->update(deltaTime);
 }
 
 void LevelSelectionState::handleSFMLEvent(sf::RenderWindow& window, sf::Event& event)
@@ -75,10 +77,18 @@ void LevelSelectionState::handleFunctionalityOfButtons()
 	{
 		if (i.second.wasPressed(mousePositionView, wasMousePressed))
 		{
-			LevelName levelName = i.first;
-			wasMousePressed = false;
-			createCurrentLevel = DefaultLevelMaker::makeFunctionCreatingDefaultLevel(levelName);
-			stateData.states.push(std::make_unique<GameplayState>(stateData, createCurrentLevel));
+			if (static_cast<int>(i.first) <= stateData.savedPlayerData.numberOfUnlockedLevels)
+			{
+				LevelName levelName = i.first;
+				wasMousePressed = false;
+				createCurrentLevel = DefaultLevelMaker::makeFunctionCreatingDefaultLevel(levelName);
+				stateData.states.push(std::make_unique<GameplayState>(stateData, createCurrentLevel));
+			}
+			else
+			{
+				feedback = std::make_unique<Feedback>(sf::Vector2f(0, 700), L"Nie odblokowano jeszcze tego poziomu.\n¯eby odblokowaæ dany poziom musisz ukoñczyæ wszystkie poprzednie poziomy.", 50, stateData.resources.font);
+			}
+			
 		}
 	}
 }
@@ -89,4 +99,6 @@ void LevelSelectionState::drawButtons(sf::RenderTarget& target, sf::RenderStates
 	{
 		target.draw(i.second);
 	}
+	if (feedback)
+		target.draw(*feedback);
 }
