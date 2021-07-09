@@ -44,6 +44,31 @@ void EnemiesHandler::setShouldUpdate(float viewLeftPos, float viewRightPos)
     }
 }
 
+void EnemiesHandler::deleteEnemiesIfDead(Player& player, PlayerData& currentPlayerData, BonusesHandler& bonusesHandler)
+{
+    auto enemy = enemies.begin();
+    bool wasEnemyDeleted = false;
+
+    while (!enemies.empty())
+    {
+        bool isLastEnemy = msl::isLastElement(enemies, enemy);
+        wasEnemyDeleted = false;
+        
+        if ((*enemy)->getHp() <= 0)
+        {
+            currentPlayerData.experienceOfPlayer += 100;
+            bonusesHandler.tryAddBonus((*enemy)->getPosition(), player.getType());
+            msl::fastErase(enemies, enemy);
+            wasEnemyDeleted = true;
+        }
+        if (!wasEnemyDeleted)
+            enemy++;
+
+        if (isLastEnemy)
+            break;
+    }
+}
+
 void EnemiesHandler::updateEnemies(float deltaTime, const sf::Vector2f& playerPosition)
 {
     for (auto& i : enemies)

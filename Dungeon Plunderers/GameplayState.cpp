@@ -120,6 +120,7 @@ void GameplayState::update(const float deltaTime)
             currentPlayer->calculateGlobalBoundsOfSprite();
             blocksHandler.moveAllBlocks(newDeltaTime);
             enemiesHandler.updateEnemies(newDeltaTime, currentPlayer->getPosition());
+            enemiesHandler.deleteEnemiesIfDead(*currentPlayer, stateData.savedPlayerData, bonusesHandler);
             coinsHandler.moveCoinsWithBlocks(newDeltaTime);
             trampolinesHandler.moveTrampolinesWithBlocks(newDeltaTime);
 
