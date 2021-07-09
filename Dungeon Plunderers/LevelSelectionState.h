@@ -39,5 +39,6 @@ private:
 	void drawButtons(sf::RenderTarget& target, sf::RenderStates states) const;
 	std::function<Level(const Resources& resources)> createCurrentLevel;
 	Level createdLevel;
+	void updateColorOfButtons();
 };
 

@@ -29,6 +29,8 @@ void LevelSelectionState::update(const float deltaTime)
 	}
 	handleFunctionalityOfButtons();
 	updateBackToPreviousState();
+	updateColorOfButtons();
+
 	if (feedback)
 		feedback->update(deltaTime);
 }
@@ -101,4 +103,21 @@ void LevelSelectionState::drawButtons(sf::RenderTarget& target, sf::RenderStates
 	}
 	if (feedback)
 		target.draw(*feedback);
+}
+
+void LevelSelectionState::updateColorOfButtons()
+{
+	for (auto& i : buttons)
+	{
+		if (static_cast<int>(i.first) > stateData.savedPlayerData.numberOfUnlockedLevels)
+		{
+			i.second.setHoverColor(sf::Color(60, 60, 60));
+			i.second.setIdleColor(sf::Color(60, 60, 60));
+		}
+		else
+		{
+			i.second.setIdleColor(sf::Color::White);
+			i.second.setHoverColor(sf::Color::Red);
+		}
+	}
 }
