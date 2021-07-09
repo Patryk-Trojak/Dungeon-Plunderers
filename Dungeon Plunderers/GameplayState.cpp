@@ -465,9 +465,13 @@ void GameplayState::endLevelIfPlayerHasWon()
 
 std::wstring GameplayState::makeWstringAboutWin()
 {
-    return L"Gratulacje! Uda³o ci siê przejœæ poziom " + std::to_wstring(numberOfLevel)
-        + L"!\nZyska³eœ " + std::to_wstring(collectedMoneyOnLevel) + L" pieniêdzy"
-        L"\nObecnie masz " + std::to_wstring(stateData.savedPlayerData.money) + L" pieniêdzy";
+    std::wstring message = L"Gratulacje! Uda³o ci siê ukoñczyæ poziom";
+    if (level.name != LevelName::playerLevel)
+    {
+        message += L" " + std::to_wstring(numberOfLevel) + L"!\nZyska³eœ " + std::to_wstring(collectedMoneyOnLevel) + L" pieniêdzy"
+            L"\nObecnie masz " + std::to_wstring(stateData.savedPlayerData.money) + L" pieniêdzy";
+    }
+    return message;
 }
 
 void GameplayState::makeMessageBoxAboutWin()
