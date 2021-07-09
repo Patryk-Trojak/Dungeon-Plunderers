@@ -19,7 +19,6 @@ PlayerUpgradeState::PlayerUpgradeState(StateData& stateData)
 	}
 	initTexts();
 	initWeaponsSprites();
-	initBackgrounds();
 }
 
 PlayerUpgradeState::~PlayerUpgradeState()
@@ -49,7 +48,6 @@ void PlayerUpgradeState::updateInput(const float deltaTime)
 void PlayerUpgradeState::draw(sf::RenderTarget& target, sf::RenderStates state) const
 {
 	target.draw(background, state);
-	drawBackgrounds(target, state);
 
 	drawUpgradeButtons(target, state);
 	drawTexts(target, state);
@@ -409,25 +407,6 @@ void PlayerUpgradeState::initWeaponsSprites()
 	weapons[6].setPosition(sf::Vector2f(positionXOfAllWeapons, 845));
 
 	weapons[7].setPosition(sf::Vector2f(positionXOfAllWeapons, 915));
-}
-
-void PlayerUpgradeState::initBackgrounds()
-{
-	
-	for (auto& i : backgrounds)
-		i.setTexture(stateData.resources[TextureID::ShopBackground]);
-
-
-	float positionXOfAllWeapons = 200;
-
-	for (auto& i : backgrounds)
-		i.setPosition(40, 200);
-}
-
-void PlayerUpgradeState::drawBackgrounds(sf::RenderTarget& target, sf::RenderStates state) const
-{
-	for (auto const& i : backgrounds)
-		target.draw(i);
 }
 
 bool PlayerUpgradeState::isAbleToBoostUpgrade(UpgradeName upgradeName) const

@@ -23,7 +23,6 @@ void ShopState::draw(sf::RenderTarget& target, sf::RenderStates state) const
 {
 	target.draw(background, state);
 
-	drawBackgrounds(target, state);
 	for (auto const& i : projectiles)
 		target.draw(*i);
 

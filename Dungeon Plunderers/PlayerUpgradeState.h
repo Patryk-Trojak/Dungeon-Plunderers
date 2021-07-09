@@ -51,10 +51,6 @@ protected:
 	void drawWeapons(sf::RenderTarget& target, sf::RenderStates state) const;
 	void initWeaponsSprites();
 
-	std::array<sf::Sprite, 4> backgrounds;
-	void initBackgrounds();
-	void drawBackgrounds(sf::RenderTarget& target, sf::RenderStates state) const;
-
 	virtual bool isAbleToBoostUpgrade(UpgradeName upgradeName) const;
 	bool isAbleToDecreaseUpgrade(UpgradeName upgradeName) const;
 	bool isUpgradeMaxed(UpgradeName upgradeName) const;
