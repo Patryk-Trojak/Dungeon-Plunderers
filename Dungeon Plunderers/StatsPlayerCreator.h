@@ -8,45 +8,45 @@ struct PlayerStats {
 struct StormtrooperStats
 	:public PlayerStats
 {
-	int handgunDamage = 0;
-	int rifleDamage = 0;
-	int shotgunDamage = 0;
+	float handgunDamage = 0;
+	float rifleDamage = 0;
+	float shotgunDamage = 0;
 	
-	int handgunFireRate = 0;
-	int rifleFireRate = 0;
-	int shotgunFireRate = 0;
+	float handgunFireRate = 0;
+	float rifleFireRate = 0;
+	float shotgunFireRate = 0;
 	
-	int rifleInitialAmmo = 0;
-	int shotgunInitialAmmo = 0;
+	float rifleInitialAmmo = 0;
+	float shotgunInitialAmmo = 0;
 };
 
 struct WizardStats
 	:public PlayerStats
 {
-	int basicWandDamage = 0;
-	int fireWandDamage = 0;
-	int iceWandDamage = 0;
+	float basicWandDamage = 0;
+	float fireWandDamage = 0;
+	float iceWandDamage = 0;
 
-	int basicWandFireRate = 0;
-	int fireWandFireRate = 0;
-	int iceWandFireRate = 0;
+	float basicWandFireRate = 0;
+	float fireWandFireRate = 0;
+	float iceWandFireRate = 0;
 
-	int fireWandCostOfShot = 0;
-	int iceWandCostOfShot = 0;
+	float fireWandCostOfShot = 0;
+	float iceWandCostOfShot = 0;
 };
 
 struct HelicopterStats
 	:public PlayerStats
 {
-	int damage = 0;
-	int fireRate = 0;
+	float damage = 0;
+	float fireRate = 0;
 };
 
 struct WizardOnCloudStats
 	:public PlayerStats
 {
-	int damage = 0;
-	int fireRate = 0;
+	float damage = 0;
+	float fireRate = 0;
 	int cloudHealth = 0;
 	int shieldHealth = 0;
 };
