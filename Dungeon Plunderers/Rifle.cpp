@@ -20,11 +20,11 @@ Rifle::~Rifle()
 
 void Rifle::attack(std::vector<std::unique_ptr<PlayerProjectile>>& Projectile, const sf::Vector2f& mousePosition)
 {
-	if (timerOfShooting > 0.05/*fireRate and currentNumberOfAmmo > 0*/)
+	if (timerOfShooting > fireRate and currentNumberOfAmmo > 0)
 	{
 		sf::Vector2f velocityOfProjectile = sf::Vector2f(3500 * cos(weapon.getRotation() * M_PI / 180) * weapon.getScale().x, 3500 * sin(weapon.getRotation() * M_PI / 180) * weapon.getScale().x);
 		sf::Vector2f InitialPositionOfProjectile = sf::Vector2f(weapon.getPosition().x + cos((weapon.getRotation()) * M_PI / 180) * 185 * weapon.getScale().x + sin(weapon.getRotation() * M_PI / 180) * 3, weapon.getPosition().y + sin(weapon.getRotation() * M_PI / 180) * 185 * weapon.getScale().x - cos(weapon.getRotation() * M_PI / 180) * 3);
-		Projectile.emplace_back(std::make_unique<Bullet>(InitialPositionOfProjectile + sf::Vector2f(0.f, 0.f), velocityOfProjectile, 20, textureOfProjectile));
+		Projectile.emplace_back(std::make_unique<Bullet>(InitialPositionOfProjectile + sf::Vector2f(0.f, 0.f), velocityOfProjectile, damageOfProjectile, textureOfProjectile));
 		timerOfShooting = 0;
 		currentNumberOfAmmo--;
 	}
