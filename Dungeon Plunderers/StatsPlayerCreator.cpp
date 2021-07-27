@@ -26,7 +26,16 @@ WizardStats StatsPlayerCreator::wizardStats(const PlayerData& playerSave)
 {
 	WizardStats stats;
 
-	stats.basicWandDamage = 20 + playerSave.numbersOfUpgradeBought.at(UpgradeName::BasicWandDamage) * 20;
+	stats.basicWandDamage = 6.f + playerSave.numbersOfUpgradeBought.at(UpgradeName::BasicWandDamage) * 3.f;
+	stats.basicWandFireRate = 0.2f - playerSave.numbersOfUpgradeBought.at(UpgradeName::BasicWandFireRate) * 0.02f;
+
+	stats.fireWandDamage = 50.f + playerSave.numbersOfUpgradeBought.at(UpgradeName::FireWandDamage) * 30.f;
+	stats.fireWandFireRate = 0.8 - playerSave.numbersOfUpgradeBought.at(UpgradeName::FireWandFireRate) * 0.05f;
+	stats.fireWandCostOfShot = 10.f - playerSave.numbersOfUpgradeBought.at(UpgradeName::FireWandCostOfShot) * 1.f;
+
+	stats.iceWandDamage = 80.f + playerSave.numbersOfUpgradeBought.at(UpgradeName::IceWandDamage) * 44.f;
+	stats.iceWandFireRate = 1.1 - playerSave.numbersOfUpgradeBought.at(UpgradeName::IceWandFireRate) * 0.07f;
+	stats.iceWandCostOfShot = 10.f - playerSave.numbersOfUpgradeBought.at(UpgradeName::IceWandCostOfShot) * 1.f;
 
 	return stats;
 }
