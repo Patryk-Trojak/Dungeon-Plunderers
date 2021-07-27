@@ -34,11 +34,11 @@ void SlimeEnemy::attack(std::vector<std::unique_ptr<EnemyProjectile>>& Projectil
 	{
 		if (enemy.getScale().x > 0)
 		{
-			Projectiles.emplace_back(std::make_unique<SlimeProjectile>(enemy.getPosition() + sf::Vector2f(12, 25), sf::Vector2f(900.f * enemy.getScale().x, 0.f), 20, textureOfProjectile));
+			Projectiles.emplace_back(std::make_unique<SlimeProjectile>(enemy.getPosition() + sf::Vector2f(12, 25), sf::Vector2f(900.f * enemy.getScale().x, 0.f), damageOfProjectile, textureOfProjectile));
 		}
 		else
 		{
-			Projectiles.emplace_back(std::make_unique<SlimeProjectile>(enemy.getPosition() + sf::Vector2f(-12, 25), sf::Vector2f(900.f * enemy.getScale().x, 0.f), 20, textureOfProjectile));
+			Projectiles.emplace_back(std::make_unique<SlimeProjectile>(enemy.getPosition() + sf::Vector2f(-12, 25), sf::Vector2f(900.f * enemy.getScale().x, 0.f), damageOfProjectile, textureOfProjectile));
 		}
 		timerOfShooting = 0;
 		canShoot = false;
