@@ -56,16 +56,16 @@ void Wand::attack(std::vector<std::unique_ptr<PlayerProjectile>>& Projectile, co
 		switch (name)
 		{
 		case WandsTypes::basic:
-			Projectile.emplace_back(std::make_unique<Electroball>(InitialPositionOfProjectile, velocityOfProjectile, 20, textureOfProjectile));
+			Projectile.emplace_back(std::make_unique<Electroball>(InitialPositionOfProjectile, velocityOfProjectile, damageOfProjectile, textureOfProjectile));
 				break; 
 		case WandsTypes::fire:
-			Projectile.emplace_back(std::make_unique<Fireball>(InitialPositionOfProjectile, velocityOfProjectile, 20, textureOfProjectile, rotation * multiplier));
+			Projectile.emplace_back(std::make_unique<Fireball>(InitialPositionOfProjectile, velocityOfProjectile, damageOfProjectile, textureOfProjectile, rotation * multiplier));
 			break;
 		case WandsTypes::ice:
-			Projectile.emplace_back(std::make_unique<Icicle>(InitialPositionOfProjectile, velocityOfProjectile, 20, textureOfProjectile, rotation * multiplier));
+			Projectile.emplace_back(std::make_unique<Icicle>(InitialPositionOfProjectile, velocityOfProjectile, damageOfProjectile, textureOfProjectile, rotation * multiplier));
 			break;
 		case WandsTypes::shadow:
-			Projectile.emplace_back(std::make_unique<ShadowBall>(InitialPositionOfProjectile, velocityOfProjectile, 20, textureOfProjectile));
+			Projectile.emplace_back(std::make_unique<ShadowBall>(InitialPositionOfProjectile, velocityOfProjectile, damageOfProjectile, textureOfProjectile));
 			break;
 		}
 		timerOfShooting = 0;
