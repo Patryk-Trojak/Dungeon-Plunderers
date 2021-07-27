@@ -42,7 +42,7 @@ void GunEnemy::attack(std::vector<std::unique_ptr<EnemyProjectile>>& Projectiles
 		sf::Vector2f velocityOfProjectile = sf::Vector2f(800 * cos(enemy.getRotation() * M_PI / 180), 800 * sin(enemy.getRotation() * M_PI / 180));
 		sf::Vector2f InitialPositionOfProjectile = enemy.getPosition() + sf::Vector2f(cos(enemy.getRotation() * M_PI / 180) * 65, sin(enemy.getRotation() * M_PI / 180) * 65);
 
-		Projectiles.emplace_back(std::make_unique<EnemyBullet>(InitialPositionOfProjectile, velocityOfProjectile, 20, textureOfProjectile));
+		Projectiles.emplace_back(std::make_unique<EnemyBullet>(InitialPositionOfProjectile, velocityOfProjectile, damageOfProjectile, textureOfProjectile));
 		timerOfShooting = 0;
 	}
 }
